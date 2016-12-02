@@ -1,0 +1,70 @@
+%!TEX root = ../preamble.tex
+
+\section{Introduction}
+The field of artificial intelligence for games has seen significant advancements in the last few years, using new combinations of existing algorithms. Deep neural networks has been a central component in these advancements, and has proven to be a powerful logic representation, capable of solving a wide range of problems. Google DeepMind's AlphaGo\cite{christian} used deep neural networks and Monte Carlo tree search to achieve remarkable results, beating a professional Go player for the first time in history.
+
+While the fundamental algorithms behind these solutions have existed for decades, the driving factor has primarily been combining and adjusting them to fit the problem domain, as well as having large amounts of data and computational resources available. This naturally raises the question of what the potential of these algorithms is, and which problems they can solve. Inspired by the work of both Koutn\'{\i}k et al.~\cite{torcs} and Chenyi Chen et al.~\cite{chen}, who are experimenting with feature detection in convolutional networks for autonomous driving, and neuroevolution in visual decision making in a car racing simulation game, this project experiments with creating a visual FPS agent using both neuroevolution and convolutional neural networks (CNN) as illustrated in figure~\ref{fig:architecture}.
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/architecture.pdf_tex}
+		\vspace{-45mm}
+	\end{scriptsize}
+	\caption{The combination of supervised learning and neuroevolution translates the visual state to actions frame by frame.}
+	\label{fig:architecture}
+\end{figure}
+
+The combination of the two techniques are an unexplored area, that could have advantages compared to both of the car controlling approaches. Using neuroevolution to decide the actions of the agent has the advantage, that the problem is solved without having to explicitly program the rules, thereby potentially consuming fewer development resources and allowing evolution of novel behaviour. The visual feature detecting CNN solves the problem of dimensionality, as neuroevolution often proves too time consuming for high dimensional input. Allowing the evolved agent to work directly on an interpretation of the visual output is advantageous, both because it humanises the agent and enhances the entertainment value of interacting with it, while making it more relevant to real world robotics. 
+
+The approach of Koutn\'{\i}k et al.\cite{torcs} has comparable advantages, as it uses neuroevolution to decide actions from the visual input, as clarified in section \ref{sec:relatedwork}. However, the training time is a concern, as it takes almost 40 hours on an 8-core machine to evolve a controller that is capable of driving smoothly. Playing TORCS can be viewed as an easy problem to solve for neuroevolution, as it provides rapid feedback in the form of lap time and distance traveled, making it easy for the fitness evaluation to distinguish between fit and unfit networks. Therefore, the training time is a central concern in neuroevolution, and it might be addressed, by leaving out the CNN when training, which is possible using our architecture. A CNN trained with supervised learning could also provide a better foundation for the neuroevolution in terms of evolution speed, as the feature representation of the visual state is explicitly designed for neuroevolution.
+
+\todo{Compare the approach of vizdoom with ours}
+
+\subsection{AI in FPS games}
+In 2015 the FPS game genre was the most popular game genre by sales in the United States\cite{marketshare} with 24,5\% of the total video game sales. In popular FPS games, AI is frequently used to control enemies, and the replay value of a game reliant on an IA(Intelligent Agent) as a game obstacle, is dependent on interesting IA behaviour. Interesting IAs have greater resemblance of a human player and acts both unpredictably and adaptively. IAs are often implemented using finite state machines, which models repetitive behaviour. This leaves potential for improving the game genre, by making the IA behaviour more believable. Another technicality that separates these game obstacles from human player obstacles, are the way the IA interprets the game state. IAs of FPS games mostly uses the underlying game state as input, such as the coordinates and relative angles and distances of entities of interest. It is far simpler to determine an appropriate action from the game state, than reading the visual output of the screen. This design choice places a gap between the IA and the players understanding of the game state. An enemy in a dark corner or covered in smoke, might be hard to notice for a human player, but easily discoverable for an agent knowing the coordinates of enemies within sight. An IA accessing only the information accessible by a human player could possibly be more believable and more entertaining to play against. 
+
+\subsection{Research question}
+\label{sub:research-question}
+The goal of this thesis is to clarify, how deep learning and neuroevolution can be combined to create AI for a FPS agent, using only the visual output of the game as input to the agent. The work of this thesis aims to contribute to future AI implementations, both in the world of AI for games and in the world of AI for real robotics. As a single focused research question, it is formulated as:
+\begin{itemize}
+\item How can supervised deep learning and neuroevolution be combined to create a visual FPS agent? \todo{Could be formulated as a yes-no question, but it would reduce the complexity of the answer.}
+\end{itemize}
+{\setlength{\parindent}{0cm}
+As a part of answering the question above, we answer the following question:
+}
+\begin{itemize}
+\item Which feature representation of a visual partially-observable state makes the combination of neuroevolution and supervised deep learning perform well?
+\end{itemize}
+The research question is answered by...\todo{write about the experiments}
+
+\subsection{Content}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

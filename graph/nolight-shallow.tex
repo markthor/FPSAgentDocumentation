@@ -1,0 +1,17 @@
+%!TEX root = ../preamble.tex
+
+\pgfplotstableread{data/nolight-shallow.dat}{\nolightShallow}
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			title=Score over iterations,
+			xlabel=Iterations,
+			ylabel=Score,
+			restrict x to domain=0:6000,
+			enlarge x limits=0.1,
+		]
+		\addplot+ [red, mark=none] table [x={iteration}, y={score}] {\nolightShallow};
+	\end{axis}
+\end{tikzpicture}
+\caption{Training of a shallow convolutional network without lights}
+\end{figure}

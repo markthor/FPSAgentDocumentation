@@ -1,0 +1,29 @@
+%!TEX root = ../preamble.tex
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Experiments with the convolutional neural network}
+
+
+\subsubsection{Feature maps}
+The feature maps shown on figure \ref{fig:featuremaps} are visualized by scaling the output range of $[0,1]$ of every neuron linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualized output of the max pooling layer and the following result of the convolutional layer.
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/featuremaps.pdf_tex}
+	\end{scriptsize}
+	\caption{A small subset of the feature maps produced from running a training example from the lightened arena through the visual partitioning classification deep convolutional neural network. The feature maps highlight the position of the target.}
+	\label{fig:featuremaps}
+\end{figure}
+
+%Shallow vs deep
+%No light vs light
+
+%\input{graph/angular.tex}
+%\input{graph/nolight-deep.tex}
+%\input{graph/nolight-shallow.tex}
+%\input{graph/light-deep.tex}
+%\input{graph/light-shallow.tex}

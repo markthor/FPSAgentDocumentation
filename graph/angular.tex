@@ -1,0 +1,16 @@
+%!TEX root = ../preamble.tex
+
+
+\pgfplotstableread{data/angular.dat}{\angular}
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			title=ASDASD,
+			xlabel=Iterations,
+			ylabel=Score,
+		]
+		\addplot+ [red, mark=none] table [x={iteration}, y={score}] {\angular};
+	\end{axis}
+\end{tikzpicture}
+\caption{ASDASD}
+\end{figure}

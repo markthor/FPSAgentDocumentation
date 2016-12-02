@@ -1,0 +1,49 @@
+%!TEX root = ../preamble.tex
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\def \emptyLine{\multicolumn{3}{| c |}{}  & \multicolumn{3}{c |}{}  & \multicolumn{3}{c |}{}}
+
+\renewcommand{\arraystretch}{1.9}
+
+\includegraphics[height=256px]{img/134.png} \vspace*{-260px}
+
+\begin{figure}[H]
+\color{black!50}
+\begin{tabular}{| p{28px} | p{28px} | p{28px} | p{28px} | p{28px} | p{28px} | p{28px} | p{28px} | p{28px} |}
+\hline
+	
+	\multicolumn{3}{| p{84px} |}{\multirow{3}{*}{}} &
+	\multicolumn{3}{  p{84px} |}{\multirow{3}{*}{}} &
+	\multicolumn{3}{  p{84px} |}{\multirow{3}{*}{}} \\
+	\emptyLine \\
+	\emptyLine \\
+	
+\hline
+	
+	\multicolumn{3}{| c |}{\multirow{3}{*}{}} &
+	& & &
+	\multicolumn{3}{  c |}{\multirow{3}{*}{}} \\ \cline{4-6}
+	
+	\multicolumn{3}{| c |}{}  &
+	& & &
+	\multicolumn{3}{c |}{} \\ \cline{4-6}
+	
+	\multicolumn{3}{| c |}{}  &
+	& & &
+	\multicolumn{3}{c |}{} \\
+
+	
+\hline
+	
+	\multicolumn{3}{| c |}{\multirow{3}{*}{}} &
+	\multicolumn{3}{  c |}{\multirow{3}{*}{}} &
+	\multicolumn{3}{  c |}{\multirow{3}{*}{}} \\
+	\emptyLine \\
+	\emptyLine \\
+	
+\hline
+\end{tabular}
+\caption{Example partition of the screen using a 3, 3 partitioning scheme}
+\label{fig:image-partition}
+\end{figure}

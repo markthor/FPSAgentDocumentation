@@ -1,0 +1,123 @@
+%!TEX root = ../preamble.tex
+
+\section{Solutions}
+The objective of combining neuroevolution and supervised learning to make a visual FPS agent, can be achieved in numerous ways. To narrow the scope of the solution, the functionality of the proposed solutions is limited to only a subset of the required functionality to play a full-fledged FPS game, as Counter Strike or Quake. Developing a FPS agent capable of playing like a human player requires the following functionality:
+\begin{itemize}
+\item Movement - The agent can move efficiently between points of interest.
+\item Navigation - The agent can recognise different maps and utilise strategic positions.
+\item Aiming and shooting - The agent can identify targets, aim and shoot efficiently with a range of weapons.
+\item Identification of objects of interest - The agent can identify objects of interest, such as armour, weapons and flags.
+\item Identification of sound - The agent can identify threats from sound.
+\item Adaption of role in a team - The agent can identify the roles of its teammates and are able to put itself in a position that compliments the team.
+\end{itemize}
+The focus of the solution is aiming and shooting. It is worth noting that sound plays an important role in many FPS games, and this source of information is out of scope of this solution.
+
+\subsection{Granularity of control}
+The frequency of which the AI makes decisions is a parameter that shapes the potential and performance requirements of the solution. The finest level of control is achieved by parsing every single frame of the game to infer an action. This is performance intensive, as the process of parsing the visual output through the combined networks requires significant amount of computational resources. Using a control frequency lesser than the number of frames reduces the potential reaction speed of the agent and the overall smoothness of its behaviour. The approach of Michal Kempka et al.\cite{vizdoom} is also vision based, and repeats the chosen action for $k$ frames. We chose the same approach, as the flexibility of skipping frames reduces the hardware requirements.
+Some of the functionality requirements of an agent capable of playing a game like Counter Strike might require higher level of control, such as deciding the long term strategy plan or navigating larger maps. This is not in the scope of the proposed solutions.
+
+\subsection{Actions}
+The agent should be able to aim, shoot and reload. Therefore, the output of the ANN evolved with NEAT is turn horizontally, turn vertically, shoot and reload. The turn actions are analog, such that the greater the output, the faster it turns. Shoot and reload are binary actions, that triggers when the output is above a specific threshold. Shooting takes precedence over reload, and turning can be done while shooting or reloading.
+
+\subsection{Feature representations}
+Recall that the feature representation is the integration point of the CNN and the evolved ANN, and that it is the output of the CNN and the input of the evolved ANN.
+The feature representation of the visual state should allow the evolved ANN to locate an enemy, aim and shoot it, while having as few dimensions as possible, as the evolution speed is a central concern. Additionally, the CNN has to be able to learn the features from training examples.
+
+\subsubsection{Angular representation}
+\label{sec:angular}
+The angular feature representation unambiguously defines the position of the target on the screen. This representation has two angles, a distance and a binary output indicating whether the target is within sight. Figure \ref{fig:angular} shows the vertical angle, given by the angle between the current facing of the agent and a projection of the vector from the agent to the target. The projection is onto a plane determined by the vector of the current facing and the up-vector.
+\begin{figure}[H]
+    \centering
+    	\begin{scriptsize}
+		\sffamily
+    	\includesvg[svgpath = img/, width = 1\textwidth]{verticalangle}
+    	\end{scriptsize}
+        \vspace{-10mm}
+    \caption{The relative vertical angle.}
+    \label{fig:angular}
+\end{figure}
+\noindent
+The horizontal angle is calculated in the same manner, except that the angle is calculated based on the projection of both vectors onto the horizontal plane. These two angles allows the evolved ANN to infer the aiming directly. The distance is included to allow for changing shooting behaviour based on distance. For example, if the agent shoots a full automatic rifle at a long distance, it might be better to fire separate shots than using automatic fire. The binary indication of whether there is a target within sight, has the purpose of making it clear when the angles reflects the position of a target, or just assumes default values.
+
+\subsubsection{Visual partitioning representation}
+The visual partitioning representation ambiguously indicates the position of the target on the screen. It defines the position of the target as a classification task, where each point on the screen belongs to a class bounded by a square as shown in figure \ref{fig:visualpartitioning}. 
+\begin{figure}[H]
+    \centering
+    	\includesvg[svgpath = img/]{visualpartitioning}
+    \caption{The position of the target is interpreted as the square of which his centre of mass(marked by the blue dot) is located.}
+    \label{fig:visualpartitioning}
+\end{figure}
+\noindent
+As the target can be visually present in multiple squares, the correct square is defined as the square that contains his centre of mass. The partitioning is finer in the centre of the screen to allow for fine adjustments of the aim. The notation of the partitioning scheme is defined as the number of partitions on the vertical and horizontal axis of the whole screen, followed by the number of partitions on the horizontal or vertical axis of the centre of the previous partitioning. The scheme is exemplified in figure \ref{fig:visualpartitioningcompared}.
+
+The feature representation is a sparse vector with a term for each partition. The term of the partition that contains the target is one, while all others are zero. If no partition contains the target, an additional term indicates the absence of a target.
+\begin{figure}[H]
+    \centering
+    	\includesvg[svgpath = img/, width = 0.8\textwidth]{visualpartitioningcompared}
+    \caption{The leftmost partitioning scheme is notated 3,3,3 and the rightmost is notated 5,3.}
+    \label{fig:visualpartitioningcompared}
+\end{figure}
+\noindent
+
+\subsubsection{Comparing the representations}
+The feature representation of the VPR(visual partitioning representation) has a significantly larger number of dimensions(26 for 3,3,3 partitioning compared to the 4 of angular) than the angular representation, consequently slowing down evolution. The VPR is less detailed, as the precision of the angular representation is bound by the precision of the decimal used to represent the angle, while the precision of the VPR is bound by the width of the partitions. The angular representation allows the agent to choose shooting strategy based on distance and generally allows the agent to behave more smoothly. The large partitions of the VPR in the edges of the screen provide very ambiguous information about the position of the enemy, which makes it impossible for the agent to evolve smooth human-like aiming. If the agent was allowed to move or take strategic decisions, this lack of detail might reduce the potential of the agent furthermore.
+
+The only advantage of the VPR is that it is significantly easier to train a CNN to recognise this representation than the angular representation.
+
+\subsection{The topology of the convolutional neural network}
+The topology of the CNN has lots of different optimisation parameters, and as hyperparameter optimisation methods are based on trial and error, it takes time and computational resources to optimise. The project inevitably leaves room for better topologies that performs better, and the search for an efficient topology is not in the scope of this project. However, we impose some requirements on the topology. The stack of convolutional layers has to have a receptive field that can detect the target, as explained in section \ref{sec:topologies}. The width and height of the target is depending on distance, but it is approximately 10 pixels wide and 25 pixels high. Therefore, the topology of the network should be able to recognise visual features spanning at least 25 pixels. The network should have some depth, as it is often correlated with better performance\cite{christian}\cite{karen}, and use the rectifier activation function to reduce the vanishing gradient problem as described in section \ref{sec:vanishinggradient}.
+
+\subsection{Data requirements}
+
+According to recent research~\cite{balanced-classes} having imbalanced representations of classes used for training CNNs can lead to poor performing networks. According to the study, the worst cases of networks trained on imbalanced data were only able to consistently classify images belonging to the most represented class, i.e. one out of a total of ten classes. The imbalance of data were at most a factor of two, i.e the most represented class having twice as many samples as the least represented class.
+
+
+There are multiple approaches to overcome these imbalances.
+
+One method is to delete data from overrepresented classes until every class has an equal amount of samples. 
+
+
+
+
+%Seeing these results it was clear that class imbalances was a thing to consider.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

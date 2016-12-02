@@ -1,0 +1,175 @@
+%!TEX root = ../preamble.tex
+
+\section{Approach}
+To answer the research question from section~\ref{sub:research-question}, we train a CNN as well as an ANN with neuroevolution, combine them and run varying experiments. This section describes the details of how the networks subject to experimentation are trained and combined.
+\todo{read source comment}
+%This section needs structure. We need to decide on large subsections. Maybe these 3: Training the CNN; Evaluation for neuroevolution; Combining... feel free to rename
+
+NEAT data gen \textrightarrow{} Data  \textrightarrow{} DB \textrightarrow{} CNN Trainer  \textrightarrow{} CNN Network
+\\
+NEAT \textrightarrow{} Picture \textrightarrow{} CNN Network \textrightarrow{} Output \textrightarrow{} Agent
+\\
+
+\subsection{Training the convolutional neural network}
+This section describes the details of the training of the CNN, including the training examples, the network topology and the hyperparameters.
+
+\subsubsection{Network topologies}
+The network topologies are illustrated on figure \ref{fig:architectureOfDeepNet}. As classification and regression are different tasks, the topologies are different. The difference between the two topologies is in the number of neurons in the fully connected layers and in the activation functions used for the output. Both have 12 layers, the first 8 being alternating convolutional and pooling layers, while the next 3 layers being fully connected layers followed by an output layer in both networks. All activation functions are ReLU(rectifier), except in the output layers, where softmax is used for classification and identity is used for regression. The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 2. The networks take an input with a volume of 256x256x3. The regression network outputs the angular representation as described in section \ref{sec:angular}, scaled to fit a range of approximately $0$ to $1$. The classification network outputs 26 probabilities summing to $1$. Both networks have a total of 320 parameters(weights and biases) in the convolutional layers.
+The classification network has 1,228,800 weights($16 \cdot 16 \cdot 120 \cdot 40$) from the last convolutional layer to the first fully connected layer and 4,386 parameters in the remaining layers.
+The regression network has 7,680,000 weights($16 \cdot 16 \cdot 120 \cdot 250$) from the last convolutional layer to the first fully connected layer and 126,754 parameters in the remaining layers.
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/architectureOfDeepNet.pdf_tex}
+	\end{scriptsize}
+	\caption{The full topology of the deep convolutional neural networks.}
+	\label{fig:architectureOfDeepNet}
+\end{figure}
+
+\subsubsection{Training with gradient descent}
+The optimisation process of gradient descent did not include continuous evaluation on a validation set for early stopping, as overfitting was of no concern. When the error of the network stopped improving, the process was stopped. The parameters were updated from a mini-batch of size 32, with a learning rate of $10^{-3}$. The process did not include dropout, but included L2-regularization with a coefficient of $5 \cdot 10^{-4}$ for some of the experiments. Nesterov's accelerated gradient was used with a momentum coefficient of $0.9$. The networks were initialised with Xavier initialisation. The number of training examples used for training was 130,000.
+
+\subsubsection{Training data}
+The training data consists of the raw image data and ground truths. The raw image data is, for each pixel, the byte value of the red, green and blue pixel, i.e. three numbers between 0-255, arranged as a 3 dimensional volume, as seen in figure \ref{fig:split}.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[svgpath = img/]{RGBtransformation}
+    \caption{An image split into its three color channels.}
+    \label{fig:split}
+\end{figure}
+\noindent
+The ground truth is, for each class, a bit representing if the image is considered to be of that particular class, e.g. a bit array. A pair of pixel data and ground truths will henceforth be referred to as an instance of training data. A collection of instances of training data are called training data.
+In section~\ref{subsub:data-gen} it is explained how the training data for this project was generated.
+
+\subsubsection{Optimal visual partitioning scheme}
+The optimal visual partitioning scheme depends on many factors. It is ideal if part of the enemy is always in the centre of the image if the CNN would report that an enemy is in the centre square. In that situation the agent would always, assuming no recoil, hit the enemy if there is an enemy in the centre square and the agent shoots. Without the guarantee that if the CNN reports and enemy is in the centre partition, a part of the enemy is in the centre of the partition, the task of shooting the enemy becomes more difficult\todo{Explain that is depending on distance, and that it can become downright impossible because it has no feedback for misses}.
+
+Fulfilling this requirement depends on how wide the enemy is on the screen\todo{assuming a box-shaped hitbox}. Assuming the enemy is 11 pixels wide, having a centre square of 11x11 pixels would fulfil the aforementioned requirement. If $6/11$ pixels is inside the centre square the enemy is considered to be inside that partition and since the sixth pixel is the centre pixel of the centre square, a part of the enemy is in the centre of the centre square - fulfilling the requirement.
+
+\subsubsection{Partitioning scheme used for experiments}
+The max distance between the agent and the enemy resulted in the enemy being approximately 10 pixels wide, when the image is downscaled to 256x256 pixels.
+
+A 5, 3 partitioning scheme would result in the centre partition being around 17 pixels wide, where it for a 3, 3, 3, partitioning scheme is approximately 9 pixels wide. There are 34 classes using a 5, 3 partitioning scheme, calculated as $(5*5-1)+(3*3)+1=34$ and 26 classes using a 3, 3, 3, partitioning scheme, calculated as $(3*3-1)+(3*3-1)+(3*3)+1=26$.
+
+Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partitioning scheme, leading to faster training of the agent, and the resulting width of the centre partition is narrower, all experiments were done using a 3, 3, 3 partitioning scheme.
+
+\subsubsection{Scaling of the angular representation}
+\todo{write}
+
+%\subsection{Visual partitioning}
+%To train the CNN to be able to classify images, classes are needed. Two obvious classes are pictures with and without an enemy. Having only these classes does not provide enough information for NEAT to be able to produce intelligent behaviour. In other words, more classes are needed.
+%\todo{Basically already explained in section solutions}
+%Introducing more classes is achieved by splitting the image into partitions, where an image belongs to a class if there is an enemy in the corresponding partition.
+
+%Figure~\ref{fig:image-partition}\todo{insert figure} shows an example image that has been split into nine squares. The centre square has been further split into nine squares as well. This partitioning scheme is called a 3, 3 partitioning scheme as the image is split into three squares both horizontally and diagonally, and the same is done to the centre square.
+
+%A 3, 3, 3 partitioning scheme is almost the same as before, except the centre square is further split into three squares both horizontally and diagonally.
+
+%Using a 3, 3, 3 partitioning scheme results in 26 different classes. This is calculated as $(3*3-1)+(3*3-1)+(3*3)+1$. One is subtracted from $(3*3)$ in the first two occurrences, as their centre square is further partitioned. The $+1$ in the end is the class that states there is not an enemy in the picture. The 25 other classes are images where an enemy is in one of the 25 different partitions.
+
+% SKRIV VIDERE
+
+%\input{fig/image-partition.tex}
+
+\input{fig/enemy-dist.tex}
+
+
+
+%Having a fully automated process of producing pixel data and labels allowed different arena setups to be tested quickly.
+
+%The data was saved in a database to make it possible for multiple computers across different networks to both retrieve from and persist to the database.
+
+\subsection{Training the agent}
+\label{sub:training-neat}
+As described in section~\ref{}\todo{insert reference} there are multiple ways of training the agent using NEAT.
+
+Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges.
+
+Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
+\todo{Mikkel write about the training. Feel free to edit the existing text.}
+
+\subsubsection{Evolving with NEAT}
+\todo{Write about hyperparameters and NEAT specific setup}
+
+\subsubsection{Evaluation}
+\todo{Write about the specific task that the agent is evaluated on}
+
+\subsubsection{Fitness function}
+\todo{write about how the fitness was calculated}
+
+\subsubsection{Data generation}
+\label{subsub:data-gen}
+Training data representative of what the agent will encounter during actual play, will lead to better performing networks as they should not encounter anything they have not been trained for.
+
+Taking pictures of the environment, in which the agent is during actual play, using random positioning and rotation of the camera should produce representative training data. In our case having the camera at a fixed position and random rotation should suffice as our agent is stationary.
+
+An untrained NEAT agent, basing its actions on the angular game state, exhibits more or less random behaviour. During training the behaviour should become less random and more intelligent, which is desirable under normal circumstances, but not when the agent is used to generate training data. Disabling the fitness function, i.e. always giving a fitness of 0, disables learning, thereby persisting the random behaviour.
+
+We were able to almost fully automate the process of generating training data by disabling the fitness function, making it possible to take a screenshot every $n$-th frame, where $n$ was around 5-10,  thereby getting a set of images representative of the states the agent would be in, during actual play.
+
+
+\subsubsection{Data cleaning}
+Approximately half of the images generated did not contain an enemy. To achieve a more equal distribution of images of different classes many of the images without an enemy was deleted. After deleting these images around 15\% of the images did not contain an enemy.
+
+The distribution of the rest of the classes depends heavily on the granularity of the partitioning. Using a 3, 3, 3 partitioning scheme, the next-most represented class constitutes around 11\% of the images. Even though there were large differences in the number of pictures from each class, the convolutional neural network was able to learn what it should, as it can be seen in our results throughout section~\ref{sec:results}.
+
+\subsection{Training image recognition}
+The convolutional neural network used for image recognition was trained using mini batches. A mini batch consists of $b$, where $b$ is dependent on the experiment, instances of training data randomly chosen between the set of training data constituting the training set, of size $t$.
+
+An experiment usually trains for multiple epochs, where an epoch is defined as $t/b$ iterations through the training set. One could call $t/b$ iterations through the training set, a complete traversal, but since every mini batch is composed of randomly selected instances of training data, one epoch could use the same instance multiple times and not use others at all.
+
+\subsection{Combining the networks}
+When the image recognising network and the agent has been trained, it is time to put the power of deep learning and evolution to the test. By using the CNN as the ground truth provider for our agent it is possible to evaluate this. See section~\ref{}\todo{insert ref.} for the results of this benchmark.
+\subsubsection{Preprocessing of the feature vector}
+\todo{Write about binarization of the classification vector and 0..1 cutting of the angular vector}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

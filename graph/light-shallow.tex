@@ -1,0 +1,19 @@
+%!TEX root = ../preamble.tex
+
+\pgfplotstableread{data/light-shallow.dat}{\lightShallow}
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			title=Score over iterations training a shallow convolutional network with lights,
+			xlabel=Iterations,
+			ylabel=Score,
+			xmin = -500,
+			xmax = 12500,
+			restrict x to domain=0:12000,
+			xticklabel style={rotate=30},
+		]
+		\addplot+ [red, mark=none] table [x={iteration}, y={score}] {\lightShallow};
+	\end{axis}
+\end{tikzpicture}
+\caption{Score over iterations training a shallow convolutional network with lights}
+\end{figure}

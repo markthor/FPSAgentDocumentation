@@ -1,0 +1,122 @@
+\documentclass{thesis-document-class}
+
+\usepackage{svg}
+\usepackage[utf8]{inputenc}
+\usepackage{todonotes}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage[toc,page]{appendix}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{filecontents, pgfplots, pgfplotstable}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{tabularx}
+
+%%%%% pgfplots settings %%%%%
+\pgfplotsset{compat=newest}
+\pgfplotsset{every axis/.append style={
+	height=10cm,
+	width=\textwidth,
+	scaled y ticks = false,
+	scaled x ticks = false,
+	y tick label style={
+		/pgf/number format/fixed,
+		/pgf/number format/fixed zerofill,
+		/pgf/number format/1000 sep={\ },
+		/pgf/number format/precision=2,
+	},
+	x tick label style={
+		/pgf/number format/fixed,
+		/pgf/number format/1000 sep={\ },
+	},
+}}
+%%%%% pgfplots settings %%%%%
+
+\title{Combining Deep Learning and Neuroevolution for visual perception and shooting in a First Person Shooter game}
+
+\authorA{Andreas Precht Poulsen}
+\authorB{Mark Thorhauge}
+\authorC{Mikkel Hvilsh{\o}j Funch}
+\supervisor{Sebastian Risi, Ph.D.}
+
+\university{IT University of Copenhagen}
+\location{Copenhagen, Denmark}
+
+\degree{A thesis submitted in fulfillment of the requirements for the degree of Master of Science.}
+\date{December 2016}
+
+
+
+\begin{document}
+	\maketitle
+	
+	\toc{1}
+
+	\input{ch/introduction.tex}
+	\input{ch/background.tex}
+    \input{ch/solutions.tex}
+	\input{ch/approach.tex}
+	\input{ch/results.tex}
+    \input{ch/discussion.tex}
+    \input{ch/futurework.tex}
+    \input{ch/conclusion.tex}
+	
+	\begin{appendices}
+		\input{appendices/tech.tex}
+	\end{appendices}
+	
+	\clearpage
+	\bibliographystyle{ieeetr}
+	\bibliography{bibliography}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
