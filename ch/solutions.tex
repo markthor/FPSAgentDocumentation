@@ -73,8 +73,7 @@ According to recent research~\cite{balanced-classes} having imbalanced represent
 
 
 There are multiple approaches to overcome these imbalances.
-
-One method is to delete data from overrepresented classes until every class has an equal amount of samples. 
+One method is to delete data from overrepresented classes until every class has an equal amount of samples. This can severely affect the amount of training data as data is deleted until every class has samples equal to the lowest denominator. A second method is proposed in~\cite{balanced-classes}, showing promising results. The idea is to randomly duplicate samples from lesser represented classes, until classes are more evenly distributed. The most extreme form of this method duplicates samples until an even distribution is achieved.
 
 
 
