@@ -88,6 +88,7 @@ Consequently, the full topology of the CNN determines its ability to recognise v
 Google's LeNet as documented in \cite{christian} uses inception modules, which consists of several parallel convolutional layers. The results of the parallel layers are concatenated like filters of a convolutional layer to produce the output of the inception module. Inception modules can be viewed as an expansion of the filter idea, as having multiple concatenated parallel filters is essentially the same, except that the parallel layers can have different values of zero padding, stride and receptive field, and can be piped to produce depth within the module.
 
 \subsection{NEAT}
+\label{sec:neat}
 NEAT\footnote{Neuroevolution in augmenting Topologies} is an evolutionary algorithm for evolving both the topology and weights of artificial neural networks while using speciation to preserve the best and possibly new innovative networks.
 
 NEATs ability to modify the topology of networks and make common evolutionary practices, such as crossover, work on genomes with different topologies, is what distinguishes it from many other evolutionary methods for developing artificial neural networks. The purpose of NEAT, and similar methods, is developing the most optimal network, with the best performance possible and a topology consisting only of the input and output nodes and connections between them. \todo{Measured by what?}. 
@@ -214,6 +215,7 @@ The real time shooter Doom has seen several successful AI implementations using 
 Numerous examples of applying supervised learning or evolutionary algorithms to FPS games exist\cite{benjamin}\cite{silvano}, few however uses the visual partially-observable state. This difference is not only significant in terms of the methods required to solve the problem, but also in terms of the expected behaviour of the agent.
 
 \subsection{The FPS setting}
+\label{sec:fpssetting}
 We obtained the base game and textures from \url{http://armedunity.com/files/file/107-multiplayer-fps-kit-raknet/} and have modified a lot to make it exactly as we need it. This includes removing the ability for bots to shoot and removing everything regarding multiplayer and servers and the basic FPS environment will be described in this section.
 
 The agent have a single full automatic weapon to use, which has 30 bullets in a single magazine, and the agent has 6 extra magazines at his disposal. The weapon does not automatically reload when the magazine is empty, to force the agent to learn that behaviour. Since the agent does not get any input regarding bullets and magazines left, it should, optimally, learn to count how many bullets and magazines it has used. This is important in order to not waste time attempting to shoot or reload when there are no more bullets or magazines left.

@@ -52,7 +52,7 @@ A 5, 3 partitioning scheme would result in the centre partition being around 17 
 Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partitioning scheme, leading to faster training of the agent, and the resulting width of the centre partition is narrower, all experiments were done using a 3, 3, 3 partitioning scheme.
 
 \subsubsection{Scaling of the angular representation}
-\todo{write}
+The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0.
 
 %\subsection{Visual partitioning}
 %To train the CNN to be able to classify images, classes are needed. Two obvious classes are pictures with and without an enemy. Having only these classes does not provide enough information for NEAT to be able to produce intelligent behaviour. In other words, more classes are needed.
@@ -77,21 +77,41 @@ Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partiti
 
 \subsection{Training the agent}
 \label{sub:training-neat}
-As described in section~\ref{}\todo{insert reference} there are multiple ways of training the agent using NEAT.
-
-Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges.
-
-Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
-\todo{Mikkel write about the training. Feel free to edit the existing text.}
-
-\subsubsection{Evolving with NEAT}
-\todo{Write about hyperparameters and NEAT specific setup}
+The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}. Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
 
 \subsubsection{Evaluation}
-\todo{Write about the specific task that the agent is evaluated on}
+The fitness of a network was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 10 times and the results averaged. The random spawn of the target ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded by hitting the target, killing the target, and aiming closer to the target.
 
 \subsubsection{Fitness function}
-\todo{write about how the fitness was calculated}
+The fitness function for the evaluation can be formulated as:
+$$f = \text{damage} + \text{aim\_bonus}$$
+Where damage is the total damage dealt, and aim\_bonus is calculated as:
+$$ \text{aim\_bonus} = \frac{1}{n} \sum_{n} \frac{c}{(1+v)^2} $$
+Where c is a constant set to 75, $n$ is the number of frames and $v$ is the angle measured in radians between the forward pointing vector of the agent and the line from the agent to the target. Hence $v = 0$ if the agent aims directly at the target. This bonus makes the evolution faster, as dealing damage requires aiming, and evolving the ability to aim takes several generations.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\begin{axis}[
+		scale only axis,
+		height=5cm,
+		width=10cm,
+		domain={0:3.1415926535},
+		samples=30,
+		xmin=0,   xmax=3.1415926535,
+		ymin=0,   ymax=75,
+		xlabel=$v$,
+		ylabel={aim\_bonus}
+	]
+	% use TeX as calculator:
+	\addplot[mark=none]{75 / (1 + x)^2};
+	\addplot +[mark=none] coordinates {(0.7333, 0) (0.7333, 75)};
+	\end{axis}
+\end{tikzpicture}
+\caption{The fitness awarded as a function of the angle between the current and the desired pointing direction. The red line marks the value of $v$ when the target is at the corner of the screen}
+\end{figure}
+
+\subsubsection{NEAT setup}
+The hyperparameters of NEAT are shown in the table below. The activation function used is sigmoid, and biases are modelled by having a constant input, which when connected to, is the equivalent of a bias.
 
 \subsubsection{Data generation}
 \label{subsub:data-gen}
