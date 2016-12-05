@@ -6,3 +6,4 @@ preamble.pdf
 *.synctex.gz*
 .DS_Store
 *.toc
+*.dvi
