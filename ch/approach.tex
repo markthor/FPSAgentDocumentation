@@ -42,10 +42,10 @@ The training data consists of the raw image data and ground truths. The raw imag
 \end{figure}
 \noindent
 The ground truth is, for each class, a bit representing if the image is considered to be of that particular class, e.g. a bit array. A pair of pixel data and ground truths will henceforth be referred to as an instance of training data. A collection of instances of training data are called training data.
-In section~\ref{subsub:data-gen} it is explained how the training data for this project was generated.
+In section~\ref{subsub:data-gen} it is explained how the training data for this project was gathered.
 
 \subsubsection{Optimal visual partitioning scheme}
-The optimal visual partitioning scheme depends on many factors. It is ideal if part of the enemy is always in the centre of the image if the CNN would report that an enemy is in the centre square. In that situation the agent would always, assuming no recoil, hit the enemy if there is an enemy in the centre square and the agent shoots. Without the guarantee that if the CNN reports and enemy is in the centre partition, a part of the enemy is in the centre of the partition, the task of shooting the enemy becomes more difficult\todo{Explain that is depending on distance, and that it can become downright impossible because it has no feedback for misses}.
+The optimal visual partitioning scheme depends on many factors. It is ideal if part of the enemy is always in the centre of the image if the CNN would report that an enemy is in the centre square. In that situation the agent would always, assuming no recoil, hit the enemy if there is an enemy in the centre square and the agent shoots. Without that guarantee the task of consistently shooting the enemy becomes more difficult.\todo{Explain that is depending on distance, and that it can become downright impossible because it has no feedback for misses}
 
 Fulfilling this requirement depends on how wide the enemy is on the screen\todo{assuming a box-shaped hitbox}. Assuming the enemy is 11 pixels wide, having a centre square of 11x11 pixels would fulfil the aforementioned requirement. If $6/11$ pixels is inside the centre square the enemy is considered to be inside that partition and since the sixth pixel is the centre pixel of the centre square, a part of the enemy is in the centre of the centre square - fulfilling the requirement.
 
