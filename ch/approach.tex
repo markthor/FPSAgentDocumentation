@@ -5,6 +5,11 @@ To answer the research question from section~\ref{sub:research-question}, we tra
 \todo{read source comment}
 %This section needs structure. We need to decide on large subsections. Maybe these 3: Training the CNN; Evaluation for neuroevolution; Combining... feel free to rename
 
+NEAT data gen \textrightarrow{} Data  \textrightarrow{} DB \textrightarrow{} CNN Trainer  \textrightarrow{} CNN Network
+\\
+NEAT \textrightarrow{} Picture \textrightarrow{} CNN Network \textrightarrow{} Output \textrightarrow{} Agent
+\\
+
 \subsection{Training the convolutional neural network}
 This section describes the details of the training of the CNN, including the training examples, the network topology and the hyperparameters.
 
@@ -52,7 +57,7 @@ A 5, 3 partitioning scheme would result in the centre partition being around 17 
 Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partitioning scheme, leading to faster training of the agent, and the resulting width of the centre partition is narrower, all experiments were done using a 3, 3, 3 partitioning scheme.
 
 \subsubsection{Scaling of the angular representation}
-The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0.
+The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the angular representation is estimated by a CNN and used as input to the evolved ANN, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1.
 
 %\subsection{Visual partitioning}
 %To train the CNN to be able to classify images, classes are needed. Two obvious classes are pictures with and without an enemy. Having only these classes does not provide enough information for NEAT to be able to produce intelligent behaviour. In other words, more classes are needed.
@@ -112,6 +117,7 @@ Where c is a constant set to 75, $n$ is the number of frames and $v$ is the angl
 
 \subsubsection{NEAT setup}
 The hyperparameters of NEAT are shown in the table below. The activation function used is sigmoid, and biases are modelled by having a constant input, which when connected to, is the equivalent of a bias.
+\input{fig/neat-hyperparameters}
 
 \subsubsection{Data generation}
 \label{subsub:data-gen}
