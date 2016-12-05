@@ -1,7 +1,7 @@
 %!TEX root = ../preamble.tex
 
 
-\pgfplotstableread{data/angular.dat}{\angular}
+\pgfplotstableread{data/nolight-angular.dat}{\nolightAngular}
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
@@ -13,8 +13,8 @@
 			xticklabel style={rotate=30},
 			minor x tick num=1,
 		]
-		\addplot+ [red, mark=none] table [x={iteration}, y={score}] {\angular};
+		\addplot+ [red, mark=none] table [x={iteration}, y={score}] {\nolightAngular};
 	\end{axis}
 \end{tikzpicture}
-\caption{Training of a deep convolutional network to detect angles and distance}
+\caption{Training of a deep convolutional network to detect angles and distance without light}
 \end{figure}

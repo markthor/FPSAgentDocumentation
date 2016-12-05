@@ -131,6 +131,8 @@ We were able to almost fully automate the process of generating training data by
 
 
 \subsubsection{Data cleaning}
+
+as discussed in section~\ref{sub:data-req}
 Approximately half of the images generated did not contain an enemy. To achieve a more equal distribution of images of different classes many of the images without an enemy was deleted. After deleting these images around 15\% of the images did not contain an enemy.
 
 The distribution of the rest of the classes depends heavily on the granularity of the partitioning. Using a 3, 3, 3 partitioning scheme, the next-most represented class constitutes around 11\% of the images. Even though there were large differences in the number of pictures from each class, the convolutional neural network was able to learn what it should, as it can be seen in our results throughout section~\ref{sec:results}.
