@@ -131,11 +131,13 @@ We were able to almost fully automate the process of generating training data by
 
 
 \subsubsection{Data cleaning}
+Problems can occur when representation of classes are imbalanced, as discussed in section~\ref{sub:data-req}.
 
-as discussed in section~\ref{sub:data-req}
-Approximately half of the images generated did not contain an enemy. To achieve a more equal distribution of images of different classes many of the images without an enemy was deleted. After deleting these images around 15\% of the images did not contain an enemy.
+To overcome these problems some of the images not containing an enemy was deleted. Before deletion approximately half of the images did not contain an enemy. We decided to delete images such that, after deletion around 15\% of the images did not contain an enemy.
 
-The distribution of the rest of the classes depends heavily on the granularity of the partitioning. Using a 3, 3, 3 partitioning scheme, the next-most represented class constitutes around 11\% of the images. Even though there were large differences in the number of pictures from each class, the convolutional neural network was able to learn what it should, as it can be seen in our results throughout section~\ref{sec:results}.
+The distribution of the rest of the classes depends heavily on the granularity of the partitioning scheme used. Using a 3, 3, 3 partitioning scheme, the most represented class, not counting images without an enemy, constitutes around 11\% of the images.
+
+Even though there were large differences in the number of pictures from each class, the convolutional neural network was able to learn what it should, as it can be seen in our results throughout section~\ref{sec:results}, contrary to the claims of~\cite{balanced-classes}. \todo{Should we write why we think that is?}
 
 \subsection{Training image recognition}
 The convolutional neural network used for image recognition was trained using mini batches. A mini batch consists of $b$, where $b$ is dependent on the experiment, instances of training data randomly chosen between the set of training data constituting the training set, of size $t$.
