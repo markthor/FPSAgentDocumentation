@@ -30,14 +30,22 @@ The angular feature representation unambiguously defines the position of the tar
     \centering
     	\begin{scriptsize}
 		\sffamily
-    	\includesvg[svgpath = img/, width = 1\textwidth]{verticalangle}
+    	\includesvg[svgpath = img/, width = 0.7\textwidth]{verticalangle}
     	\end{scriptsize}
-        \vspace{-10mm}
     \caption{The relative vertical angle.}
     \label{fig:angular}
 \end{figure}
 \noindent
 The horizontal angle is calculated in the same manner, except that the angle is calculated based on the projection of both vectors onto the horizontal plane. These two angles allows the evolved ANN to infer the aiming directly. The distance is included to allow for changing shooting behaviour based on distance. For example, if the agent shoots a full automatic rifle at a long distance, it might be better to fire separate shots than using automatic fire. The binary indication of whether there is a target within sight, has the purpose of making it clear when the angles reflects the position of a target, or just assumes default values.
+\begin{figure}[H]
+    \centering
+    	\begin{scriptsize}
+		\sffamily
+    	\includesvg[svgpath = img/, width = 1\textwidth]{angular}
+    	\end{scriptsize}
+    \caption{The vertical and horizontal angles define a position on the screen. The field of view is $65^\circ$ and the target is at a horizontal angle of $-17.17^\circ$ and a vertical angle of $15.05^\circ$ in this example.}
+    \label{fig:angular}
+\end{figure}
 
 \subsubsection{Visual partitioning representation}
 The visual partitioning representation ambiguously indicates the position of the target on the screen. It defines the position of the target as a classification task, where each point on the screen belongs to a class bounded by a square as shown in figure \ref{fig:visualpartitioning}. 
