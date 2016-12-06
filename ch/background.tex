@@ -205,6 +205,16 @@ Drawing the weights from a normal distribution with a mean of zero and a constan
 Xavier et al. \cite{DBLP:journals/jmlr/GlorotB10} suggests an initialisation, where the variance is based on the number of input and output signals, respectively denoted $n_{in}$ and $n_{out}$.
 $$ \text{Var}(W) = \frac{2}{n_{in} + n_{out}} $$
 This helps keep the weights within a range that makes gradient descent converge faster than with a constant variance.
+
+\subsubsection{Distribution imbalance in classification training data}
+\label{sub:data-req}
+According to recent research~\cite{balanced-classes} having imbalanced representations of classes used for training with gradient descent can lead to poor performing networks. According to the study, the worst cases of networks trained on imbalanced data were only able to consistently classify images belonging to the most represented class, i.e. one out of a total of ten classes. The imbalance of data were at most a factor of two, i.e the most represented class having twice as many samples as the least represented class.
+
+If the training data at hand is imbalanced one might want to do even the distribution of classes. Overcoming the imbalances can be achieved through different approaches.
+
+One method is to delete data from overrepresented classes until every class has an equal amount of samples. This can severely affect the amount of training data as data is deleted until every class has samples equal to the lowest denominator.
+
+A second method is proposed in~\cite{balanced-classes}, showing promising results. The idea is to randomly duplicate samples from lesser represented classes, until classes are more evenly distributed. The most extreme form of this method duplicates samples until an even distribution is obtained.
 \subsection{Related work}
 \label{sec:relatedwork}
 In 2014, a visual agent for playing TORCS\footnote{The Open Racing Car Simulator} was developed using reinforcement learning to evolve a network with a CNN component\cite{torcs}. The fitness functions used to train the top layer network was different than the fitness function used to train the CNN component. The top layer network adapted the output of the CNN component and successfully used it, despite the output of the CNN component being humanly incomprehensible, and based solely on the image. The TORCS AI demonstrates the strong input interpretation potential of NEAT.

@@ -63,17 +63,6 @@ The training data consists of the raw image data and ground truths. The raw imag
 The ground truth is, for each class, a bit representing if the image is considered to be of that particular class, e.g. a bit array. A pair of pixel data and ground truths will henceforth be referred to as an instance of training data. A collection of instances of training data are called training data.
 In section~\ref{subsub:data-gen} it is explained how the training data for this project was gathered.
 
-\subsubsection{Optimal visual partitioning scheme}
-The optimal visual partitioning scheme depends on many factors. It is ideal if part of the enemy is always in the centre of the image if the CNN would report that an enemy is in the centre square. In that situation the agent would always, assuming no recoil, hit the enemy if there is an enemy in the centre square and the agent shoots. Without that guarantee the task of consistently shooting the enemy becomes more difficult.\todo{Explain that is depending on distance, and that it can become downright impossible because it has no feedback for misses}
-
-Fulfilling this requirement depends on how wide the enemy is on the screen\todo{assuming a box-shaped hitbox}. Assuming the enemy is 11 pixels wide, having a centre square of 11x11 pixels would fulfil the aforementioned requirement. If $6/11$ pixels is inside the centre square the enemy is considered to be inside that partition and since the sixth pixel is the centre pixel of the centre square, a part of the enemy is in the centre of the centre square - fulfilling the requirement.
-
-\subsubsection{Partitioning scheme used for experiments}
-The max distance between the agent and the enemy resulted in the enemy being approximately 10 pixels wide, when the image is downscaled to 256x256 pixels.
-
-A 5, 3 partitioning scheme would result in the centre partition being around 17 pixels wide, where it for a 3, 3, 3, partitioning scheme is approximately 9 pixels wide. There are 34 classes using a 5, 3 partitioning scheme, calculated as $(5*5-1)+(3*3)+1=34$ and 26 classes using a 3, 3, 3, partitioning scheme, calculated as $(3*3-1)+(3*3-1)+(3*3)+1=26$.
-
-Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partitioning scheme, leading to faster training of the agent, and the resulting width of the centre partition is narrower, all experiments were done using a 3, 3, 3 partitioning scheme.
 
 \subsubsection{Binarisation of the visual partitioning representation}
 The output of the CNN approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. When the CNN is used as input provider to the evolved ANN, output of the CNN is transformed to a sparse vector with a 1 in the class with the highest probability. This makes the input similar to the input that the evolved ANN is trained with.
