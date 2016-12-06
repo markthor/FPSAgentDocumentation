@@ -11,10 +11,13 @@ NEAT \textrightarrow{} Picture \textrightarrow{} CNN Network \textrightarrow{} O
 \\
 
 \subsection{Training the convolutional neural network}
-This section describes the details of the training of the CNN, including the training examples, the network topology and the hyperparameters.
+This section describes the details of the training of the CNN, including the training examples, the network topology and the hyperparameters. 
 
-\subsubsection{Network topologies}
-The network topologies are illustrated on figure \ref{fig:architectureOfDeepNet}. As classification and regression are different tasks, the topologies are different. The difference between the two topologies is in the number of neurons in the fully connected layers and in the activation functions used for the output. Both have 12 layers, the first 8 being alternating convolutional and pooling layers, while the next 3 layers being fully connected layers followed by an output layer in both networks. All activation functions are ReLU(rectifier), except in the output layers, where softmax is used for classification and identity is used for regression. The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 2. The networks take an input with a volume of 256x256x3. The regression network outputs the angular representation as described in section \ref{sec:angular}, scaled to fit a range of approximately $0$ to $1$. The classification network outputs 26 probabilities summing to $1$. Both networks have a total of 320 parameters(weights and biases) in the convolutional layers.
+\subsubsection{Topologies}
+We present four different topologies, two for classification and two for regression. Both types are tested with a 12 layered architecture and a 6 layered architecture, called deep and shallow respectively. The difference between the two topologies is in the number of neurons in the fully connected layers and in the activation functions used for the output. All activation functions are ReLU(rectifier), except in the output layers, where softmax is used for classification and identity is used for regression. The regression network outputs the angular representation as described in section \ref{sec:angular}, scaled to fit a range of $-1$ to $1$. The classification network outputs 26 probabilities summing to $1$. The networks take inputs with a shape of 256x256x3, which is the 3 color channels of the image.
+
+\paragraph{Deep neural network topologies}
+The network topologies are illustrated on figure \ref{fig:architectureOfDeepNet}. Both have 12 layers, the first 8 being alternating convolutional and pooling layers, while the next 3 layers being fully connected layers followed by an output layer.  The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 2. Both networks have a total of 3,200 parameters(weights and biases) in the convolutional layers.
 The classification network has 1,228,800 weights($16 \cdot 16 \cdot 120 \cdot 40$) from the last convolutional layer to the first fully connected layer and 4,386 parameters in the remaining layers.
 The regression network has 7,680,000 weights($16 \cdot 16 \cdot 120 \cdot 250$) from the last convolutional layer to the first fully connected layer and 126,754 parameters in the remaining layers.
 
@@ -26,6 +29,21 @@ The regression network has 7,680,000 weights($16 \cdot 16 \cdot 120 \cdot 250$) 
 	\end{scriptsize}
 	\caption{The full topology of the deep convolutional neural networks.}
 	\label{fig:architectureOfDeepNet}
+\end{figure}
+
+\paragraph{Shallow neural network topologies}
+The network topologies are illustrated on figure \ref{fig:architectureOfShallowNet}. Both have 6 layers, the first 4 being alternating convolutional and pooling layers, followed by a fully connected layer and an output layer.  The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 4. Both networks have a total of 5200 parameters(weights and biases) in the convolutional layers.
+The classification network has 3,686,400 weights($16 \cdot 16 \cdot 120 \cdot 120$) from the last convolutional layer to the first fully connected layer and 3,266 parameters in the remaining layers.
+The regression network has 23,040,000 weights($16 \cdot 16 \cdot 120 \cdot 750$) from the last convolutional layer to the first fully connected layer and 3,754 parameters in the remaining layers.
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/architectureOfShallowNet.pdf_tex}
+	\end{scriptsize}
+	\caption{The full topology of the relatively shallow convolutional neural networks.}
+	\label{fig:architectureOfShallowNet}
 \end{figure}
 
 \subsubsection{Training with gradient descent}
@@ -55,6 +73,9 @@ The max distance between the agent and the enemy resulted in the enemy being app
 A 5, 3 partitioning scheme would result in the centre partition being around 17 pixels wide, where it for a 3, 3, 3, partitioning scheme is approximately 9 pixels wide. There are 34 classes using a 5, 3 partitioning scheme, calculated as $(5*5-1)+(3*3)+1=34$ and 26 classes using a 3, 3, 3, partitioning scheme, calculated as $(3*3-1)+(3*3-1)+(3*3)+1=26$.
 
 Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partitioning scheme, leading to faster training of the agent, and the resulting width of the centre partition is narrower, all experiments were done using a 3, 3, 3 partitioning scheme.
+
+\subsubsection{Binarisation of the visual partitioning representation}
+The output of the CNN approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. The highest distribution of the output of the \todo{write}
 
 \subsubsection{Scaling of the angular representation}
 The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the angular representation is estimated by a CNN and used as input to the evolved ANN, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 as well, regardless of the output of the CNN.
@@ -143,11 +164,6 @@ Even though we had these large differences in the number of pictures from each c
 The convolutional neural network used for image recognition was trained using mini batches. A mini batch consists of $b$, where $b$ is dependent on the experiment, instances of training data randomly chosen between the set of training data constituting the training set, of size $t$.
 
 An experiment usually trains for multiple epochs, where an epoch is defined as $t/b$ iterations through the training set. One could call $t/b$ iterations through the training set, a complete traversal, but since every mini batch is composed of randomly selected instances of training data, one epoch could use the same instance multiple times and not use others at all.
-
-\subsection{Combining the networks}
-When the image recognising network and the agent has been trained, it is time to put the power of deep learning and evolution to the test. By using the CNN as the ground truth provider for our agent it is possible to evaluate this. See section~\ref{}\todo{insert ref.} for the results of this benchmark.
-\subsubsection{Preprocessing of the feature vector}
-\todo{Write about binarization of the classification vector and 0..1 cutting of the angular vector}
 
 
 
