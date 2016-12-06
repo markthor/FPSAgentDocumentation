@@ -48,7 +48,7 @@ The regression network has 23,040,000 weights($16 \cdot 16 \cdot 120 \cdot 750$)
 \end{figure}
 
 \subsubsection{Training with gradient descent}
-The optimisation process of gradient descent did not include continuous evaluation on a validation set for early stopping, as overfitting was of no concern. When the error of the network stopped improving, the process was stopped. The parameters were updated from a mini-batch of size 32, with a learning rate of $10^{-3}$. The process did not include dropout, but included L2-regularization with a coefficient of $5 \cdot 10^{-4}$ for some of the experiments. Nesterov's accelerated gradient was used with a momentum coefficient of $0.9$. The networks were initialised with Xavier initialisation. The number of training examples used for training was 130,000 for all experiments.
+The optimisation process of gradient descent did not include continuous evaluation on a validation set for early stopping, as overfitting was of no concern. When the error of the network stopped improving, the process was stopped. The parameters were updated from a mini-batch of size 32, with a learning rate of $10^{-3}$. The process did not include dropout, but included L2-regularization with a coefficient of $5 \cdot 10^{-4}$ for some of the experiments. Nesterov's accelerated gradient was used with a momentum coefficient of $0.9$. The networks were initialised with Xavier initialisation. The number of training examples used for training was 130,000 for all experiments. The framework used for supervised learning was DL4J, a deep learning framework for java, accessable at \url{https://deeplearning4j.org}.
 
 \subsubsection{Training data}
 The training data consists of the raw image data and ground truths. The raw image data is, for each pixel, the byte value of the red, green and blue pixel, i.e. three numbers between 0-255, arranged as a 3 dimensional volume, as seen in figure \ref{fig:split}.
@@ -96,15 +96,13 @@ The angular representation of the position of the target consists of four dimens
 
 %\input{fig/image-partition.tex}
 
-\input{fig/distribution.tex}
-
 %Having a fully automated process of producing pixel data and labels allowed different arena setups to be tested quickly.
 
 %The data was saved in a database to make it possible for multiple computers across different networks to both retrieve from and persist to the database.
 
 \subsection{Training the agent}
 \label{sub:training-neat}
-The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}. Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
+The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}\todo{describe the sharpNEAT framework}. Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
 
 \subsubsection{Evaluation}
 The fitness of a network was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 10 times and the results averaged. The random spawn of the target ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded for hitting the target and aiming closer to the target.
@@ -161,10 +159,12 @@ The distribution of the rest of the classes depends heavily on the granularity o
 
 Even though we had these large differences in the number of pictures from each class, the convolutional neural network was able to learn what it should, as it can be seen in our results throughout section~\ref{sec:results}, contrary to the claims of~\cite{balanced-classes}.
 
-\subsection{Training image recognition}
-The convolutional neural network used for image recognition was trained using mini batches. A mini batch consists of $b$, where $b$ is dependent on the experiment, instances of training data randomly chosen between the set of training data constituting the training set, of size $t$.
+\input{fig/distribution.tex}
 
-An experiment usually trains for multiple epochs, where an epoch is defined as $t/b$ iterations through the training set. One could call $t/b$ iterations through the training set, a complete traversal, but since every mini batch is composed of randomly selected instances of training data, one epoch could use the same instance multiple times and not use others at all.
+%\subsection{Training image recognition}
+%The convolutional neural network used for image recognition was trained using mini batches. A mini batch consists of $b$, where $b$ is dependent on the experiment, instances of training data randomly chosen between the set of training data constituting the training set, of size $t$.
+%
+%An experiment usually trains for multiple epochs, where an epoch is defined as $t/b$ iterations through the training set. One could call $t/b$ iterations through the training set, a complete traversal, but since every mini batch is composed of randomly selected instances of training data, one epoch could use the same instance multiple times and not use others at all.
 
 
 
