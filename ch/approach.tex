@@ -1,6 +1,7 @@
 %!TEX root = ../preamble.tex
 
 \section{Approach}
+\label{sec:approach}
 To answer the research question from section~\ref{sub:research-question}, we train a CNN as well as an ANN with neuroevolution, combine them and run varying experiments. This section describes the details of how the networks subject to experimentation are trained and combined.
 \todo{read source comment}
 %This section needs structure. We need to decide on large subsections. Maybe these 3: Training the CNN; Evaluation for neuroevolution; Combining... feel free to rename
@@ -75,7 +76,7 @@ A 5, 3 partitioning scheme would result in the centre partition being around 17 
 Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partitioning scheme, leading to faster training of the agent, and the resulting width of the centre partition is narrower, all experiments were done using a 3, 3, 3 partitioning scheme.
 
 \subsubsection{Binarisation of the visual partitioning representation}
-The output of the CNN approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. The highest distribution of the output of the \todo{write}
+The output of the CNN approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. When the CNN is used as input provider to the evolved ANN, output of the CNN is transformed to a sparse vector with a 1 in the class with the highest probability. This makes the input similar to the input that the evolved ANN is trained with.
 
 \subsubsection{Scaling of the angular representation}
 The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the angular representation is estimated by a CNN and used as input to the evolved ANN, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 as well, regardless of the output of the CNN.
@@ -106,7 +107,7 @@ The angular representation of the position of the target consists of four dimens
 The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}. Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
 
 \subsubsection{Evaluation}
-The fitness of a network was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 10 times and the results averaged. The random spawn of the target ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded by hitting the target, killing the target, and aiming closer to the target.
+The fitness of a network was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 10 times and the results averaged. The random spawn of the target ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded for hitting the target and aiming closer to the target.
 
 \subsubsection{Fitness function}
 The fitness function for the evaluation can be formulated as:
