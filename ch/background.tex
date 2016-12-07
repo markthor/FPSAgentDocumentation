@@ -98,10 +98,11 @@ NEAT does so by continually mutating weights while steadily using complexificati
 Other similar methods use pre-defined topologies based on the developers best intuition, empirical data or even random topologies to develop a satisfying network, by only mutating the weights. These methods rarely achieve an optimal solution with minimal dimensionality, as the task of pre-defining even a simple network is a very difficult task, at least if one desire the smallest dimensionality possible.\todo{i think some mathematicians might disagree on that one}
 
 \subsubsection{NEAT Encoding}
-
-NEAT uses a direct encoding scheme which consists of a list of node genes and connection genes. Node genes simply depict whether it is an input, output or hidden node. A connection gene describe a source and target node, weight, wether or not it is enabled and a unique innovation number. 
+NEAT uses a direct encoding scheme which consists of a list of node genes and connection genes. Node genes simply depict whether it is an input, output or hidden node. A connection gene describe a source and target node, weight, whether or not it is enabled and a unique innovation number. 
 These innovation numbers are paramount for NEAT in order to do crossovers and comparisons as part of its evolutionary algorithm and to apply speciation techniques. The innovation number is a unique historical marking each connection has. It is used to quickly identify the shared ancestral traits in different networks in order to give a means of comparing and classifying structures. When a new, previously unknown, connection is introduced in a structure, as a result of a structural mutation, is the new connection gene given the next innovation number as its identifier.
-Crossover in NEAT work by first identifying shared, disjoint and excess connection genes in the two parent genomes. Then a new structure is built from randomly inheriting shared genes, while excess and disjoint genes are inherited from the fittest of the parents. This method for working with different topologies also solves the competing conventions problem(source) and allow the development of recurrent networks to solve non-markovian problems such as the pole balancing problem(source?) or parts of the experiments in this paper.
+Crossover in NEAT work by first identifying shared, disjoint and excess connection genes in the two parent genomes. Then a new structure is built from randomly inheriting shared genes, while excess and disjoint genes are inherited from the fittest of the parents. This method for working with different topologies also solves the competing conventions problem\todo{source, original neat paper} and allow the development of recurrent networks to solve non-markovian problems such as the pole balancing problem\todo{source?} or parts of the experiments in this paper.
+
+The NEAT framework used in the paper, handles crossover / sexual reproduction a little bit different. A newly produced genome will either  enable or disable all disabled connections it received, whereas original NEAT, makes this decision on a connection by connection basis.
 
 \begin{figure}[H]
 	\centering
@@ -133,7 +134,7 @@ $f'i$, is the modified fitness of the network, $sh(\delta(i,j))$ is a function r
 \todo{how should this be cited?}http://sharpneat.sourceforge.net/research/speciation-kmeans.html
 The framework used for the experiments in this paper does not use the exact speciation strategy described here. It uses K-Means Clustering for speciation which is an algorithm for distributing data points into $K$ different clusters, or in this case, species. The algorithm works by first distributing all genomes into $k$ a random clusters. Then it calculates the centre point for each cluster and continues to distribute all the genomes into the nearest cluster. If a genome has changed cluster during the re-distribution, the algorithm starts again from calculating the centre point of the clusters as they are then and distribute the genomes again. This is done until all clusters are stable or some amount of iterations.
 
-The center point of a cluster is calculated with euclidean distance as the componentwise mean of all the points in a cluster(allowed?).
+The center point of a cluster is calculated with euclidean distance as the componentwise mean of all the points in a cluster\todo{allowed?}.
 
 K-Means implementation uses a vector of a genes' connection's innovation ids and their weights to represent them in the coordinate system. Manhattan distance is used as the distance metric, which is not much different from the distance metric in the original speciation idea. Manhattan distance in the original distance metric is equal to ${c_1E}$ and ${c_2E}$ set to 0 and $c_3$ to 1.
 
