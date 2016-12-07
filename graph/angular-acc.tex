@@ -1,0 +1,99 @@
+%!TEX root = ../preamble.tex
+
+\hspace{-8mm}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	width=0.67\textwidth,
+	height=7cm,
+	enlarge y limits={abs=0.5},
+	xmin=0,
+	xmax=100,
+	axis y line*=none,
+    axis x line*=bottom,
+    xbar,
+    reverse legend,
+    legend style={at={(0.5,-0.2)},anchor=north},
+    yticklabels={
+		{Without visual distortion\\shallow architecture},
+		{Without visual distortion\\deep architecture},
+		{With visual distortion\\shallow architecture},
+		{With visual distortion\\deep architecture},
+	},
+	yticklabel style={align=right},
+    ytick=data,
+    nodes near coords,
+    every node near coord/.append style={
+		/pgf/number format/fixed zerofill,
+		/pgf/number format/precision=2
+	},
+    ]
+
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+	(99.61,3)
+	(98.95,2)
+	(99.12,1)
+	(99.84,0)
+};
+\addplot [draw=cred, fill=cred!70] coordinates {
+	(99.12,3)
+	(99.84,2)
+	(99.61,1)
+	(98.95,0)
+};
+
+\legend{Test set,Training set}
+\end{axis}
+
+\end{tikzpicture}
+\caption{Accuracy of target detection using angular representation}
+\label{fig:angular-acc}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+%!TEX root = ../preamble.tex
+
+\hspace{-8mm}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	width=0.67\textwidth,
+	height=5cm,
+	enlarge y limits={abs=0.5},
+	xmin=0,
+	xmax=0.0021,
+	axis y line*=none,
+    axis x line*=bottom,
+    xbar,
+    reverse legend,
+    legend style={at={(0.5,-0.1)},anchor=north},
+    yticklabels={
+		{Mean horizontal error},
+		{Mean vertical error},
+		{Mean distance error},
+	},
+	yticklabel style={align=right},
+    ytick=data,
+	xtick style={draw=none},	
+    xticklabels={,,,,,},
+    nodes near coords,
+    every node near coord/.append style={
+		/pgf/number format/fixed zerofill,
+		/pgf/number format/precision=6
+	},
+    ]
+
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+	(0.001243,3)
+	(0.002089,2)
+	(0.001004,1)
+%	(97.23,0)
+};
+\addplot [draw=cred, fill=cred!70] coordinates {
+	(0.002100,3)
+	(0.001324,2)
+	(0.001350,1)
+%	(97.23,0)
+};
+
+\legend{Test set,Training set}
+\end{axis}
+
+\end{tikzpicture}
+\caption{Angular accuracy without visual distortion}
+\label{fig:angular-acc}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

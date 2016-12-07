@@ -1,10 +1,12 @@
 %!TEX root = ../preamble.tex
 
+\pgfplotstableread{data/nolight-angular-shallow.dat}{\nolightAngularShallow}
+\pgfplotstableread{data/nolight-angular-deep.dat}{\nolightAngularDeep}
 
-\pgfplotstableread{data/nolight-angular.dat}{\nolightAngular}
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
+			title=Score over iterations,
 			xlabel=Iterations,
 			ylabel=Score,
 			xmin = -640,
@@ -12,9 +14,13 @@
 			restrict x to domain=0:16000,
 			xticklabel style={rotate=30},
 			minor x tick num=1,
+			legend pos=north east,
 		]
-		\addplot+ [red, mark=none] table [x={iteration}, y={score}] {\nolightAngular};
+		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\nolightAngularShallow};
+		\addlegendentry{Shallow architecture}
+		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\nolightAngularDeep};
+		\addlegendentry{Deep architecture}
 	\end{axis}
 \end{tikzpicture}
-\caption{Training of a deep convolutional network to detect angles and distance without light}
+\caption{Training convolutional neural networks using angular regression without visual distortion}
 \end{figure}

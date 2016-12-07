@@ -1,6 +1,7 @@
 %!TEX root = ../preamble.tex
 
 \pgfplotstableread{data/nolight-shallow.dat}{\nolightShallow}
+
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
@@ -12,7 +13,7 @@
 			restrict x to domain=0:12000,
 			xticklabel style={rotate=30},
 		]
-		\addplot+ [color=cred, mark=none] table [x={iteration}, y={score}] {\nolightShallow};
+		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\nolightShallow};
 	\end{axis}
 \end{tikzpicture}
 \caption{Training of a shallow convolutional network without lights}

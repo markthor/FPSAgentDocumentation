@@ -1,0 +1,25 @@
+%!TEX root = ../preamble.tex
+
+\pgfplotstableread{data/light-vpr-shallow.dat}{\lightVPRShallow}
+\pgfplotstableread{data/light-vpr-deep.dat}{\lightVPRDeep}
+
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			title=Score over iterations,
+			xlabel=Iterations,
+			ylabel=Score,
+			xmin = -480,
+			xmax = 12480,
+			restrict x to domain=0:12000,
+			xticklabel style={rotate=30},
+			legend pos=north east,
+		]
+		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\lightVPRShallow};
+		\addlegendentry{Shallow architecture}
+		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\lightVPRDeep};
+		\addlegendentry{Deep architecture}
+	\end{axis}
+\end{tikzpicture}
+\caption{Training convolutional neural networks using VPR with visual distortion}
+\end{figure}

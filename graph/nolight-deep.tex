@@ -7,11 +7,12 @@
 			title=Score over iterations,
 			xlabel=Iterations,
 			ylabel=Score,
-			%xmin=-500,
-			restrict x to domain=0:4000,
-			enlarge x limits=0.1,
+			xmin = -480,
+			xmax = 12480,
+			restrict x to domain=0:12000,
+			xticklabel style={rotate=30},
 		]
-		\addplot+ [red, mark=none] table [x={iteration}, y={score}] {\nolightDeep};
+		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\nolightDeep};
 	\end{axis}
 \end{tikzpicture}
 \caption{Training of a deep convolutional network without lights}

@@ -1,0 +1,96 @@
+%!TEX root = ../preamble.tex
+
+\hspace{-8mm}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	%title=Accuracy of different setups,
+	width=0.67\textwidth,
+	height=8cm,
+	enlarge y limits={abs=.625},
+	xmin=0,
+	xmax=100,
+	axis y line*=none,
+    axis x line*=bottom,
+    xbar,
+    reverse legend,
+    legend style={at={(0.5,-0.1)},anchor=north},
+    yticklabels={
+		{With visual distortion,\\shallow architecture},
+		{With visual distortion,\\deep architecture},
+		{Without visual distortion,\\shallow architecture},
+		{Without visual distortion,\\deep architecture},
+	},
+	yticklabel style={align=right},
+    ytick=data,
+    nodes near coords,
+    ]
+
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+	(95.84,3)
+	(97.23,2)
+	(95.84,1)
+	(97.23,0)
+};
+\addplot [draw=cred, fill=cred!70] coordinates {
+	(95.84,3)
+	(97.23,2)
+	(95.84,1)
+	(97.23,0)
+};
+
+\legend{Test set,Training set}
+\end{axis}
+
+\end{tikzpicture}
+\caption{VPR accuracy for different setups}
+\label{fig:vpr-acc}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
