@@ -29,15 +29,18 @@
 	},
     ]
 
+% Test set
 \addplot [draw=cgreen, fill=cgreen!70] coordinates {
 	(99.61,3)
 	(98.95,2)
 	(99.12,1)
 	(99.84,0)
 };
+
+% Training set
 \addplot [draw=cred, fill=cred!70] coordinates {
 	(99.12,3)
-	(99.84,2)
+	(97.90,2)
 	(99.61,1)
 	(98.95,0)
 };
@@ -49,6 +52,16 @@
 \caption{Accuracy of target detection using angular representation}
 \label{fig:angular-acc}
 \end{figure}
+
+% DEEP TOPOLOGY
+% WITHOUT LIGHTS
+% TRAINING SAMPLES - 10,000
+% model12.bin
+%
+% Mean horizontal error is: 0.040724
+% Mean vertical error is: 0.046235
+% Mean distance error is: 0.061281
+% Accuracy is: 0.979000
 
 
 
