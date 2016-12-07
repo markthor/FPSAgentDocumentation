@@ -1,0 +1,45 @@
+o.n.n.NativeOps - Number of threads used for NativeOps: 4
+Unable to guess runtime. Please set OMP_NUM_THREADS or equivalent manually.
+o.n.n.Nd4jBlas - Number of threads used for BLAS: 4
+Evaluating model models/light-deep/model2.bin 
+Evaluated 250 images
+Evaluated 500 images
+Evaluated 750 images
+Evaluated 1000 images
+Evaluated 1250 images
+Evaluated 1500 images
+Evaluated 1750 images
+Evaluated 2000 images
+Evaluated 2250 images
+Evaluated 2500 images
+Evaluated 2750 images
+Evaluated 3000 images
+Evaluated 3250 images
+Evaluated 3500 images
+Evaluated 3750 images
+Evaluated 4000 images
+Evaluated 4250 images
+Evaluated 4500 images
+Evaluated 4750 images
+Evaluated 5000 images
+Evaluated 5250 images
+Evaluated 5500 images
+Evaluated 5750 images
+Evaluated 6000 images
+Evaluated 6250 images
+Evaluated 6500 images
+Evaluated 6750 images
+Evaluated 7000 images
+Evaluated 7250 images
+Evaluated 7500 images
+Evaluated 7750 images
+Evaluated 8000 images
+Evaluated 8250 images
+Evaluated 8500 images
+Evaluated 8750 images
+Evaluated 9000 images
+Evaluated 9250 images
+Evaluated 9500 images
+Evaluated 9750 images
+Evaluated 10000 images
+Hit rate: 86.600000%

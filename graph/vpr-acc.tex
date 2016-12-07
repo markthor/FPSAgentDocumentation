@@ -26,15 +26,19 @@
     nodes near coords,
     ]
 
+% Test set
 \addplot [draw=cgreen, fill=cgreen!70] coordinates {
-	(95.84,3)
-	(97.23,2)
-	(95.84,1)
-	(97.23,0)
+	(94,3)
+	(93,2)
+	(92,1)
+	(91,0)
 };
+
+
+% Training set
 \addplot [draw=cred, fill=cred!70] coordinates {
 	(95.84,3)
-	(97.23,2)
+	(86.6,2) % Correct value
 	(95.84,1)
 	(97.23,0)
 };
@@ -43,7 +47,7 @@
 \end{axis}
 
 \end{tikzpicture}
-\caption{VPR accuracy for different setups}
+\caption{Accuracy of target detection using visual partitioning}
 \label{fig:vpr-acc}
 \end{figure}
 
