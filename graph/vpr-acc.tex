@@ -24,23 +24,27 @@
 	yticklabel style={align=right},
     ytick=data,
     nodes near coords,
+    every node near coord/.append style={
+		/pgf/number format/fixed zerofill,
+		/pgf/number format/precision=2
+	},
     ]
 
 % Test set
 \addplot [draw=cgreen, fill=cgreen!70] coordinates {
-	(94,3)
-	(93,2)
-	(92,1)
-	(91,0)
+	(85.74,3) % Correct value
+	(86.66,2) % Correct value
+	(0,1)
+	(0,0)
 };
 
 
 % Training set
 \addplot [draw=cred, fill=cred!70] coordinates {
-	(95.84,3)
+	(86.10,3) % Correct value
 	(86.6,2) % Correct value
-	(95.84,1)
-	(97.23,0)
+	(0,1)
+	(0,0)
 };
 
 \legend{Test set,Training set}
