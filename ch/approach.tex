@@ -94,7 +94,7 @@ The angular representation of the position of the target consists of four dimens
 The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}\todo{describe the sharpNEAT framework}. Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
 
 \subsubsection{Evaluation}
-The fitness of a network was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 10 times and the results averaged. The random spawn of the target ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded for hitting the target and aiming closer to the target.
+The fitness of a network was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 20 times and the results averaged. The random spawn of the target, and agent, ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded for hitting the target and aiming closer to the target.
 
 \subsubsection{Fitness function}
 The fitness function for the evaluation can be formulated as:
@@ -125,7 +125,7 @@ Where c is a constant set to 75, $n$ is the number of frames and $v$ is the angl
 \end{figure}
 
 \subsubsection{NEAT setup}
-The hyperparameters of NEAT are shown in the table below. The activation function used is sigmoid, and biases are modelled by having a constant input, which when connected to, is the equivalent of a bias.
+The hyperparameters of NEAT are shown in the table below. The activation function used is sigmoid, and biases are modelled by having a constant input, which when connected to, is the equivalent of a bias. The networks start fully connected and allow recurrent connections to appear.
 \input{fig/neat-hyperparameters}
 
 \subsubsection{Data generation}
