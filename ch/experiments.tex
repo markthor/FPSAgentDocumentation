@@ -1,0 +1,22 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Convolutional neural network experiments}
+The CNNs described in section \ref{sec:approach} are measured in several ways to find out how well they work individually. Both the visual partitioning and angular representation are measured under different circumstances and with different topologies.
+
+The visual partitioning representation are measured by the percentage of its prediction that are correct, referred to as accuracy. The class that the CNN assigns the highest probability to is regarded as its prediction. Consequently, the whether the CNN predicts with a confidence of $51\%$ or $99\%$ does not change the accuracy, but it changes the cost.
+
+The angular representation is measured in both accuracy percentage and absolute mean error. The horizontal angle, the vertical angle and the distance are measured in absolute mean error while the output indicating whether there is a target present on the image is measured in percentage accuracy. When the angular representation is used as input provider to the evolved ANN, the term indicating whether a target is present is converted to 0 or 1, whichever is closest. Hence the confidence of the prediction does not change its fitness as an input provider. 
+
+To measure whether the CNNs overfits the training data, they are measured against the training set and a test set, using 10,000 samples. 
+
+\subsubsection{Visual distortion}
+To measure how the network is penalised by having a varying visual representation of the target, the networks are trained with two different data sets, from two different visual settings, as seen in figure \ref{fig:light}. The textures are more detailed in the visually distorted version and the overlay of the player and the weapon is only present in this setting. The overlay fully or partially covers the target in some cases, making the recognition task harder, or even impossible.
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\input{img/withLightWithoutLight.pdf_tex}
+	\end{scriptsize}
+	\caption{The two different visual settings.}
+	\label{fig:light}
+\end{figure}
