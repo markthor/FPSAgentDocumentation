@@ -17,9 +17,9 @@
 			legend pos=north east,
 		]
 		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\nolightAngularShallow};
-		\addlegendentry{Shallow architecture}
+		\addlegendentry{Shallow topology}
 		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\nolightAngularDeep};
-		\addlegendentry{Deep architecture}
+		\addlegendentry{Deep topology}
 	\end{axis}
 \end{tikzpicture}
 \caption{Training convolutional neural networks using angular regression without visual distortion}
