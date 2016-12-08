@@ -9,12 +9,8 @@ The game used is made using the game engine Unity, where it is possible to inter
 The convolutional neural network is trained using DL4J \todo{Has DL4J been introduced at this point?}, which is written in Java.
 It is unfortunately not possible to interface with the game using Java. Somehow the game has to communicate with a convolutional neural network.
 
-\subsection{ASD}
-asdaslkd. asdkasd.
+\section{Figures}
 
-asdasd.
-
-\section{Results}
 \begin{figure}[H]
 	\begin{scriptsize}
 		\sffamily
@@ -22,5 +18,26 @@ asdasd.
 		\input{img/grid.pdf_tex}
 	\end{scriptsize}
 	\caption{Ids of the 3, 3, 3 partitioning scheme}
+	\label{fig:ids}
+\end{figure}
+
+\section{Incorrect predictions}
+The following examples are incorrect predictions by the deep visual partitioning convolutional neural network. The green squares mark the ground truths, and the red squares mark the wrong predictions. Absence of either the red or the green square means that either the the prediction  or the ground truth is that no target is present on the screen.
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/failcollection1.pdf_tex}
+	\end{scriptsize}
+	\label{fig:ids}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/failcollection2.pdf_tex}
+	\end{scriptsize}
 	\label{fig:ids}
 \end{figure}

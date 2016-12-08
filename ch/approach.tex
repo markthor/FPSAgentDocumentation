@@ -10,6 +10,7 @@ To answer the research question from section~\ref{sub:research-question}, we tra
 This section describes the details of the training of the CNN, including the training examples, the network topology and the hyperparameters. 
 
 \subsubsection{Topologies}
+\label{sec:approachtopologies}
 We present four different topologies, two for classification and two for regression. Both types are tested with a 12 layered architecture and a 6 layered architecture, called deep and shallow respectively. The difference between the two topologies is in the number of neurons in the fully connected layers and in the activation functions used for the output. All activation functions are ReLU(rectifier), except in the output layers, where softmax is used for classification and identity is used for regression. The regression network outputs the angular representation as described in section \ref{sec:angular}, scaled to fit a range of $-1$ to $1$. The classification network outputs 26 probabilities summing to $1$. The networks take inputs with a shape of 256x256x3, which is the 3 color channels of the image.
 
 \paragraph{Deep neural network topologies}

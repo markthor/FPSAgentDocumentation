@@ -4,14 +4,14 @@
 \subsection{Convolutional neural network experiments}
 The CNNs described in section \ref{sec:approach} are measured in several ways to find out how well they work individually. Both the visual partitioning and angular representation are measured under different circumstances and with different topologies.
 
-The visual partitioning representation are measured by the percentage of its prediction that are correct, referred to as accuracy. The class that the CNN assigns the highest probability to is regarded as its prediction. Consequently, the whether the CNN predicts with a confidence of $51\%$ or $99\%$ does not change the accuracy, but it changes the cost.
+The VPR(visual partitioning representation) are measured by the percentage of its prediction that are correct, referred to as accuracy. The class that the CNN assigns the highest probability to is regarded as its prediction. Consequently, the whether the CNN predicts with a confidence of $51\%$ or $99\%$ does not change the accuracy, but it changes the cost.
 
 The angular representation is measured in both accuracy percentage and absolute mean error. The horizontal angle, the vertical angle and the distance are measured in absolute mean error while the output indicating whether there is a target present on the image is measured in percentage accuracy. When the angular representation is used as input provider to the evolved ANN, the term indicating whether a target is present is converted to 0 or 1, whichever is closest. Hence the confidence of the prediction does not change its fitness as an input provider. 
 
-To measure whether the CNNs overfits the training data, they are measured against the training set and a test set, using 10,000 samples. 
+To measure whether the CNNs overfits the training data, they are measured against the training set and a test set, using 10,000 samples.
 
 \subsubsection{Visual distortion}
-To measure how the network is penalised by having a varying visual representation of the target, the networks are trained with two different data sets, from two different visual settings, as seen in figure \ref{fig:light}. The textures are more detailed in the visually distorted version and the overlay of the player and the weapon is only present in this setting. The overlay fully or partially covers the target in some cases, making the recognition task harder, or even impossible.
+To measure how the network is penalised by having a varying visual representation of the target, the networks are trained with two different data sets, from two different visual settings, as seen in figure \ref{fig:light}. This is relevant, as both the real world and modern FPS games have various visual representations of targets. The textures are more detailed in the visually distorted version and the overlay of the player and the weapon is only present in this setting. The overlay fully or partially covers the target in some cases, making the recognition task harder, or even impossible.
 
 \begin{figure}[H]
 	\begin{scriptsize}
@@ -20,3 +20,21 @@ To measure how the network is penalised by having a varying visual representatio
 	\caption{The two different visual settings.}
 	\label{fig:light}
 \end{figure}
+
+\subsubsection{Different topologies}
+The effect of depth of the CNN topologies described in section \ref{sec:approachtopologies} are measured in combination with the different visual game settings to assert its effect on training speed, overfitting and accuracy.
+
+\subsubsection{Smaller training sets}
+In a real world application of visual recognition, the number of training examples is often limited, as the training examples are subject to manual labeling. Hence, we measure both the accuracy of the VPR and the angular representation trained on significantly smaller data sets from the visually distorted game setting. Furthermore, overfitting is measured separately on these networks trained with smaller data sets, as overfitting gets more likely with fewer training examples. The data sets used are subsets of the training sets with 130,000 examples, and has an even distribution of VPR classes.
+
+ 
+\subsection{Neuroevolution experiments}
+
+
+
+
+
+
+
+
+
