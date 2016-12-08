@@ -1,0 +1,7 @@
+Evaluating model: models/angular/nolight/shallow/model3.bin
+Using db table: trainingDataNoLight
+Mean horizontal error is: 0.052970
+Mean vertical error is: 0.055122
+Mean distance error is: 0.089300
+Accuracy is: 0.973800
+
