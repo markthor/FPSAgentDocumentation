@@ -8,7 +8,7 @@
 	height=5cm,
 	enlarge y limits={abs=0.5},
 	xmin=0,
-	xmax=0.0021,
+	xmax=0.1,
 	axis y line*=none,
     axis x line*=bottom,
     xbar,
@@ -30,15 +30,18 @@
 	},
     ]
 
+% TEST SET
 \addplot [draw=cgreen, fill=cgreen!70] coordinates {
-	(0.001243,2)
-	(0.002089,1)
-	(0.001004,0)
+	(0.055178,2)
+	(0.057934,1)
+	(0.095012,0)
 };
+
+% TRAINING SET
 \addplot [draw=cred, fill=cred!70] coordinates {
-	(0.002100,2)
-	(0.001324,1)
-	(0.001350,0)
+	(0.052970,2)
+	(0.055122,1)
+	(0.089300,0)
 };
 
 \legend{Test set,Training set}

@@ -1,13 +1,7 @@
 %!TEX root = ../preamble.tex
 
-
-\begin{minipage}{\textwidth}
-\vspace{4mm}
+\begin{table}
 \begin{center}
-
-\captionof{table}{NEAT hyperparameters used to train the agent}
-\label{tab:neat-hyperparams} 
-
 	\begin{tabular}{| l | r |}
 		\hline
 	
@@ -17,7 +11,7 @@
 		Asexual offspring & 80\% \\ \hline
 		Sexual offspring & 20\% \\ \hline
 		Interspecies mating proportion & 0.01\% \\ \hline
-		Connection weight range & -5 | 5 \\ \hline
+		Connection weight range & -5 to 5 \\ \hline
 		Connection weight mutation probability & 80\% \\ \hline
 		Add node probability & 3\% \\ \hline
 		Add connection probability & 5\% \\ \hline
@@ -29,4 +23,6 @@
 		
 	\end{tabular}
 \end{center}
-\end{minipage}
+\caption{NEAT hyperparameters used to train the agent}
+\label{tab:neat-hyperparams}
+\end{table}
