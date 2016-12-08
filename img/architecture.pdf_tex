@@ -72,6 +72,8 @@
     \put(0.56507905,0.47380733){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.19462342\unitlength}\raggedright \end{minipage}}}%
     \put(0.56105235,0.45635833){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20133458\unitlength}\raggedright \end{minipage}}}%
     \put(0.63621724,0.41474925){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
-    \put(0.4403585,0.77428636){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18008472\unitlength}\centering Fully connected layers\end{minipage}}}%
+    \put(0.42970861,0.77428636){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18611608\unitlength}\centering Fully connected layers\end{minipage}}}%
+    \put(0.4260436,0.59540281){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{VRC}}}%
+    \put(0.7471939,0.59540346){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{AIC}}}%
   \end{picture}%
 \endgroup%
