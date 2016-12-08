@@ -58,9 +58,10 @@
 }
 
 \newcommand{\toc}[1] {
-	\thispagestyle{empty}
-	\tableofcontents
-	\thispagestyle{empty}
-	\clearpage
-	\setcounter{page}{#1}
+	\pagestyle{empty}
+		\tableofcontents
+		\clearpage
+		\listoffigures
+		\setcounter{page}{#1}
+	\pagestyle{plain}
 }
