@@ -3,6 +3,10 @@
 \section{Technical Description}
 Bla bla bla
 
+\subsection{Hardware used for training}
+\label{sub:hardware}
+GeForce GTX TITAN X
+
 \subsection{Bridging between Unity and DL4J}\todo{Move this to Theory?}
 The game used is made using the game engine Unity, where it is possible to interface with the game using either C\#, JavaScript, Boo or Unity Script.
 
@@ -25,19 +29,24 @@ It is unfortunately not possible to interface with the game using Java. Somehow 
 The following examples are incorrect predictions by the deep visual partitioning convolutional neural network. The green squares mark the ground truths, and the red squares mark the wrong predictions. Absence of either the red or the green square means that either the the prediction  or the ground truth is that no target is present on the screen.
 
 \begin{figure}[H]
+	\begin{center}
 	\begin{scriptsize}
 		\sffamily
-		\def\svgwidth{\textwidth}
+		\def\svgwidth{0.95\textwidth}
 		\input{img/failcollection1.pdf_tex}
 	\end{scriptsize}
 	\label{fig:ids}
+	\end{center}
 \end{figure}
 
+
 \begin{figure}[H]
+	\begin{center}
 	\begin{scriptsize}
 		\sffamily
-		\def\svgwidth{\textwidth}
+		\def\svgwidth{0.95\textwidth}
 		\input{img/failcollection2.pdf_tex}
 	\end{scriptsize}
 	\label{fig:ids}
+	\end{center}
 \end{figure}
