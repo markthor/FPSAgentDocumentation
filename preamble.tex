@@ -60,7 +60,22 @@
 \begin{document}
 	\maketitle
 	
-	\toc{1}
+	\pagestyle{empty}
+	
+%	\renewcommand{\contentsname}{Contents}
+	\tableofcontents
+%	\newpage
+	
+%	\renewcommand{\listfigurename}{Figures and plots}
+	\listoffigures
+%	\newpage
+	
+%	\renewcommand{\listtablename}{Tables}
+	\listoftables
+	\newpage
+	
+	\setcounter{page}{1}
+	\pagestyle{plain}
 
 	\input{ch/namingconventions.tex}
 	\input{ch/introduction.tex}

@@ -56,12 +56,3 @@
         \end{center}
     \end{titlepage}
 }
-
-\newcommand{\toc}[1] {
-	\pagestyle{empty}
-		\tableofcontents
-		\clearpage
-		\listoffigures
-		\setcounter{page}{#1}
-	\pagestyle{plain}
-}
