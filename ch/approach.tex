@@ -3,8 +3,6 @@
 \section{Approach}
 \label{sec:approach}
 To answer the research question from section~\ref{sub:research-question}, we train a CNN as well as an ANN with neuroevolution, combine them and run varying experiments. This section describes the details of how the networks subject to experimentation are trained and combined.
-\todo{read source comment}
-%This section needs structure. We need to decide on large subsections. Maybe these 3: Training the CNN; Evaluation for neuroevolution; Combining... feel free to rename
 
 \subsection{Training the convolutional neural network}
 This section describes the details of the training of the CNN, including the training examples, the network topology and the hyperparameters. 
@@ -65,25 +63,6 @@ The output of the CNN approximating the visual partitioning representation is a 
 
 \subsubsection{Scaling of the angular representation}
 The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the angular representation is estimated by a CNN and used as input to the evolved ANN, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 for consistency, regardless of the output of the CNN.
-
-%\subsection{Visual partitioning}
-%To train the CNN to be able to classify images, classes are needed. Two obvious classes are pictures with and without an enemy. Having only these classes does not provide enough information for NEAT to be able to produce intelligent behaviour. In other words, more classes are needed.
-%\todo{Basically already explained in section solutions}
-%Introducing more classes is achieved by splitting the image into partitions, where an image belongs to a class if there is an enemy in the corresponding partition.
-
-%Figure~\ref{fig:image-partition}\todo{insert figure} shows an example image that has been split into nine squares. The centre square has been further split into nine squares as well. This partitioning scheme is called a 3, 3 partitioning scheme as the image is split into three squares both horizontally and diagonally, and the same is done to the centre square.
-
-%A 3, 3, 3 partitioning scheme is almost the same as before, except the centre square is further split into three squares both horizontally and diagonally.
-
-%Using a 3, 3, 3 partitioning scheme results in 26 different classes. This is calculated as $(3*3-1)+(3*3-1)+(3*3)+1$. One is subtracted from $(3*3)$ in the first two occurrences, as their centre square is further partitioned. The $+1$ in the end is the class that states there is not an enemy in the picture. The 25 other classes are images where an enemy is in one of the 25 different partitions.
-
-% SKRIV VIDERE
-
-%\input{fig/image-partition.tex}
-
-%Having a fully automated process of producing pixel data and labels allowed different arena setups to be tested quickly.
-
-%The data was saved in a database to make it possible for multiple computers across different networks to both retrieve from and persist to the database.
 
 \subsection{Training the agent}
 \label{sub:training-neat}
@@ -146,15 +125,6 @@ The distribution of the rest of the classes depends heavily on the granularity o
 Even though we had these large differences in the number of pictures from each class, the convolutional neural network was able to learn what it should, as it can be seen in our results throughout section~\ref{sec:results}, contrary to the claims of~\cite{balanced-classes}.
 
 \input{fig/distribution.tex}
-
-%\subsection{Training image recognition}
-%The convolutional neural network used for image recognition was trained using mini batches. A mini batch consists of $b$, where $b$ is dependent on the experiment, instances of training data randomly chosen between the set of training data constituting the training set, of size $t$.
-%
-%An experiment usually trains for multiple epochs, where an epoch is defined as $t/b$ iterations through the training set. One could call $t/b$ iterations through the training set, a complete traversal, but since every mini batch is composed of randomly selected instances of training data, one epoch could use the same instance multiple times and not use others at all.
-
-
-
-
 
 
 

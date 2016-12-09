@@ -1,6 +1,6 @@
 %% Creator: Inkscape 0.91_64bit, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'vertical angle.pdf' (pdf, eps, ps)
+%% Accompanies image file 'img/uncertain.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{420.51601563bp}%
+    \setlength{\unitlength}{102.4bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,16 +48,9 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.44994242)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{vertical angle.pdf}}%
-    \put(0.17198586,0.42919453){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Target}}}%
-    \put(0.95096873,0.26408001){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Up}}}%
-    \put(-0.00160238,0.30620506){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Current aim}}}%
-    \put(0.09241176,0.00581751){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Horizontal line}}}%
-    \put(0.91699692,0.00589415){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Agent}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{vertical angle.pdf}}%
-    \put(0.33206978,0.39561959){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Desired aim}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{vertical angle.pdf}}%
-    \put(0.71931922,0.07332304){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$V_{vertical}$}}}%
+  \begin{picture}(1,1)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{img/uncertain.pdf}}%
+    \put(0.01183773,0.64744624){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\begin{minipage}{0.19532246\unitlength}\raggedright 0.23\end{minipage}}}%
+    \put(0.01218119,0.31115554){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\begin{minipage}{0.19532246\unitlength}\raggedright 0.77\end{minipage}}}%
   \end{picture}%
 \endgroup%
