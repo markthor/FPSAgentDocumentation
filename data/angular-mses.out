@@ -11,3 +11,10 @@ Mean horizontal error is: 0.055178
 Mean vertical error is: 0.057934
 Mean distance error is: 0.095012
 Accuracy is: 0.973900
+
+Evaluating model: models/angular/light/deep/model3.bin
+Using db table: trainingData
+Mean horizontal error is: 0.162300
+Mean vertical error is: 0.171913
+Mean distance error is: 0.161433
+Accuracy is: 0.905600
