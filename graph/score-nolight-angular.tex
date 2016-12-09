@@ -1,7 +1,7 @@
 %!TEX root = ../preamble.tex
 
-\pgfplotstableread{data/angular-nolight-shallow.dat}{\nolightAngularShallow}
-%\pgfplotstableread{data/nolight-angular-deep.dat}{\nolightAngularDeep}
+\pgfplotstableread{data/angular-nolight-shallow.dat}{\angularNolightShallow}
+%\pgfplotstableread{data/angular-nolight-deep.dat}{\angularNolightDeep}
 
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
@@ -9,6 +9,8 @@
 			title=Score over iterations,
 			xlabel=Iterations,
 			ylabel=Score,
+			ymin=0,
+			ymax=0.55,
 			xmin = -640,
 			xmax = 16640,
 			restrict x to domain=0:16000,
@@ -16,9 +18,9 @@
 			minor x tick num=1,
 			legend pos=north east,
 		]
-		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\nolightAngularShallow};
+		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\angularNolightShallow};
 		\addlegendentry{Shallow topology}
-		%\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\nolightAngularDeep};
+		%\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\angularNolightDeep};
 		%\addlegendentry{Deep topology}
 	\end{axis}
 \end{tikzpicture}
