@@ -62,7 +62,25 @@ In section~\ref{subsub:data-gen} it is explained how the training data for this 
 The output of the CNN approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. When the CNN is used as input provider to the evolved ANN, output of the CNN is transformed to a sparse vector with a 1 in the class with the highest probability. This makes the input similar to the input that the evolved ANN is trained with.
 
 \subsubsection{Scaling of the angular representation}
-The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the angular representation is estimated by a CNN and used as input to the evolved ANN, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 for consistency, regardless of the output of the CNN.
+The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the AR is estimated by the VRC and used as input to the AIC, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 for consistency, regardless of the output of the VRC. When the AR is used as input to the AIC, each angle is split into two scalars. For both angles the scalars are defined as:
+
+\[
+    f_1(v) =  
+\begin{dcases}
+    v,& \text{if } v > 0\\
+    0,              & v \leq 0
+\end{dcases}
+\]
+
+\[
+    f_2(v) =  
+\begin{dcases}
+    -v,& \text{if } v < 0\\
+    0,              & v \geq 0
+\end{dcases}
+\]
+
+This results in 6 outputs from 
 
 \subsection{Training the agent}
 \label{sub:training-neat}
@@ -97,7 +115,7 @@ Where c is a constant set to 75, $n$ is the number of frames and $v$ is the angl
 	\addplot +[mark=none] coordinates {(0.7333, 0) (0.7333, 75)};
 	\end{axis}
 \end{tikzpicture}
-\caption{The fitness awarded as a function of the angle between the current and the desired pointing direction. The red line marks the value of $v$ when the target is at the corner of the screen}
+\caption[Fitness function used for neuroevolution]{The fitness awarded as a function of the angle between the current and the desired pointing direction. The red line marks the value of $v$ when the target is at the corner of the screen}
 \end{figure}
 
 \subsubsection{NEAT setup}

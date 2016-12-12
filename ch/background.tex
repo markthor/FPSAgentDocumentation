@@ -24,8 +24,9 @@ In a fully connected feed-forward ANN with a single hidden layer, as shown in fi
 
 \begin{figure}[H]
     \centering
+    \vspace{-0.8cm}
     \includesvg[svgpath = img/, width = 0.7\textwidth]{ann}
-    \caption{An example of a simple feed-forward topology for a network approximating a function of the form $f:{\rm I\!R}^2 \rightarrow {\rm I\!R}^1$}
+    \caption[Simple feed-forward topology]{An example of a simple feed-forward topology for a network approximating a function of the form $f:{\rm I\!R}^2 \rightarrow {\rm I\!R}^1$}
     \label{fig:fft}
 \end{figure}
 
@@ -39,9 +40,10 @@ However, deep networks also suffers from topology-specific problems. The vanishi
 Recurrent connections and non-layered topologies are common in ANNs developed by TWEANNs\footnote{Topology \& Weight Evolving Artificial Neural Network algorithms}, as exemplified in figure \ref{fig:rt}. In the previous layered example, the neurons were activated three times to get the output of the network. In a non-layered recurrent topology, the neurons can be activated any number of times, known as discrete time steps, as the output is cycled through the network. This models a short-term memory, as the network can keep cycling previous inputs.
 
 \begin{figure}[H]
+	\vspace{-1.2cm}
     \centering
     \includesvg[svgpath = img/, width = 0.7\textwidth]{annR}
-    \caption{An example of an ANN with a recurrent connection(the dotted line) in a less constrained topology.}
+    \caption[Simple recurrent topology]{An example of an ANN with a recurrent connection(the dotted line) in a less constrained topology.}
     \label{fig:rt}
 \end{figure}
 
@@ -62,9 +64,10 @@ A filter performs a convolution operation multiple times on the input volume. Th
 The convolution operation is defined by a set of weights, a bias and an activation function. In the same manner as a neuron in a fully connected network has weighted connections to the neurons in the previous layer, a convolution operation has weighted connections to the data points in its receptive field. The difference is, that the weights and the bias of the convolution are the same for every operation within the same filter. This is known as parameter sharing, and drastically reduces the number of free parameters within a layer.
 
 \begin{figure}[H]
+    \vspace{-2cm}
     \centering
     \includesvg[svgpath = img/, width = 0.7\textwidth]{kernel}
-    \caption[The input to the convolution is spatial in connectivity]{The input to the convolution is spatial in connectivity. The red square marks the pixels used as input to the convolution, to calculate one term of the resulting output volume. The blue and green squares mark the pixels used as input to calculate the neighbouring terms. RF is an abbreviation of receptive field.}
+    \caption[Receptive field]{The input to the convolution is spatial in connectivity. The red square marks the pixels used as input to the convolution, to calculate one term of the resulting output volume. The blue and green squares mark the pixels used as input to calculate the neighbouring terms. RF is an abbreviation of receptive field.}
     \label{fig:cnn}
 \end{figure}
 
@@ -79,7 +82,7 @@ The ability of the CNN to recognise visual features depends on its effective rec
 \begin{figure}[H]
     \centering
     \includesvg[svgpath = img/]{convolutionalstacking}
-    \caption{A cross-section of three convolutional layers with receptive fields of 3x3 and stride of 1. The output of the lowest layer is used as input to the next layer, and the receptive field of the entire network is widened. Together they form an effective receptive field of 7x7.}
+    \caption[Stacking of convolutional layers]{A cross-section of three convolutional layers with receptive fields of 3x3 and stride of 1. The output of the lowest layer is used as input to the next layer, and the receptive field of the entire network is widened. Together they form an effective receptive field of 7x7.}
     \label{fig:convolutionalstacking}
 \end{figure}
 
@@ -107,7 +110,7 @@ The NEAT framework used in the paper, handles crossover / sexual reproduction a 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=190px]{img/genotype.png}
-	\caption{An example of a gene encoding of an ANN in NEAT}
+	\caption[NEAT gene encoding]{An example of a gene encoding of an ANN in NEAT}
 	\label{fig:genotype}
 \end{figure}
 
@@ -243,7 +246,7 @@ The arena the agent learns in is quadratic, with the agent spawning on one side 
 		\sffamily
 		\input{img/arena.pdf_tex}
 	\end{scriptsize}
-	\caption{The arena as seen from above. This illustration omits the y-axis. The lines represent planes, as the agent and the target spawns randomly along both the y-axis and the x-axis.}
+	\caption[The FPS game arena]{The arena as seen from above. This illustration omits the y-axis. The lines represent planes, as the agent and the target spawns randomly along both the y-axis and the x-axis.}
 	\label{fig:arena}
 \end{figure}
 
