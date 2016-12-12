@@ -4,31 +4,9 @@
 \begin{figure}[H]
 \begin{tikzpicture}
 \begin{axis}[
-	width=0.67\textwidth,
-	height=5cm,
-	enlarge y limits={abs=0.5},
-	xmin=0,
+	angular-mse,
 	xmax=0.175,
-	axis y line*=none,
-    axis x line*=bottom,
-    xbar,
-    reverse legend,
-    legend style={at={(0.5,-0.1)},anchor=north},
-    yticklabels={
-		{Mean horizontal error},
-		{Mean vertical error},
-		{Mean distance error},
-	},
-	yticklabel style={align=right},
-    ytick=data,
-	xtick style={draw=none},	
-    xticklabels={,,,,,},
-    nodes near coords,
-    every node near coord/.append style={
-		/pgf/number format/fixed zerofill,
-		/pgf/number format/precision=6
-	},
-    ]
+]
 
 \addplot [draw=cgreen, fill=cgreen!70] coordinates {
 	(0.161777,2) % Correct value
