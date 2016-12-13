@@ -6,9 +6,9 @@
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
-			title=Score over iterations,
+			title=Cost over iterations,
 			xlabel=Iterations,
-			ylabel=Score,
+			ylabel=Cost,
 			ymin=0,
 			ymax=0.55,
 			xmin = -640,
@@ -19,10 +19,10 @@
 			legend pos=north east,
 		]
 		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\angularNolightShallow};
-		\addlegendentry{Shallow topology}
+		\addlegendentry{Shallow network}
 		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\angularNolightDeep};
-		\addlegendentry{Deep topology}
+		\addlegendentry{Deep network}
 	\end{axis}
 \end{tikzpicture}
-\caption{Training convolutional neural networks using angular regression without visual distortion}
+\caption{Mean squared error cost over mini-batch gradient descent iterations using AR without visual distortion}
 \end{figure}
