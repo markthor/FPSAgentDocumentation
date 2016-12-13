@@ -6,9 +6,9 @@
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
-			title=Score over iterations,
+			title=Cost over iterations,
 			xlabel=Iterations,
-			ylabel=Score,
+			ylabel=Cost,
 			xmin = -480,
 			xmax = 12480,
 			restrict x to domain=0:12000,
@@ -16,10 +16,10 @@
 			legend pos=north east,
 		]
 		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\lightVPRShallow};
-		\addlegendentry{Shallow architecture}
+		\addlegendentry{Shallow network}
 		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\lightVPRDeep};
-		\addlegendentry{Deep architecture}
+		\addlegendentry{Deep network}
 	\end{axis}
 \end{tikzpicture}
-\caption{Training convolutional neural networks using VPR with visual distortion}
+\caption[Training the VRC using VPR with visual distortion]{Negative log-likelihood cost over mini-batch gradient descent iterations using VPR with visual distortion}
 \end{figure}

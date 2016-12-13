@@ -16,9 +16,9 @@
 			legend pos=north east,
 		]
 		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\nolightVPRShallow};
-		\addlegendentry{Shallow topology}
+		\addlegendentry{Shallow network}
 		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\nolightVPRDeep};
-		\addlegendentry{Deep topology}
+		\addlegendentry{Deep network}
 	\end{axis}
 \end{tikzpicture}
 \caption[Training the VRC using VPR without visual distortion]{Negative log-likelihood cost over mini-batch gradient descent iterations using VPR without visual distortion}
