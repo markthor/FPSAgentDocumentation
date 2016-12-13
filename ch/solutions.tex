@@ -2,7 +2,7 @@
 
 \section{Solutions}
 \label{sec:solutions}
-The objective of combining neuroevolution and supervised learning to make a visual FPS agent, can be achieved in numerous ways. To narrow the scope of the solution, the functionality of the proposed solutions is limited to only a subset of the required functionality to play a full-fledged FPS game, as Counter Strike or Quake. Developing a FPS agent capable of playing like a human player requires the following functionality:
+Creating a fully functional visual FPS agent requires solutions to a range of different problems. To narrow the scope of the solution, the functionality of the proposed solutions is limited to only a subset of the required functionality to play a full-fledged FPS game, as Counter Strike or Quake. Developing a FPS agent capable of playing like a human player requires the following functionality:
 \begin{itemize}
 \item Movement - The agent can move efficiently between points of interest.
 \item Navigation - The agent can recognise different maps and utilise strategic positions.
@@ -11,18 +11,18 @@ The objective of combining neuroevolution and supervised learning to make a visu
 \item Identification of sound - The agent can identify threats from sound.
 \item Adaption of role in a team - The agent can identify the roles of its teammates and are able to put itself in a position that compliments the team.
 \end{itemize}
-The focus of the solution is aiming and shooting. It is worth noting that sound plays an important role in many FPS games, and this source of information is out of scope of this solution.
+The focus of the solution is aiming and shooting, and the proposed solutions only attempts to solve this problem.
 
 \subsection{Granularity of control}
-The frequency of which the AI makes decisions is a parameter that shapes the potential and performance requirements of the solution. The finest level of control is achieved by parsing every single frame of the game to infer an action. This is performance intensive, as the process of parsing the visual output through the combined networks requires significant amount of computational resources. Using a control frequency lesser than the number of frames reduces the potential reaction speed of the agent and the overall smoothness of its behaviour. The approach of Michal Kempka et al.\cite{vizdoom} is also vision based, and repeats the chosen action for $k$ frames. We chose the same approach, as the flexibility of skipping frames reduces the hardware requirements.
+The frequency of which the AI makes decisions is a parameter that shapes the potential and performance requirements of the solution. The finest level of control is achieved by parsing every single frame of the game to infer an action. This is performance intensive, as the process of parsing the visual output through the VRC requires significant amount of computational resources. Using a control frequency lesser than the number of frames reduces the potential reaction speed of the agent and the overall smoothness of its behaviour. The approach of Michal Kempka et al.\cite{vizdoom} is also vision based, and repeats the chosen action for $k$ frames. We chose the same approach, as the flexibility of skipping frames reduces the hardware requirements.
 Some of the functionality requirements of an agent capable of playing a game like Counter Strike might require higher level of control, such as deciding the long term strategy plan or navigating larger maps. This is not in the scope of the proposed solutions.
 
 \subsection{Actions}
-The agent should be able to aim, shoot and reload. Therefore, the output of the ANN evolved with NEAT is turn horizontally, turn vertically, shoot and reload. The turn actions are analog, such that the greater the output, the faster it turns. Shoot and reload are binary actions, that triggers when the output is above a specific threshold. Shooting takes precedence over reload, and turning can be done while shooting or reloading.
+The agent should be able to aim, shoot and reload. Therefore, the output of the AIC is turn horizontally, turn vertically, shoot and reload. The turn actions are analog, such that the greater the output, the faster it turns. Shoot and reload are binary actions, that triggers when the output is above a specific threshold. Shooting takes precedence over reload, and turning can be done while shooting or reloading.
 
 \subsection{Feature representations}
-Recall that the feature representation is the integration point of the CNN and the evolved ANN, and that it is the output of the CNN and the input of the evolved ANN.
-The feature representation of the visual state should allow the evolved ANN to locate an enemy, aim and shoot it, while having as few dimensions as possible, as the evolution speed is a central concern. Additionally, the CNN has to be able to learn the features from training examples.
+Recall that the feature representation is the integration point of the VRC and the AIC, and that it is the output of the VRC and the input of the AIC.
+The feature representation of the visual state should allow the AIC to locate an enemy, aim and shoot it, while having as few dimensions as possible, as the evolution speed is a central concern. Additionally, the VRC has to be able to learn the features from training examples.
 
 \subsubsection{Angular representation}
 \label{sec:angular}
@@ -37,7 +37,7 @@ The angular feature representation unambiguously defines the position of the tar
     \label{fig:angular}
 \end{figure}
 \noindent
-The horizontal angle is calculated in the same manner, except that the angle is calculated based on the projection of both vectors onto the horizontal plane. These two angles allows the evolved ANN to infer the aiming directly. The distance is included to allow for changing shooting behaviour based on distance. For example, if the agent shoots a full automatic rifle at a long distance, it might be better to fire separate shots than using automatic fire. The binary indication of whether there is a target within sight, has the purpose of making it clear when the angles reflects the position of a target, or just assumes default values.
+The horizontal angle is calculated in the same manner, except that the angle is calculated based on the projection of both vectors onto the horizontal plane. These two angles allows the AIC to infer the aiming directly. The distance is included to allow for changing shooting behaviour based on distance. For example, if the agent shoots a full automatic rifle at a long distance, it might be better to fire separate shots than using automatic fire. The binary indication of whether there is a target within sight, has the purpose of clarifying whether the angles reflects the position of a target, or just assumes default values.
 \begin{figure}[H]
     \centering
     	\begin{scriptsize}
@@ -69,9 +69,9 @@ The feature representation is a sparse vector with a term for each partition. Th
 \end{figure}
 
 \subsubsection{Optimal visual partitioning scheme}
-The optimal visual partitioning scheme depends on many factors. It is ideal if part of the enemy is always in the centre of the image if the CNN would report that an enemy is in the centre square. In that situation the agent would always, assuming no recoil, hit the enemy if there is an enemy in the centre square and the agent shoots. Without that guarantee the task of consistently shooting the enemy becomes more difficult.\todo{Explain that is depending on distance, and that it can become downright impossible because it has no feedback for misses}
+The optimal visual partitioning scheme depends on many factors. It is necessary that a part of the target is present in the exact centre of the image, if the position of the target is classified as the centre partition. In that situation the agent would always, assuming no recoil, hit the enemy if there is an enemy in the centre partition and the agent shoots. Without that guarantee the task of consistently shooting the enemy becomes more difficult. The agent receives no feedback from misses, consequently if the centre square is to large, it can become impossible for the agent to learn to hit. The size of the agent is depending on distance, and this requirement is therefore depending on the distance that the agent should be able to hit at.
 
-Fulfilling this requirement depends on how wide the enemy is on the screen\todo{assuming a box-shaped hitbox}. Assuming the enemy is 11 pixels wide, having a centre square of 11x11 pixels would fulfil the aforementioned requirement. If $6/11$ pixels is inside the centre square the enemy is considered to be inside that partition and since the sixth pixel is the centre pixel of the centre square, a part of the enemy is in the centre of the centre square - fulfilling the requirement.
+Assuming the target is 11 pixels wide and has a box-shaped hitbox\footnote{The projection of the target onto the screen that registers as a hit when shot at}, having a centre square of 11x11 pixels would fulfil the aforementioned requirement. If $6/11$ pixels is inside the centre square the enemy is considered to be inside that partition and since the sixth pixel is the centre pixel of the centre square, a part of the enemy is in the centre of the centre square - fulfilling the requirement.
 
 A 5, 3 partitioning scheme would result in the centre partition being around 17 pixels wide, where it for a 3, 3, 3, partitioning scheme is approximately 9 pixels wide. There are 34 classes using a 5, 3 partitioning scheme, calculated as $(5*5-1)+(3*3)+1=34$ and 26 classes using a 3, 3, 3, partitioning scheme, calculated as $(3*3-1)+(3*3-1)+(3*3)+1=26$.
 
@@ -81,7 +81,7 @@ Since a 3, 3, 3 partitioning scheme results in fewer classes than a 5, 3 partiti
 
 
 \subsubsection{Comparing the representations}
-The feature representation of the VPR(visual partitioning representation) has a significantly larger number of dimensions(26 for 3,3,3 partitioning compared to the 4 of angular) than the angular representation, consequently slowing down evolution. The VPR is less detailed, as the precision of the angular representation is bound by the precision of the decimal used to represent the angle, while the precision of the VPR is bound by the width of the partitions. The angular representation allows the agent to choose shooting strategy based on distance and generally allows the agent to behave more smoothly. The large partitions of the VPR in the edges of the screen provide very ambiguous information about the position of the enemy, which makes it impossible for the agent to evolve smooth human-like aiming. If the agent was allowed to move or take strategic decisions, this lack of detail might reduce the potential of the agent furthermore. The angular representation allows the agent to aim precisely, which many FPS shooter games rewards by increasing the damage inflicted for hitting vulnerable areas on the target.
+The feature representation of the VPR(visual partitioning representation) has a significantly larger number of dimensions(26 for 3,3,3 partitioning compared to the 6 of angular) than the angular representation, consequently slowing down evolution. The VPR is less detailed, as the precision of the angular representation is bound by the precision of the decimal used to represent the angle, while the precision of the VPR is bound by the width of the partitions. The angular representation allows the agent to choose shooting strategy based on distance and generally allows the agent to behave more smoothly. The large partitions of the VPR in the edges of the screen provide very ambiguous information about the position of the enemy, which makes it impossible for the agent to evolve smooth human-like aiming. If the agent was allowed to move or take strategic decisions, this lack of detail might reduce the potential of the agent furthermore. The angular representation allows the agent to aim precisely, which many FPS shooter games rewards by increasing the damage inflicted for hitting vulnerable areas on the target.
 
 The only advantage of the VPR is that it is significantly easier to train a CNN to recognise this representation than the angular representation.
 

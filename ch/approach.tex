@@ -59,7 +59,7 @@ In section~\ref{subsub:data-gen} it is explained how the training data for this 
 
 
 \subsubsection{Binarisation of the visual partitioning representation}
-The output of the CNN approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. When the CNN is used as input provider to the evolved ANN, output of the CNN is transformed to a sparse vector with a 1 in the class with the highest probability. This makes the input similar to the input that the evolved ANN is trained with.
+The output of the VRC approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. When the VRC is used as input provider to the AIC, output of the VRC is transformed to a sparse vector with a 1 in the class with the highest probability. This makes the input similar to the input that the AIC is trained with.
 
 \subsubsection{Scaling of the angular representation}
 The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the AR is estimated by the VRC and used as input to the AIC, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 for consistency, regardless of the output of the VRC. When the AR is used as input to the AIC, each angle is split into two scalars. For both angles the scalars are defined as:
@@ -79,8 +79,8 @@ The angular representation of the position of the target consists of four dimens
     0,              & v \geq 0
 \end{dcases}
 \]
-
-This results in 6 outputs from 
+\noindent
+This results in 6 non-negative outputs from the AR.
 
 \subsection{Training the agent}
 \label{sub:training-neat}
