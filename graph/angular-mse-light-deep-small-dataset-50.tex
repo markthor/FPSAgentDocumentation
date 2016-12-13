@@ -1,0 +1,94 @@
+%!TEX root = ../preamble.tex
+
+\hspace{-8mm}
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	angular-mse,
+	xmax=0.45,
+]
+
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+	(0.434460,2) % Correct value
+	(0.379895,1) % Correct value
+	(0.202830,0) % Correct value
+};
+\addplot [draw=cred, fill=cred!70] coordinates {
+	(0.229095,2) % Correct value
+	(0.217716,1) % Correct value
+	(0.090129,0) % Correct value
+};
+
+\legend{Test set,Training set}
+\end{axis}
+
+\end{tikzpicture}
+\caption{Angular accuracy of the deep topology with visual distortion using training data that has 50 samples per class}
+\label{fig:angular-acc}
+\end{figure}
+
+
+
+
+
+
+Evaluating model: models/model100.bin
+Using db table: trainingDataLightEqualDistribution50PerClass
+Mean horizontal error is: 0.229095
+Mean vertical error is: 0.217716
+Mean distance error is: 0.090129
+Accuracy is: 0.970000
+
+
+
+1300 samples
+Evaluating model: models/model100.bin
+Using db table: trainingDataLightTestSet
+Mean horizontal error is: 0.434460
+Mean vertical error is: 0.379895
+Mean distance error is: 0.202830
+Accuracy is: 0.848462
+
+
+
+10000 samples
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

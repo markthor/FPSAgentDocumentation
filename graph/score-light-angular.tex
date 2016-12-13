@@ -1,6 +1,6 @@
 %!TEX root = ../preamble.tex
 
-%\pgfplotstableread{data/angular-light-shallow.dat}{\angularLightShallow}
+\pgfplotstableread{data/angular-light-shallow.dat}{\angularLightShallow}
 \pgfplotstableread{data/angular-light-deep.dat}{\angularLightDeep}
 
 \begin{figure}[H]
@@ -18,8 +18,8 @@
 			minor x tick num=1,
 			legend pos=north east,
 		]
-%		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\angularLightShallow};
-%		\addlegendentry{Shallow topology}
+		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\angularLightShallow};
+		\addlegendentry{Shallow topology}
 		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\angularLightDeep};
 		\addlegendentry{Deep topology}
 	\end{axis}

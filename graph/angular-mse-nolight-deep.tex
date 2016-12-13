@@ -5,7 +5,7 @@
 \begin{tikzpicture}
 \begin{axis}[
 	angular-mse,
-	xmax=0.065,
+	xmax=0.09,
 ]
 
 % Test set
@@ -17,9 +17,9 @@
 
 % Training set
 \addplot [draw=cred, fill=cred!70] coordinates {
-	(0.040724,2) % horizontal error
-	(0.046235,1) % vertical error
-	(0.061281,0) % distance error
+	(0.052970,2) % Correct value - horizontal error
+	(0.055122,1) % Correct value - vertical error
+	(0.089300,0) % Correct value - distance error
 };
 
 \legend{Test set,Training set}
@@ -29,9 +29,6 @@
 \caption{Angular accuracy of the deep topology without visual distortion}
 \label{fig:angular-acc}
 \end{figure}
-
-
-
 
 
 

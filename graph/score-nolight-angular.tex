@@ -1,7 +1,7 @@
 %!TEX root = ../preamble.tex
 
 \pgfplotstableread{data/angular-nolight-shallow.dat}{\angularNolightShallow}
-%\pgfplotstableread{data/angular-nolight-deep.dat}{\angularNolightDeep}
+\pgfplotstableread{data/angular-nolight-deep.dat}{\angularNolightDeep}
 
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
@@ -20,8 +20,8 @@
 		]
 		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\angularNolightShallow};
 		\addlegendentry{Shallow topology}
-		%\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\angularNolightDeep};
-		%\addlegendentry{Deep topology}
+		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\angularNolightDeep};
+		\addlegendentry{Deep topology}
 	\end{axis}
 \end{tikzpicture}
 \caption{Training convolutional neural networks using angular regression without visual distortion}

@@ -1,0 +1,28 @@
+%!TEX root = ../preamble.tex
+
+%\pgfplotstableread{data/angular-light-shallow.dat}{\angularLightShallow}
+\pgfplotstableread{data/angular-light-deep-small-dataset-50.dat}{\angularLightDeepSmallDatasetFifty}
+
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			title=Score over iterations,
+			xlabel=Iterations,
+			ylabel=Score,
+			ymin=0,
+			ymax=0.55,
+			xmin = -166,
+			xmax = 4306,
+			restrict x to domain=0:4140,
+			xticklabel style={rotate=30},
+			minor x tick num=1,
+			legend pos=north east,
+		]
+%		\addplot+ [cred, mark=none] table [x={iteration}, y={score}] {\angularLightShallow};
+%		\addlegendentry{Shallow topology}
+		\addplot+ [cblue, mark=none] table [x={iteration}, y={score}] {\angularLightDeepSmallDatasetFifty};
+		\addlegendentry{Deep topology}
+	\end{axis}
+\end{tikzpicture}
+\caption{Training convolutional neural networks using angular regression with visual distortion}
+\end{figure}
