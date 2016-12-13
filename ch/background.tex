@@ -95,13 +95,13 @@ Google's LeNet as documented in \cite{christian} uses inception modules, which c
 \label{sec:neat}
 NEAT\footnote{Neuroevolution in augmenting Topologies} is an evolutionary algorithm for evolving both the topology and weights of artificial neural networks while using speciation to preserve the best and possibly new innovative networks.
 
-NEATs ability to modify the topology of networks and make common evolutionary practices, such as crossover, work on genomes with different topologies, is what distinguishes it from many other evolutionary methods for developing artificial neural networks. The purpose of NEAT, and similar methods, is developing the most optimal network, with the best performance possible and a topology consisting only of the input and output nodes and connections between them. \todo{Measured by what?}. 
+NEATs ability to modify the topology of networks and make common evolutionary practices, such as crossover, work on genomes with different topologies, is what distinguishes it from many other evolutionary methods for developing artificial neural networks. The purpose of NEAT, and similar methods, is developing the most optimal network, with the best performance possible and a topology consisting only of the input and output nodes and connections between them. \todo{Measured by what?}.
 
 NEAT does so by continually mutating weights while steadily using complexification in order to allow more advanced behaviour to develop. This steady development of the topologies, along with speciation, allow NEAT to only complexify, if it benefits the solution. \todo{detect might not be the right word. More like: }
 Other similar methods use pre-defined topologies based on the developers best intuition, empirical data or even random topologies to develop a satisfying network, by only mutating the weights. These methods rarely achieve an optimal solution with minimal dimensionality, as the task of pre-defining even a simple network is a very difficult task, at least if one desire the smallest dimensionality possible.\todo{i think some mathematicians might disagree on that one}
 
 \subsubsection{NEAT Encoding}
-NEAT uses a direct encoding scheme which consists of a list of node genes and connection genes. Node genes simply depict whether it is an input, output or hidden node. A connection gene describe a source and target node, weight, whether or not it is enabled and a unique innovation number. 
+NEAT uses a direct encoding scheme which consists of a list of node genes and connection genes. Node genes simply depict whether it is an input, output or hidden node. A connection gene describe a source and target node, weight, whether or not it is enabled and a unique innovation number.
 These innovation numbers are paramount for NEAT in order to do crossovers and comparisons as part of its evolutionary algorithm and to apply speciation techniques. The innovation number is a unique historical marking each connection has. It is used to quickly identify the shared ancestral traits in different networks in order to give a means of comparing and classifying structures. When a new, previously unknown, connection is introduced in a structure, as a result of a structural mutation, is the new connection gene given the next innovation number as its identifier.
 Crossover in NEAT work by first identifying shared, disjoint and excess connection genes in the two parent genomes. Then a new structure is built from randomly inheriting shared genes, while excess and disjoint genes are inherited from the fittest of the parents. This method for working with different topologies also solves the competing conventions problem\todo{source, original neat paper} and allow the development of recurrent networks to solve non-markovian problems such as the pole balancing problem\todo{source?} or parts of the experiments in this paper.
 
@@ -119,7 +119,7 @@ Speciation in NEAT allows networks with very different topologies to compete, br
 
 A new topological innovation in a TWEANN, occurs when a structural change happens, like a new node or a new connection. Such a change is however likely to make the network perform considerably worse than before, compared to the networks in the population, which did not get such a significant change. In order to preserve new innovations, the entire population split into separate species, depending on their topology and they compete, primarily, within their own specie. This way, if a new innovation is placed in a new species, it will be allowed to evolve and tune its new structure to something fitting, and not just be discarded as a bad evolutionary step before it has even been explored.
 
-This formula for calculating the distance between two genomes are used to place them in species: 
+This, formula for calculating the distance between two genomes, are used to place them in species: 
 
 $$\delta = \frac{c_1E}{N} + \frac{c_2D}{N} + \bar W c_3$$
 
