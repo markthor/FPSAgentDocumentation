@@ -14,7 +14,6 @@ Accuracy is: 0.973900
 
 
 
-
 Evaluating model: models/angular/nolight/deep/model3.bin
 Using db table: trainingDataNoLight
 Mean horizontal error is: 0.052970

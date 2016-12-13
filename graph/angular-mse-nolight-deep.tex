@@ -5,14 +5,13 @@
 \begin{tikzpicture}
 \begin{axis}[
 	angular-mse,
-	xmax=0.09,
 ]
 
 % Test set
 \addplot [draw=cgreen, fill=cgreen!70] coordinates {
-	(0.030724,2) % horizontal error
-	(0.036235,1) % vertical error
-	(0.051281,0) % distance error
+	(0.055178,2) % Correct value - horizontal error
+	(0.057934,1) % Correct value - vertical error
+	(0.095012,0) % Correct value - distance error
 };
 
 % Training set

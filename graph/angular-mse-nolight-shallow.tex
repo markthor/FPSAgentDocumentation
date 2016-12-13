@@ -5,21 +5,20 @@
 \begin{tikzpicture}
 \begin{axis}[
 	angular-mse,
-	xmax=0.1,
 ]
 
 % TEST SET
 \addplot [draw=cgreen, fill=cgreen!70] coordinates {
-	(0.055178,2)
-	(0.057934,1)
-	(0.095012,0)
+	(0.096121,2) % Correct value
+	(0.092301,1) % Correct value
+	(0.164209,0) % Correct value
 };
 
 % TRAINING SET
 \addplot [draw=cred, fill=cred!70] coordinates {
-	(0.052970,2)
-	(0.055122,1)
-	(0.089300,0)
+	(0.093103,2) % Correct value
+	(0.087807,1) % Correct value
+	(0.153207,0) % Correct value
 };
 
 \legend{Test set,Training set}

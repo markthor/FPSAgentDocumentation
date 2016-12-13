@@ -31,14 +31,15 @@
 % USED FOR ANGULAR MSE
 \pgfplotsset{angular-mse/.style={%
 		width=0.67\textwidth,
-		height=5cm,
-		enlarge y limits={abs=0.5},
+		height=5.5cm,
+		enlarge y limits={abs=0.7},
 		xmin=0,
+		xmax=0.2,
 		axis y line*=none,
 		axis x line*=bottom,
 	    xbar,
 	    reverse legend,
-		legend style={at={(0.5,-0.1)},anchor=north},
+		legend style={at={(0.5,-0.2)},anchor=north},
 	    yticklabels={
 			{Mean horizontal error},
 			{Mean vertical error},
@@ -46,8 +47,8 @@
 		},
 		yticklabel style={align=right},
 	    ytick=data,
-		xtick style={draw=none},	
-	    xticklabels={,,,,,},
+		%xtick style={draw=none},	
+	    %xticklabels={,,,,,},
 	    nodes near coords,
 	    every node near coord/.append style={
 			/pgf/number format/fixed zerofill,
