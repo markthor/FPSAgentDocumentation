@@ -1,12 +1,42 @@
 %!TEX root = ../preamble.tex
 
 \section{Results}
+This section describes the results of the experiments explained in section \ref{sec:experiments}.
+\input{graph/graph-defs.tex}
 \label{sec:results}
 
 \subsection{Convolutional neural network experiments}
+\subsubsection{Visual partitioning representation}
+The performance of the VPR CNN is measured as the cost function on the mini-batch that the gradient is estimated from in mini-batch gradient descent. As the process of batch selection is random, the score is fluctuating. The cost function is negative log-likelihood, described in section \ref{sec:negative}.
+The results presented are with and without visual distortion and with the network topologies described in section \ref{sec:topologies}.
+
+\input{graph/score-nolight-vpr.tex} %DONE
+\input{graph/score-light-vpr.tex} %DONE
+
+\noindent
+The graphs show that the shallow topology converges in fewer iterations, but both topologies manages to converge to a solution. 
+
+\input{graph/vpr-acc.tex} %DONE
+
+\noindent
+The accuracy is measured as the percentage of correct predictions. It is apparent from these results, that the models have not overfitted to the training data, as the difference in accuracy of the training set and the test set is insignificant. Furthermore, the topologies of the networks does not seem to have a significant impact on the accuracy. Examples of the training examples that the deep CNN with visual distortion fails to classify correctly can be seen in section \ref{sec:incorrectpredictions} of the appendix. The incorrect predictions are due to the target being in between partitions or behind the weapon overlay.
+
+%\input{graph/score-nolight-angular.tex}
+%\input{graph/score-light-angular.tex}
+
+%\input{graph/angular-acc.tex} %DONE
+
+%\input{graph/angular-mse-nolight-deep.tex} %DONE
+%\input{graph/angular-mse-nolight-shallow.tex} %DONE
+%\input{graph/angular-mse-light-deep.tex} %DONE
+%\input{graph/angular-mse-light-shallow.tex} %DONE
+
+%\input{graph/score-light-angular-small-dataset-50.tex}
+%\input{graph/angular-mse-light-deep-small-dataset-50.tex}
+
 
 \subsubsection{Feature maps}
-The feature maps shown on figure \ref{fig:featuremaps} are visualised by scaling the output range of $[0,1]$ of every neuron linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer.
+The feature maps shown on figure \ref{fig:featuremaps} are visualised by scaling the output range of $[0,1]$ of every neuron in the convolutional layers linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer.
 
 \begin{figure}[H]
 	\begin{scriptsize}
@@ -18,37 +48,13 @@ The feature maps shown on figure \ref{fig:featuremaps} are visualised by scaling
 	\label{fig:featuremaps}
 \end{figure}
 
-
-
-\input{graph/graph-defs.tex}
-
-%\input{graph/score-nolight-angular.tex} % DONE
-%\input{graph/score-light-angular.tex} % DONE
-
-
-%\input{graph/score-nolight-vpr.tex} %DONE
-%\input{graph/score-light-vpr.tex} %DONE
-
-%\input{graph/angular-acc.tex} %DONE
-%\input{graph/vpr-acc.tex} %DONE
-
-%\input{graph/angular-mse-nolight-deep.tex} %DONE
-%\input{graph/angular-mse-nolight-shallow.tex} %DONE
-%\input{graph/angular-mse-light-deep.tex} %DONE
-%\input{graph/angular-mse-light-shallow.tex} %DONE
-
-%\input{graph/score-light-angular-small-dataset-50.tex}
-%\input{graph/angular-mse-light-deep-small-dataset-50.tex}
-
-
-
 % NEAT GRAPHS
-%\input{graph/neat-overall-fitness.tex} %DONE
-%\input{graph/neat-aiming-fitness.tex} %DONE
-%\input{graph/neat-shooting-fitness.tex} %DONE
+\input{graph/neat-overall-fitness.tex} %DONE
+\input{graph/neat-aiming-fitness.tex} %DONE
+\input{graph/neat-shooting-fitness.tex} %DONE
 
-%\input{graph/neat-angular-fitness.tex} %DONE
-%\input{graph/neat-vpr-fitness.tex} %DONE
+\input{graph/neat-angular-fitness.tex} %DONE
+\input{graph/neat-vpr-fitness.tex} %DONE
 
 
 
