@@ -1,0 +1,27 @@
+angular-deep
+Count:	500
+Sum:	1907611
+Mean:	3815.222
+Median:	3822
+Mode:	3858
+
+angular-shallow
+Count:	500
+Sum:	1241330
+Mean:	2482.66
+Median:	2460.5
+Mode:	2456
+
+vpr-deep
+Count:	500
+Sum:	2390778
+Mean:	4781.556
+Median:	3747
+Mode:	3630
+
+vpr-shallow
+Count:	500
+Sum:	395624
+Mean:	791.248
+Median:	777
+Mode:	691

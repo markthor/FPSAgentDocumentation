@@ -1,0 +1,1016 @@
+o.n.n.NativeOps - Number of threads used for NativeOps: 32
+o.n.n.Nd4jBlas - Number of threads used for BLAS: 6
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.NeuralNetConfiguration - Layer "Layer not named" l1 or l2 has been added to configuration but useRegularization is set to false.
+o.d.n.c.MultiLayerConfiguration - Warning: new network default sets pretrain to false.
+o.d.n.c.MultiLayerConfiguration - Warning: new network default sets backprop to true.
+Time of iteration 1 is 13472 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 0 is 3.2563908100128174
+Time of iteration 2 is 9905 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 1 is 3.2545838356018066
+Time of iteration 3 is 14161 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 2 is 3.258246898651123
+Time of iteration 4 is 3866 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 3 is 3.2572503089904785
+Time of iteration 5 is 3855 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 4 is 3.2562341690063477
+Time of iteration 6 is 3471 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 5 is 3.2555480003356934
+Time of iteration 7 is 3765 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 6 is 3.253514528274536
+Time of iteration 8 is 3601 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 7 is 3.255368709564209
+Time of iteration 9 is 3593 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 8 is 3.255866527557373
+Time of iteration 10 is 3892 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 9 is 3.2503881454467773
+Time of iteration 11 is 3849 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 10 is 3.253964900970459
+Time of iteration 12 is 3855 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 11 is 3.2529659271240234
+Time of iteration 13 is 4607 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 12 is 3.249648332595825
+Time of iteration 14 is 4093 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 13 is 3.2477312088012695
+Time of iteration 15 is 4515 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 14 is 3.250910758972168
+Time of iteration 16 is 4043 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 15 is 3.245640993118286
+Time of iteration 17 is 3583 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 16 is 3.246878147125244
+Time of iteration 18 is 4700 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 17 is 3.2502431869506836
+Time of iteration 19 is 4100 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 18 is 3.252026319503784
+Time of iteration 20 is 3918 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 19 is 3.2435598373413086
+Time of iteration 21 is 3830 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 20 is 3.239108085632324
+Time of iteration 22 is 3548 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 21 is 3.2388381958007812
+Time of iteration 23 is 3489 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 22 is 3.2393856048583984
+Time of iteration 24 is 4507 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 23 is 3.2440104484558105
+Time of iteration 25 is 200173 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 24 is 3.237319231033325
+Time of iteration 26 is 29032 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 25 is 3.243159770965576
+Time of iteration 27 is 25703 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 26 is 3.2254271507263184
+Time of iteration 28 is 11495 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 27 is 3.2455809116363525
+Time of iteration 29 is 9764 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 28 is 3.241839647293091
+Time of iteration 30 is 19020 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 29 is 3.23968505859375
+Time of iteration 31 is 4493 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 30 is 3.2284483909606934
+Time of iteration 32 is 3915 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 31 is 3.226304292678833
+Time of iteration 33 is 6025 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 32 is 3.2308006286621094
+Time of iteration 34 is 4693 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 33 is 3.233531951904297
+Time of iteration 35 is 3860 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 34 is 3.234428644180298
+Time of iteration 36 is 3635 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 35 is 3.2271888256073
+Time of iteration 37 is 3808 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 36 is 3.22218918800354
+Time of iteration 38 is 4122 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 37 is 3.2221713066101074
+Time of iteration 39 is 3847 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 38 is 3.215646743774414
+Time of iteration 40 is 3729 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 39 is 3.226412296295166
+Time of iteration 41 is 3785 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 40 is 3.2229371070861816
+Time of iteration 42 is 3735 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 41 is 3.2293190956115723
+Time of iteration 43 is 4364 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 42 is 3.2108187675476074
+Time of iteration 44 is 3772 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 43 is 3.2058825492858887
+Time of iteration 45 is 3774 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 44 is 3.210944175720215
+Time of iteration 46 is 3577 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 45 is 3.234858512878418
+Time of iteration 47 is 3802 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 46 is 3.203169107437134
+Time of iteration 48 is 3703 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 47 is 3.211942195892334
+Time of iteration 49 is 3495 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 48 is 3.210087299346924
+Time of iteration 50 is 3793 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 49 is 3.212073802947998
+Time of iteration 51 is 4613 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 50 is 3.2132647037506104
+Time of iteration 52 is 3693 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 51 is 3.210364580154419
+Time of iteration 53 is 3642 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 52 is 3.200467586517334
+Time of iteration 54 is 3429 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 53 is 3.196605682373047
+Time of iteration 55 is 3562 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 54 is 3.191164016723633
+Time of iteration 56 is 3546 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 55 is 3.1992030143737793
+Time of iteration 57 is 3545 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 56 is 3.1769657135009766
+Time of iteration 58 is 3480 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 57 is 3.2144763469696045
+Time of iteration 59 is 3516 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 58 is 3.1980128288269043
+Time of iteration 60 is 3748 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 59 is 3.180483818054199
+Time of iteration 61 is 3593 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 60 is 3.18082332611084
+Time of iteration 62 is 3655 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 61 is 3.177537679672241
+Time of iteration 63 is 5876 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 62 is 3.1957688331604004
+Time of iteration 64 is 4402 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 63 is 3.2022342681884766
+Time of iteration 65 is 3904 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 64 is 3.193655490875244
+Time of iteration 66 is 3475 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 65 is 3.16829776763916
+Time of iteration 67 is 3533 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 66 is 3.181713104248047
+Time of iteration 68 is 3683 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 67 is 3.1943132877349854
+Time of iteration 69 is 3568 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 68 is 3.2255454063415527
+Time of iteration 70 is 3551 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 69 is 3.1771693229675293
+Time of iteration 71 is 3627 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 70 is 3.185997486114502
+Time of iteration 72 is 3855 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 71 is 3.162609338760376
+Time of iteration 73 is 3863 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 72 is 3.183497667312622
+Time of iteration 74 is 3760 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 73 is 3.166232109069824
+Time of iteration 75 is 3463 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 74 is 3.1884753704071045
+Time of iteration 76 is 3556 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 75 is 3.1610279083251953
+Time of iteration 77 is 3534 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 76 is 3.1601572036743164
+Time of iteration 78 is 3561 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 77 is 3.160374164581299
+Time of iteration 79 is 3621 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 78 is 3.161196708679199
+Time of iteration 80 is 3692 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 79 is 3.1692850589752197
+Time of iteration 81 is 5122 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 80 is 3.171910047531128
+Time of iteration 82 is 4228 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 81 is 3.1673498153686523
+Time of iteration 83 is 3847 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 82 is 3.142238140106201
+Time of iteration 84 is 3595 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 83 is 3.1501941680908203
+Time of iteration 85 is 3700 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 84 is 3.136580467224121
+Time of iteration 86 is 3782 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 85 is 3.096893072128296
+Time of iteration 87 is 3785 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 86 is 3.1639957427978516
+Time of iteration 88 is 3643 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 87 is 3.131373405456543
+Time of iteration 89 is 3734 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 88 is 3.1261067390441895
+Time of iteration 90 is 3763 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 89 is 3.1900224685668945
+Time of iteration 91 is 3564 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 90 is 3.095924139022827
+Time of iteration 92 is 3718 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 91 is 3.1581106185913086
+Time of iteration 93 is 3873 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 92 is 3.115051746368408
+Time of iteration 94 is 3750 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 93 is 3.1187150478363037
+Time of iteration 95 is 3781 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 94 is 3.075568914413452
+Time of iteration 96 is 3656 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 95 is 3.136463165283203
+Time of iteration 97 is 3630 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 96 is 3.0781211853027344
+Time of iteration 98 is 3829 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 97 is 3.090602397918701
+Time of iteration 99 is 3617 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 98 is 3.104673385620117
+Time of iteration 100 is 3517 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 99 is 3.0791265964508057
+Time of iteration 101 is 3630 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 100 is 3.135240077972412
+Time of iteration 102 is 3878 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 101 is 3.1025547981262207
+Time of iteration 103 is 3630 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 102 is 3.0294113159179688
+Time of iteration 104 is 3747 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 103 is 3.063617706298828
+Time of iteration 105 is 3751 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 104 is 3.145750045776367
+Time of iteration 106 is 3699 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 105 is 3.012232780456543
+Time of iteration 107 is 3690 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 106 is 3.10772442817688
+Time of iteration 108 is 3694 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 107 is 3.032684803009033
+Time of iteration 109 is 3747 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 108 is 3.040154457092285
+Time of iteration 110 is 3833 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 109 is 3.0747900009155273
+Time of iteration 111 is 3877 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 110 is 2.946837902069092
+Time of iteration 112 is 3908 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 111 is 2.9480743408203125
+Time of iteration 113 is 3775 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 112 is 3.085780143737793
+Time of iteration 114 is 3886 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 113 is 2.95267391204834
+Time of iteration 115 is 3615 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 114 is 2.9406604766845703
+Time of iteration 116 is 3704 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 115 is 2.8366658687591553
+Time of iteration 117 is 5260 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 116 is 2.929448127746582
+Time of iteration 118 is 3711 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 117 is 2.9694690704345703
+Time of iteration 119 is 17743 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 118 is 3.0216381549835205
+Time of iteration 120 is 3627 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 119 is 2.9014389514923096
+Time of iteration 121 is 3839 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 120 is 3.029550313949585
+Time of iteration 122 is 3910 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 121 is 3.1021080017089844
+Time of iteration 123 is 3678 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 122 is 2.890780448913574
+Time of iteration 124 is 3644 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 123 is 3.0073013305664062
+Time of iteration 125 is 3743 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 124 is 2.9295830726623535
+Time of iteration 126 is 3553 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 125 is 2.9981160163879395
+Time of iteration 127 is 3773 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 126 is 2.714212417602539
+Time of iteration 128 is 4111 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 127 is 2.8855507373809814
+Time of iteration 129 is 3684 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 128 is 2.9646167755126953
+Time of iteration 130 is 3654 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 129 is 3.054445266723633
+Time of iteration 131 is 4942 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 130 is 2.8527684211730957
+Time of iteration 132 is 4405 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 131 is 2.919318199157715
+Time of iteration 133 is 5075 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 132 is 3.0044775009155273
+Time of iteration 134 is 3692 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 133 is 2.942673683166504
+Time of iteration 135 is 3727 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 134 is 2.6835131645202637
+Time of iteration 136 is 3714 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 135 is 2.880138397216797
+Time of iteration 137 is 3583 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 136 is 3.0277867317199707
+Time of iteration 138 is 3680 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 137 is 2.9604969024658203
+Time of iteration 139 is 3607 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 138 is 2.797402858734131
+Time of iteration 140 is 3700 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 139 is 2.9788143634796143
+Time of iteration 141 is 3611 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 140 is 2.8202571868896484
+Time of iteration 142 is 3690 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 141 is 2.8185129165649414
+Time of iteration 143 is 3720 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 142 is 2.760145664215088
+Time of iteration 144 is 4034 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 143 is 2.882465362548828
+Time of iteration 145 is 3668 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 144 is 2.5985188484191895
+Time of iteration 146 is 3665 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 145 is 2.8938279151916504
+Time of iteration 147 is 4191 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 146 is 2.8477067947387695
+Time of iteration 148 is 3633 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 147 is 3.2284440994262695
+Time of iteration 149 is 3838 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 148 is 2.9990572929382324
+Time of iteration 150 is 4270 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 149 is 2.7392592430114746
+Time of iteration 151 is 3772 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 150 is 3.015526056289673
+Time of iteration 152 is 3745 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 151 is 2.7946219444274902
+Time of iteration 153 is 3790 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 152 is 2.726531505584717
+Time of iteration 154 is 3728 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 153 is 2.6315906047821045
+Time of iteration 155 is 3668 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 154 is 2.746084451675415
+Time of iteration 156 is 3910 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 155 is 2.7901902198791504
+Time of iteration 157 is 3586 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 156 is 2.9859671592712402
+Time of iteration 158 is 3757 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 157 is 2.970306158065796
+Time of iteration 159 is 3780 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 158 is 2.8340892791748047
+Time of iteration 160 is 3675 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 159 is 2.6510696411132812
+Time of iteration 161 is 3556 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 160 is 2.821485757827759
+Time of iteration 162 is 3745 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 161 is 2.764683246612549
+Time of iteration 163 is 3610 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 162 is 2.8154563903808594
+Time of iteration 164 is 3693 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 163 is 2.5552260875701904
+Time of iteration 165 is 3651 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 164 is 2.7111339569091797
+Time of iteration 166 is 3601 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 165 is 2.589747428894043
+Time of iteration 167 is 3683 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 166 is 2.7946135997772217
+Time of iteration 168 is 3844 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 167 is 2.6641292572021484
+Time of iteration 169 is 3840 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 168 is 2.5972256660461426
+Time of iteration 170 is 3749 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 169 is 2.787595272064209
+Time of iteration 171 is 3870 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 170 is 2.3533096313476562
+Time of iteration 172 is 3795 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 171 is 2.8669891357421875
+Time of iteration 173 is 3996 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 172 is 2.7986888885498047
+Time of iteration 174 is 4174 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 173 is 2.4520018100738525
+Time of iteration 175 is 7404 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 174 is 2.456725835800171
+Time of iteration 176 is 5201 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 175 is 2.6129543781280518
+Time of iteration 177 is 3717 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 176 is 2.565208911895752
+Time of iteration 178 is 3589 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 177 is 2.566570997238159
+Time of iteration 179 is 44475 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 178 is 2.579472064971924
+Time of iteration 180 is 7554 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 179 is 3.135753631591797
+Time of iteration 181 is 5854 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 180 is 2.559889793395996
+Time of iteration 182 is 7448 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 181 is 2.5886545181274414
+Time of iteration 183 is 5497 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 182 is 2.600295305252075
+Time of iteration 184 is 3353 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 183 is 2.50812029838562
+Time of iteration 185 is 5421 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 184 is 2.707010269165039
+Time of iteration 186 is 3829 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 185 is 2.531554698944092
+Time of iteration 187 is 3914 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 186 is 2.4825634956359863
+Time of iteration 188 is 3850 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 187 is 2.5970306396484375
+Time of iteration 189 is 3849 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 188 is 2.4179067611694336
+Time of iteration 190 is 3637 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 189 is 2.4015352725982666
+Time of iteration 191 is 3835 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 190 is 2.9086711406707764
+Time of iteration 192 is 3552 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 191 is 3.0310492515563965
+Time of iteration 193 is 3700 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 192 is 2.8311219215393066
+Time of iteration 194 is 3641 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 193 is 2.391763687133789
+Time of iteration 195 is 3880 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 194 is 2.4335455894470215
+Time of iteration 196 is 3589 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 195 is 2.933269500732422
+Time of iteration 197 is 3662 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 196 is 2.4775173664093018
+Time of iteration 198 is 3614 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 197 is 2.5313031673431396
+Time of iteration 199 is 3713 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 198 is 2.838114023208618
+Time of iteration 200 is 3636 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 199 is 2.6434922218322754
+Time of iteration 201 is 3586 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 200 is 2.7418723106384277
+Time of iteration 202 is 3555 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 201 is 2.6625375747680664
+Time of iteration 203 is 3579 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 202 is 2.7244088649749756
+Time of iteration 204 is 3730 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 203 is 2.476073741912842
+Time of iteration 205 is 3631 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 204 is 2.569929361343384
+Time of iteration 206 is 3573 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 205 is 2.3076038360595703
+Time of iteration 207 is 3535 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 206 is 2.602036237716675
+Time of iteration 208 is 3706 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 207 is 2.785465717315674
+Time of iteration 209 is 3538 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 208 is 2.6267149448394775
+Time of iteration 210 is 3486 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 209 is 3.0143814086914062
+Time of iteration 211 is 3854 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 210 is 2.586642265319824
+Time of iteration 212 is 3719 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 211 is 2.6417853832244873
+Time of iteration 213 is 3684 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 212 is 2.4631686210632324
+Time of iteration 214 is 3835 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 213 is 2.6088106632232666
+Time of iteration 215 is 3604 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 214 is 2.8120951652526855
+Time of iteration 216 is 3659 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 215 is 2.69390869140625
+Time of iteration 217 is 3800 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 216 is 2.473473310470581
+Time of iteration 218 is 3748 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 217 is 2.853423595428467
+Time of iteration 219 is 3742 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 218 is 2.6788558959960938
+Time of iteration 220 is 3797 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 219 is 2.7907965183258057
+Time of iteration 221 is 3836 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 220 is 2.5880680084228516
+Time of iteration 222 is 3506 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 221 is 2.4794764518737793
+Time of iteration 223 is 3670 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 222 is 2.8331165313720703
+Time of iteration 224 is 3667 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 223 is 2.6729464530944824
+Time of iteration 225 is 3658 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 224 is 2.7988831996917725
+Time of iteration 226 is 3985 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 225 is 2.6289501190185547
+Time of iteration 227 is 3903 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 226 is 2.467271566390991
+Time of iteration 228 is 3652 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 227 is 2.6558079719543457
+Time of iteration 229 is 3797 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 228 is 2.6868278980255127
+Time of iteration 230 is 3895 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 229 is 2.597808837890625
+Time of iteration 231 is 3699 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 230 is 2.489485502243042
+Time of iteration 232 is 5448 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 231 is 2.762190341949463
+Time of iteration 233 is 3704 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 232 is 2.613435745239258
+Time of iteration 234 is 3819 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 233 is 2.4548604488372803
+Time of iteration 235 is 3608 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 234 is 2.6912944316864014
+Time of iteration 236 is 3716 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 235 is 2.5065345764160156
+Time of iteration 237 is 4628 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 236 is 2.919516086578369
+Time of iteration 238 is 4946 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 237 is 2.6378283500671387
+Time of iteration 239 is 3566 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 238 is 2.5851378440856934
+Time of iteration 240 is 3674 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 239 is 2.688392162322998
+Time of iteration 241 is 3714 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 240 is 2.490234851837158
+Time of iteration 242 is 3750 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 241 is 2.4321722984313965
+Time of iteration 243 is 3622 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 242 is 2.498607635498047
+Time of iteration 244 is 3655 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 243 is 2.660067319869995
+Time of iteration 245 is 3637 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 244 is 2.487609386444092
+Time of iteration 246 is 3716 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 245 is 2.4197254180908203
+Time of iteration 247 is 3636 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 246 is 2.37089204788208
+Time of iteration 248 is 3715 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 247 is 2.4225950241088867
+Time of iteration 249 is 3654 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 248 is 2.5710296630859375
+Time of iteration 250 is 3942 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 249 is 2.6737418174743652
+Time of iteration 251 is 4122 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 250 is 2.765143871307373
+Time of iteration 252 is 3982 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 251 is 2.4561429023742676
+Time of iteration 253 is 3877 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 252 is 2.629365921020508
+Time of iteration 254 is 4867 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 253 is 2.6276984214782715
+Time of iteration 255 is 3801 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 254 is 2.5286550521850586
+Time of iteration 256 is 3463 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 255 is 2.547149896621704
+Time of iteration 257 is 3673 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 256 is 2.7881436347961426
+Time of iteration 258 is 69071 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 257 is 2.3163106441497803
+Time of iteration 259 is 5891 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 258 is 2.7095894813537598
+Time of iteration 260 is 5913 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 259 is 2.706404209136963
+Time of iteration 261 is 3985 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 260 is 2.370748281478882
+Time of iteration 262 is 5859 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 261 is 2.557880163192749
+Time of iteration 263 is 5760 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 262 is 2.4184038639068604
+Time of iteration 264 is 5474 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 263 is 2.479649543762207
+Time of iteration 265 is 5838 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 264 is 2.4445090293884277
+Time of iteration 266 is 5726 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 265 is 2.6479387283325195
+Time of iteration 267 is 7543 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 266 is 2.5674428939819336
+Time of iteration 268 is 4907 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 267 is 2.893871307373047
+Time of iteration 269 is 4143 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 268 is 2.216777801513672
+Time of iteration 270 is 5134 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 269 is 2.5285682678222656
+Time of iteration 271 is 3712 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 270 is 2.7132749557495117
+Time of iteration 272 is 5760 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 271 is 2.633042573928833
+Time of iteration 273 is 5369 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 272 is 2.444552421569824
+Time of iteration 274 is 5205 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 273 is 2.4625582695007324
+Time of iteration 275 is 4994 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 274 is 2.374654531478882
+Time of iteration 276 is 5286 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 275 is 2.8088033199310303
+Time of iteration 277 is 5278 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 276 is 2.3190865516662598
+Time of iteration 278 is 5493 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 277 is 2.5578255653381348
+Time of iteration 279 is 4526 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 278 is 2.874244451522827
+Time of iteration 280 is 5421 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 279 is 2.274907112121582
+Time of iteration 281 is 5129 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 280 is 2.7363758087158203
+Time of iteration 282 is 5417 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 281 is 2.732112407684326
+Time of iteration 283 is 4377 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 282 is 2.433574914932251
+Time of iteration 284 is 5350 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 283 is 2.608346700668335
+Time of iteration 285 is 5160 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 284 is 2.5292880535125732
+Time of iteration 286 is 5476 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 285 is 2.671599864959717
+Time of iteration 287 is 5278 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 286 is 3.0461769104003906
+Time of iteration 288 is 5409 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 287 is 2.531702756881714
+Time of iteration 289 is 5360 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 288 is 2.5181074142456055
+Time of iteration 290 is 5211 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 289 is 2.5726358890533447
+Time of iteration 291 is 21382 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 290 is 2.469830274581909
+Time of iteration 292 is 3976 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 291 is 2.2977750301361084
+Time of iteration 293 is 3806 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 292 is 2.431720733642578
+Time of iteration 294 is 3739 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 293 is 2.4971985816955566
+Time of iteration 295 is 3733 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 294 is 2.5604686737060547
+Time of iteration 296 is 3944 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 295 is 2.5067219734191895
+Time of iteration 297 is 3586 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 296 is 2.5724315643310547
+Time of iteration 298 is 3767 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 297 is 2.5307047367095947
+Time of iteration 299 is 3725 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 298 is 2.759483575820923
+Time of iteration 300 is 3665 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 299 is 2.606448173522949
+Time of iteration 301 is 3723 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 300 is 2.6841115951538086
+Time of iteration 302 is 3930 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 301 is 2.577894687652588
+Time of iteration 303 is 3814 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 302 is 2.6255264282226562
+Time of iteration 304 is 3867 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 303 is 2.2909674644470215
+Time of iteration 305 is 3867 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 304 is 2.5259268283843994
+Time of iteration 306 is 3682 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 305 is 2.6215574741363525
+Time of iteration 307 is 3786 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 306 is 2.501964569091797
+Time of iteration 308 is 3870 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 307 is 2.3086326122283936
+Time of iteration 309 is 3851 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 308 is 2.48032546043396
+Time of iteration 310 is 3754 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 309 is 2.495635509490967
+Time of iteration 311 is 3819 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 310 is 2.595780372619629
+Time of iteration 312 is 3869 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 311 is 2.4843826293945312
+Time of iteration 313 is 3785 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 312 is 2.4381327629089355
+Time of iteration 314 is 3803 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 313 is 2.5869946479797363
+Time of iteration 315 is 3549 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 314 is 2.82672381401062
+Time of iteration 316 is 3741 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 315 is 2.563396692276001
+Time of iteration 317 is 3735 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 316 is 2.2606310844421387
+Time of iteration 318 is 3598 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 317 is 2.4840362071990967
+Time of iteration 319 is 3738 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 318 is 2.6763076782226562
+Time of iteration 320 is 3893 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 319 is 2.341482162475586
+Time of iteration 321 is 3811 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 320 is 2.357919216156006
+Time of iteration 322 is 3549 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 321 is 2.4649083614349365
+Time of iteration 323 is 3829 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 322 is 2.2372751235961914
+Time of iteration 324 is 3802 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 323 is 2.5309183597564697
+Time of iteration 325 is 3723 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 324 is 2.8592400550842285
+Time of iteration 326 is 3715 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 325 is 2.575786590576172
+Time of iteration 327 is 3545 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 326 is 2.3209431171417236
+Time of iteration 328 is 3712 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 327 is 2.4588403701782227
+Time of iteration 329 is 3614 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 328 is 2.213244915008545
+Time of iteration 330 is 3495 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 329 is 2.756420135498047
+Time of iteration 331 is 3709 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 330 is 2.5472159385681152
+Time of iteration 332 is 3845 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 331 is 2.6930766105651855
+Time of iteration 333 is 3715 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 332 is 2.391425132751465
+Time of iteration 334 is 3785 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 333 is 2.4861979484558105
+Time of iteration 335 is 3520 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 334 is 2.4613237380981445
+Time of iteration 336 is 3766 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 335 is 2.498671531677246
+Time of iteration 337 is 3831 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 336 is 2.482295036315918
+Time of iteration 338 is 3944 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 337 is 2.4184043407440186
+Time of iteration 339 is 3828 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 338 is 2.569424629211426
+Time of iteration 340 is 3624 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 339 is 2.4917778968811035
+Time of iteration 341 is 3636 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 340 is 2.451533794403076
+Time of iteration 342 is 3602 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 341 is 2.3746228218078613
+Time of iteration 343 is 3681 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 342 is 2.38700270652771
+Time of iteration 344 is 3602 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 343 is 2.7746949195861816
+Time of iteration 345 is 3861 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 344 is 2.7526278495788574
+Time of iteration 346 is 3848 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 345 is 2.7212023735046387
+Time of iteration 347 is 3810 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 346 is 2.730229139328003
+Time of iteration 348 is 3671 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 347 is 2.5634636878967285
+Time of iteration 349 is 3992 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 348 is 2.728644609451294
+Time of iteration 350 is 3608 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 349 is 2.3444056510925293
+Time of iteration 351 is 4026 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 350 is 2.2306156158447266
+Time of iteration 352 is 3872 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 351 is 2.747258186340332
+Time of iteration 353 is 3800 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 352 is 2.3301239013671875
+Time of iteration 354 is 3658 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 353 is 2.6068060398101807
+Time of iteration 355 is 3804 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 354 is 2.3497414588928223
+Time of iteration 356 is 3461 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 355 is 2.294985294342041
+Time of iteration 357 is 3519 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 356 is 2.740004539489746
+Time of iteration 358 is 3707 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 357 is 2.4878857135772705
+Time of iteration 359 is 3727 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 358 is 2.2407782077789307
+Time of iteration 360 is 3651 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 359 is 2.5830748081207275
+Time of iteration 361 is 3803 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 360 is 2.276146411895752
+Time of iteration 362 is 3644 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 361 is 2.5347814559936523
+Time of iteration 363 is 3954 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 362 is 2.341984510421753
+Time of iteration 364 is 3874 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 363 is 2.97422194480896
+Time of iteration 365 is 3577 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 364 is 2.360630989074707
+Time of iteration 366 is 3635 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 365 is 2.861558437347412
+Time of iteration 367 is 3670 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 366 is 2.5400261878967285
+Time of iteration 368 is 3646 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 367 is 2.291215658187866
+Time of iteration 369 is 3585 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 368 is 2.5449938774108887
+Time of iteration 370 is 3770 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 369 is 2.7198965549468994
+Time of iteration 371 is 3630 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 370 is 2.31898832321167
+Time of iteration 372 is 3598 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 371 is 2.5758042335510254
+Time of iteration 373 is 3761 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 372 is 2.479447364807129
+Time of iteration 374 is 3662 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 373 is 2.3674912452697754
+Time of iteration 375 is 3630 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 374 is 2.3776299953460693
+Time of iteration 376 is 3606 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 375 is 2.4406697750091553
+Time of iteration 377 is 3611 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 376 is 2.5734331607818604
+Time of iteration 378 is 3439 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 377 is 2.6111955642700195
+Time of iteration 379 is 3600 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 378 is 2.410029888153076
+Time of iteration 380 is 3888 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 379 is 2.833132266998291
+Time of iteration 381 is 3672 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 380 is 2.238612651824951
+Time of iteration 382 is 3614 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 381 is 2.4312453269958496
+Time of iteration 383 is 3592 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 382 is 2.41831111907959
+Time of iteration 384 is 3433 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 383 is 2.4221510887145996
+Time of iteration 385 is 3681 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 384 is 2.3289601802825928
+Time of iteration 386 is 3667 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 385 is 2.346656322479248
+Time of iteration 387 is 3764 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 386 is 2.398378372192383
+Time of iteration 388 is 3762 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 387 is 2.526151657104492
+Time of iteration 389 is 3663 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 388 is 2.4999618530273438
+Time of iteration 390 is 3562 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 389 is 2.5800552368164062
+Time of iteration 391 is 3780 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 390 is 2.4661874771118164
+Time of iteration 392 is 3858 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 391 is 2.6314315795898438
+Time of iteration 393 is 3660 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 392 is 2.6485869884490967
+Time of iteration 394 is 3553 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 393 is 2.2588553428649902
+Time of iteration 395 is 3752 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 394 is 2.422710418701172
+Time of iteration 396 is 3750 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 395 is 2.3946352005004883
+Time of iteration 397 is 3620 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 396 is 2.5380849838256836
+Time of iteration 398 is 3826 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 397 is 2.390301465988159
+Time of iteration 399 is 3548 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 398 is 2.608302116394043
+Time of iteration 400 is 3836 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 399 is 2.6115665435791016
+Time of iteration 401 is 3781 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 400 is 2.363126039505005
+Time of iteration 402 is 3608 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 401 is 2.5063748359680176
+Time of iteration 403 is 3788 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 402 is 2.3580446243286133
+Time of iteration 404 is 3851 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 403 is 2.4516210556030273
+Time of iteration 405 is 3715 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 404 is 2.4729905128479004
+Time of iteration 406 is 3738 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 405 is 2.2303860187530518
+Time of iteration 407 is 3615 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 406 is 2.426323413848877
+Time of iteration 408 is 3726 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 407 is 2.485844135284424
+Time of iteration 409 is 3713 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 408 is 2.697038173675537
+Time of iteration 410 is 3693 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 409 is 2.296865940093994
+Time of iteration 411 is 3564 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 410 is 2.833019256591797
+Time of iteration 412 is 3709 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 411 is 2.3439269065856934
+Time of iteration 413 is 3768 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 412 is 2.5167291164398193
+Time of iteration 414 is 3722 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 413 is 2.498279094696045
+Time of iteration 415 is 3849 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 414 is 2.482921600341797
+Time of iteration 416 is 3494 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 415 is 2.679749011993408
+Time of iteration 417 is 3680 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 416 is 2.51566481590271
+Time of iteration 418 is 3632 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 417 is 2.503261089324951
+Time of iteration 419 is 3541 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 418 is 2.3150908946990967
+Time of iteration 420 is 3790 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 419 is 2.5455820560455322
+Time of iteration 421 is 3559 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 420 is 2.5997824668884277
+Time of iteration 422 is 3877 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 421 is 2.7048912048339844
+Time of iteration 423 is 3831 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 422 is 2.4299087524414062
+Time of iteration 424 is 3749 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 423 is 2.2045822143554688
+Time of iteration 425 is 3658 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 424 is 2.374842643737793
+Time of iteration 426 is 3490 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 425 is 2.315460205078125
+Time of iteration 427 is 3772 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 426 is 2.5566062927246094
+Time of iteration 428 is 3816 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 427 is 2.260495185852051
+Time of iteration 429 is 3668 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 428 is 2.4329850673675537
+Time of iteration 430 is 3770 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 429 is 2.5792529582977295
+Time of iteration 431 is 3729 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 430 is 2.498167037963867
+Time of iteration 432 is 3661 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 431 is 2.4276890754699707
+Time of iteration 433 is 3651 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 432 is 2.6376564502716064
+Time of iteration 434 is 3877 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 433 is 2.5402116775512695
+Time of iteration 435 is 3793 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 434 is 2.4712884426116943
+Time of iteration 436 is 3743 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 435 is 2.5140531063079834
+Time of iteration 437 is 3846 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 436 is 2.6061275005340576
+Time of iteration 438 is 3834 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 437 is 2.421295404434204
+Time of iteration 439 is 3859 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 438 is 2.6673264503479004
+Time of iteration 440 is 3938 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 439 is 2.776093006134033
+Time of iteration 441 is 3755 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 440 is 2.363162040710449
+Time of iteration 442 is 3950 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 441 is 2.284853458404541
+Time of iteration 443 is 3579 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 442 is 2.4948723316192627
+Time of iteration 444 is 3800 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 443 is 2.356346368789673
+Time of iteration 445 is 3619 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 444 is 2.482121467590332
+Time of iteration 446 is 3752 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 445 is 2.6700515747070312
+Time of iteration 447 is 3823 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 446 is 2.7714931964874268
+Time of iteration 448 is 3717 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 447 is 2.408299446105957
+Time of iteration 449 is 3862 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 448 is 2.6904921531677246
+Time of iteration 450 is 3704 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 449 is 2.6011695861816406
+Time of iteration 451 is 3668 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 450 is 2.5055694580078125
+Time of iteration 452 is 3619 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 451 is 2.7743124961853027
+Time of iteration 453 is 3635 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 452 is 2.427974224090576
+Time of iteration 454 is 3503 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 453 is 2.336732864379883
+Time of iteration 455 is 3597 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 454 is 2.4416229724884033
+Time of iteration 456 is 3729 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 455 is 2.2985239028930664
+Time of iteration 457 is 3456 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 456 is 2.35164213180542
+Time of iteration 458 is 3644 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 457 is 2.5987701416015625
+Time of iteration 459 is 3609 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 458 is 2.690990447998047
+Time of iteration 460 is 3582 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 459 is 2.471867561340332
+Time of iteration 461 is 3724 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 460 is 2.423801898956299
+Time of iteration 462 is 3735 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 461 is 2.5386710166931152
+Time of iteration 463 is 3589 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 462 is 2.4421958923339844
+Time of iteration 464 is 3807 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 463 is 2.405806541442871
+Time of iteration 465 is 3816 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 464 is 2.4623215198516846
+Time of iteration 466 is 3878 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 465 is 2.3769149780273438
+Time of iteration 467 is 3737 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 466 is 2.3784310817718506
+Time of iteration 468 is 3878 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 467 is 2.4390621185302734
+Time of iteration 469 is 3780 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 468 is 2.575291156768799
+Time of iteration 470 is 3681 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 469 is 2.2346410751342773
+Time of iteration 471 is 3781 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 470 is 2.4631271362304688
+Time of iteration 472 is 3780 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 471 is 2.679213523864746
+Time of iteration 473 is 3972 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 472 is 2.4610414505004883
+Time of iteration 474 is 3713 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 473 is 2.4233078956604004
+Time of iteration 475 is 3872 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 474 is 2.3943018913269043
+Time of iteration 476 is 3862 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 475 is 2.5122556686401367
+Time of iteration 477 is 3916 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 476 is 2.419278144836426
+Time of iteration 478 is 3800 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 477 is 2.2869248390197754
+Time of iteration 479 is 3766 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 478 is 2.511627674102783
+Time of iteration 480 is 3572 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 479 is 2.4975385665893555
+Time of iteration 481 is 3762 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 480 is 2.6403555870056152
+Time of iteration 482 is 3572 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 481 is 2.479785919189453
+Time of iteration 483 is 3798 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 482 is 2.2380871772766113
+Time of iteration 484 is 3567 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 483 is 2.711013078689575
+Time of iteration 485 is 3620 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 484 is 2.528120756149292
+Time of iteration 486 is 3591 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 485 is 2.4863016605377197
+Time of iteration 487 is 3867 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 486 is 2.335122585296631
+Time of iteration 488 is 3811 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 487 is 2.6337437629699707
+Time of iteration 489 is 3635 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 488 is 2.34201717376709
+Time of iteration 490 is 3763 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 489 is 2.4445531368255615
+Time of iteration 491 is 3725 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 490 is 2.778640031814575
+Time of iteration 492 is 3742 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 491 is 2.4956166744232178
+Time of iteration 493 is 3885 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 492 is 2.280407428741455
+Time of iteration 494 is 3737 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 493 is 2.124265670776367
+Time of iteration 495 is 3588 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 494 is 2.3212008476257324
+Time of iteration 496 is 3909 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 495 is 2.6091434955596924
+Time of iteration 497 is 3591 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 496 is 2.3715362548828125
+Time of iteration 498 is 3597 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 497 is 2.5274274349212646
+Time of iteration 499 is 3724 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 498 is 2.313014030456543
+Time of iteration 500 is 3761 ms
+o.d.o.l.ScoreIterationListener - Score at iteration 499 is 2.3509092330932617
