@@ -8,46 +8,45 @@ This section describes the results of the experiments explained in section \ref{
 \subsection{Convolutional neural network experiments}
 The experiments performed are described in section \ref{sec:cnnexperiments}.
 \subsubsection{Visual partitioning representation}
-The performance of the VPR CNN is measured as the cost function on the mini-batch that the gradient is estimated from in mini-batch gradient descent. As the process of batch selection is random, the score is fluctuating. The cost function is negative log-likelihood, described in section \ref{sec:negative}.
-The results presented are with and without visual distortion and with the network topologies described in section \ref{sec:topologies}.
+\paragraph{Convergence}
+Figure \ref{fig:score-nolight-vpr} and \ref{fig:score-light-vpr} show the convergence of the CNNs using VPR is measured as the cost function on the mini-batch that the gradient is estimated from, over iterations. As the process of batch selection is random, the score is fluctuating. The cost function is negative log-likelihood, described in section \ref{sec:negative}.
+The results presented are with and without visual distortion and with the network topologies described in section \ref{sec:topologies}. The shallow topology converges in fewer iterations, but both networks manage to converge to a solution. \todo{insert time}
 
 \input{graph/score-nolight-vpr.tex} %DONE
 \input{graph/score-light-vpr.tex} %DONE
 
-\noindent
-The graphs show that the shallow topology converges in fewer iterations, but both networks manage to converge to a solution. \todo{insert time}
+\paragraph{Performance}
+The accuracy of the results in figure \ref{fig:vpr-acc} is measured as the percentage of correct predictions. It is apparent from these results, that the models have not overfitted to the training data, as the difference in accuracy of the training set and the test set is insignificant. Furthermore, the topologies of the networks does not seem to have a significant impact on the accuracy. Examples of the training examples that the deep CNN with visual distortion fails to classify correctly can be seen in section \ref{sec:incorrectpredictions} of the appendix. The incorrect predictions are due to the target being in between partitions or behind the weapon overlay.
 
 \input{graph/vpr-acc.tex} %DONE
 
-\noindent
-The accuracy of the results in figure \ref{fig:vpr-acc} is measured as the percentage of correct predictions. It is apparent from these results, that the models have not overfitted to the training data, as the difference in accuracy of the training set and the test set is insignificant. Furthermore, the topologies of the networks does not seem to have a significant impact on the accuracy. Examples of the training examples that the deep CNN with visual distortion fails to classify correctly can be seen in section \ref{sec:incorrectpredictions} of the appendix. The incorrect predictions are due to the target being in between partitions or behind the weapon overlay.
 
 \subsubsection{Angular representation}
-The performance of the AR CNN is measured as the cost function on the mini-batch that the gradient is estimated from in mini-batch gradient descent. The cost function is Euclidean loss, described in section \ref{sec:angular}.
-The results presented are with and without visual distortion and with the network topologies described in section \ref{sec:topologies}.
+\paragraph{Convergence}
+Figure \ref{fig:score-nolight-angular} and \ref{fig:score-nolight-angular} show the convergence of the CNNs using AR is shown as the cost function on the mini-batch that the gradient is estimated from, over iterations. The cost function is Euclidean loss, described in section \ref{sec:angular}.
+The results presented are both with and without visual distortion and with the network topologies described in section \ref{sec:topologies}. The deep network reaches a lower cost, but requires additional iterations to converge to a solution. The deep network trained with light has an average time per iteration of 3,734 milliseconds, while the shallow network trained with light has an average time per iteration of 2,572 milliseconds. Consequently, the deep network converges significantly slower.
 
+The same phenomena as without visual distortion is observed in figure \ref{fig:score-light-angular}, but the difference in final cost is less than without visual distortion.
 
 \input{graph/score-nolight-angular.tex}
 
-\noindent
-The deep network reaches a lower cost, but requires additional iterations to converge to a solution. The deep network trained with light has an average time per iteration of 3,734 milliseconds, while the shallow network trained with light has an average time per iteration of 2,572 milliseconds. Consequently, the deep network converges significantly slower.
-
 \input{graph/score-light-angular.tex}
 
-\noindent
-The same phenomena as above is observed in figure \ref{fig:score-light-angular}, but the difference in final cost is less that without visual distortion.
+\paragraph{Performance}
+\label{sec:results-angular-representation}
+The performance is measured as mean absolute error on the angles and distance of the AR, and as percentage correct predictions of whether a target is present in the image(target detection).
+
+Figure \ref{fig:angular-acc} shows that there is no significant difference between the accuracy on the test and the training set. This entails little to no overfitting on target detection.
+
+It is apparent from the difference in accuracy on the test set and the train set that there is little to no overfitting on horizontal angle, vertical angle and distance, as seen in figure \ref{fig:angular-mse-nolight-deep}, \ref{fig:angular-mse-nolight-shallow}, \ref{fig:angular-mse-light-deep} and \ref{fig:angular-mse-light-shallow}. The deep networks perform better than the shallow ones on both tasks, but the difference is especially significant without visual distortion. The error of the networks trained without visual distortion is visualised in \ref{sec:angular-error} of the appendix.
 
 \input{graph/angular-acc.tex} %DONE
-
-\noindent
-Figure \ref{fig:angular-acc} shows that there is no significant difference between the accuracy on the test and the training set. This entails little to no overfitting on that particular term of the AR.
-
 \input{graph/angular-mse-nolight-deep.tex} %DONE
 \input{graph/angular-mse-nolight-shallow.tex} %DONE
 \input{graph/angular-mse-light-deep.tex} %DONE
 \input{graph/angular-mse-light-shallow.tex} %DONE
 
-It is apparent from the difference in accuracy on the test set and the train set that there is little to no overfitting, as seen in figure \ref{fig:angular-mse-nolight-deep}, \ref{fig:angular-mse-nolight-shallow}, \ref{fig:angular-mse-light-deep} and \ref{fig:angular-mse-light-shallow}. The deep networks perform better than the shallow ones on both tasks, but the difference is especially significant without visual distortion.
+
 
 \input{graph/score-light-angular-small-dataset-50.tex}
 \input{graph/angular-mse-light-deep-small-dataset-50.tex}
@@ -65,6 +64,8 @@ The feature maps shown on figure \ref{fig:featuremaps} are visualised by scaling
 	\caption[Feature maps]{A small subset of the feature maps produced from running a training example from the lightened arena through the visual partitioning classification deep convolutional neural network. The feature maps highlight the position of the target.}
 	\label{fig:featuremaps}
 \end{figure}
+
+\subsection{Neuroevolution experiments}
 
 % NEAT GRAPHS
 \input{graph/neat-overall-fitness.tex} %DONE

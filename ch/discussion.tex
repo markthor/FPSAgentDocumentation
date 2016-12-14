@@ -2,6 +2,26 @@
 
 \section{Discussion}
 \label{sec:discussion}
+The discussion is divided into three parts, respectively discussing the VRC, the AIC and the combination. The research questions are answered in the last part.
+
+\subsection{The visual recognition component}
+From the results in figure \ref{fig:vpr-acc}, the CNNs estimating the VPR performed very well. The training data that the networks failed to predict correctly were either when the target were in between partitions, or behind the weapon overlay, as seen in section \ref{sec:incorrectpredictions} of the appendix. The networks were able to correctly classify images, were we found it difficult to locate the target, such as \todo{insert examples} and the varying lighting did not seem to cause incorrect predictions.
+The incorrect predictions of images were the target is present are generally cases were the target could be classified as being in either partition, depending on the exact location of the center of mass of the target. Consequently, such an incorrect prediction does not have a significant impact on an AIC using the incorrect classification to shoot and aim, as some of the target is present in the incorrect partition. These incorrections should therefore be viewed as a natural consequence of the vague classification definition, and not a failure of the optimisation of the model.
+
+Optimising the model with gradient descent proved to be relatively easy, performing adequately with two distinct network topologies, no regularisation and a very unbalanced distribution of classes. From these observations we conclude that the problem of estimating the VPR is well suited for deep learning. The network with 12 layers and the network with 6 layers performed equally well, but the deeper network did take approximately twice as long to train. However, we can not conclude that increasing the depth does not potentially increase performance if the VPR is applied to harder problems, and the observation should therefore not discourage the use of deeper networks to solve this type of problem.
+
+\todo{relate VPR to real world datasets}
+
+The results in the performance section of section \ref{fig:re
+
+
+\subsection{The action inferring component}
+
+\subsection{The combination}
+
+
+
+
 Generalising the feature representation to represent multiple targets...
 
 Ensure equal distribution of classes by oversampling underrepresented classes. See \url{http://www.diva-portal.org/smash/get/diva2:811111/FULLTEXT01.pdf} Why did we not experience the problems discussed in the paper even though we had major imbalances?

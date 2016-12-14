@@ -84,7 +84,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=13]{img/architectureOfShallowNet.pdf}}%
     \put(0.68123754,0.48991846){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28822287\unitlength}\centering Fully connected layer\\ 120 neurons\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{img/architectureOfShallowNet.pdf}}%
-    \put(0.68123754,0.58959343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28822287\unitlength}\centering Output layer 4 outputs\\ Identity activation\end{minipage}}}%
+    \put(0.68123754,0.58959343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28822287\unitlength}\centering Output layer 26 outputs\\ Softmax activation\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=15]{img/architectureOfShallowNet.pdf}}%
     \put(0.66741196,0.64022263){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.29192545\unitlength}\raggedright Visual paritioning classification\end{minipage}}}%
   \end{picture}%
