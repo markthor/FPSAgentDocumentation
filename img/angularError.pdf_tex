@@ -1,0 +1,67 @@
+%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'img/angularError.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{416bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{img/angularError.pdf}}%
+    \put(0.06316145,0.98878392){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $-30^\circ$\end{minipage}}}%
+    \put(0.29662299,0.98878448){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $-15^\circ$\end{minipage}}}%
+    \put(0.43294045,0.98878448){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $-5^\circ$\end{minipage}}}%
+    \put(0.56489224,0.98878448){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $+5^\circ$\end{minipage}}}%
+    \put(0.70104609,0.98878448){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12772601\unitlength}\raggedright $+15^\circ$\end{minipage}}}%
+    \put(0.93450767,0.98878448){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12481211\unitlength}\raggedright $+30^\circ$\end{minipage}}}%
+    \put(-0.01400362,0.92644588){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12481211\unitlength}\raggedright $+30^\circ$\end{minipage}}}%
+    \put(-0.0141915,0.69285604){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12772601\unitlength}\raggedright $+15^\circ$\end{minipage}}}%
+    \put(-0.00445813,0.55667198){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $+5^\circ$\end{minipage}}}%
+    \put(-0.0039688,0.42414396){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $-5^\circ$\end{minipage}}}%
+    \put(-0.01350397,0.2884104){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $-15^\circ$\end{minipage}}}%
+    \put(-0.01326865,0.05496982){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.11655606\unitlength}\raggedright $-30^\circ$\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{img/angularError.pdf}}%
+  \end{picture}%
+\endgroup%
