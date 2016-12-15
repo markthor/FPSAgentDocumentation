@@ -229,7 +229,7 @@ Numerous examples of applying supervised learning or evolutionary algorithms to 
 
 \subsection{The FPS setting}
 \label{sec:fpssetting}
-We obtained the base game and textures from \url{http://armedunity.com/files/file/107-multiplayer-fps-kit-raknet/} and have modified a lot to make it exactly as we need it. This includes removing the ability for bots to shoot and removing everything regarding multiplayer and server functionality. The resulting FPS environment is described in this section.
+We obtained the base game and textures used as test bed for our experiments from \url{http://armedunity.com/files/file/107-multiplayer-fps-kit-raknet/} and heavily modified it to suit our needs. This includes removing the ability for bots to shoot and removing everything regarding multiplayer and server functionality. The resulting FPS environment is described in this section.
 
 The agent has a single full automatic weapon, which has 30 bullets in a single magazine. The agent has 6 extra magazines at his disposal. The weapon does not automatically reload when the magazine is empty, in order to force the agent to learn detecting when a magazine is empty. Since the agent does not get any input regarding bullets and magazines left, it should, optimally, learn to count how many bullets and magazines it has used. This is important in order to not waste time attempting to shoot or reload when there are no more bullets or the weapon is fully loaded, it is however possible to get very reasonable behaviour from the agent without perfect reload times.
 

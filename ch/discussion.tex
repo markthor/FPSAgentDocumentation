@@ -5,7 +5,7 @@
 The discussion is divided into three parts, respectively discussing the VRC, the AIC and the combination. The research questions are answered in the last part.
 
 \subsection{The visual recognition component}
-From the results in figure \ref{fig:vpr-acc}, the CNNs estimating the VPR performed very well. The training data that the networks failed to predict correctly were either when the target were in between partitions, or behind the weapon overlay, as seen in section \ref{sec:incorrectpredictions} of the appendix. The networks were able to correctly classify images, were we found it difficult to locate the target, such as in figure \ref{fig:hardprediction} and the varying lighting did not seem to cause incorrect predictions.
+From the results in figure \ref{fig:vpr-acc}, the CNNs estimating the VPR performed very well. The training examples that the networks failed to predict correctly were either when the target were in between partitions, or behind the weapon overlay, as seen in section \ref{sec:incorrectpredictions} of the appendix. The networks were able to correctly classify images, were we found it difficult to locate the target, such as in figure \ref{fig:hardprediction} and in section  and the varying lighting did not seem to cause incorrect predictions.
 
 \begin{figure}[H]
 	\begin{scriptsize}
@@ -13,13 +13,14 @@ From the results in figure \ref{fig:vpr-acc}, the CNNs estimating the VPR perfor
 		\def\svgwidth{\textwidth}
 		\input{img/hardprediction.pdf_tex}
 	\end{scriptsize}
-	\caption[Difficult VPR classification example]{The deep CNN estimating the VPR correctly predicts the class with a confidence of 55.7\%, with only four pixels of the target being visible.}
+	\caption[Difficult VPR classification example]{The deep CNN estimating the VPR correctly predicts the class with a confidence of 55.7\%, with only four pixels of the target being visible. This example was not used for training.}
 	\label{fig:hardprediction}
 \end{figure}
 
 The incorrect predictions of images were the target is present are generally cases were the target could be classified as being in either partition, depending on the exact location of the center of mass of the target. Consequently, such an incorrect prediction does not have a significant impact on an AIC using the incorrect classification to shoot and aim, as some of the target is present in the incorrect partition. These incorrections should therefore be viewed as a natural consequence of the vague classification definition, and not a failure of the optimisation of the model.
 
-Optimising the model with gradient descent proved to be relatively easy, performing adequately with two distinct network topologies, no regularisation and a very unbalanced distribution of classes. From these observations we conclude that the problem of estimating the VPR is well suited for deep learning. The network with 12 layers and the network with 6 layers performed equally well, but the deeper network did take approximately twice as long to train. However, we can not conclude that increasing the depth does not potentially increase performance if the VPR is applied to harder problems, and the observation should therefore not discourage the use of deeper networks to solve this type of problem.\todo{relate VPR to real world datasets}
+Optimising the model with gradient descent proved to be relatively easy, performing adequately with two distinct network topologies, no regularisation and a very unbalanced distribution of classes. From these observations we conclude that the problem of estimating the VPR is well suited for deep learning. The network with 12 layers and the network with 6 layers performed equally well, but the deeper network did take approximately twice as long to train. However, we can not conclude that increasing the depth does not potentially increase performance if the VPR is applied to harder problems, and the observation should therefore not discourage the use of deeper networks to solve this type of problem. The distribution of classes of training examples is noticeably unbalanced, having more than a 100 times as many classes in the least represented class, as in the most represented class, as seen in \ref{tab:enemy-dist}. However, the unbalance does not seem to prevent the network from learning to recognize even the least represented classes. 
+\todo{relate VPR to real world datasets}
 
 The results in the performance paragraph of section \ref{sec:results-angular-representation} shows varying success with estimating the AR. We observe that the topology of the network has an impact on the error of the horizontal angle, vertical angle and distance, especially when trained without visual distortion. The accuracy of target detection is not affected by the topology, which is not surprising, as it is a strictly easier problem than estimating the VPR. That the topology has a significant influence on the results, leads us to believe, that the problem can be solved with a smaller error if the network topology is improved. Increasing the amount of training data might also yield smaller errors.
 
@@ -27,9 +28,9 @@ The error of the deep network estimating the AR with visual distortion is more t
 
 The results of the network estimating the VPR with visual distortion indicates, that the network estimating the AR theoretically should be able to approximate the position of the target regardless of visual distortion. The problems of estimating the VPR and the AR have some commonalities, as a VPR can be classified differently if the target is shifted a few pixels. Precision in target detection is therefore necessary in both problems, and the error observed in the network estimating the AR with visual distortion indicates that the network does not have the ability to detect the target with such a precision. However, the deep network estimating the AR without visual distortion proves that precise estimation of angles is possible with deep learning. Therefore it is assumed, that the inability of the network  to estimate the AR with an adequate precision is due to insufficient tuning of the learning process, such as the volume or distribution of the training data, the topology of the network or hyper parameters of gradient descent. 
 
-
-
 \subsection{The action inferring component}
+
+
 
 \subsection{The combination}
 

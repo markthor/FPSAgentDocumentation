@@ -24,7 +24,7 @@ The accuracy of the results in figure~\ref{fig:vpr-acc} is measured as the perce
 
 \subsubsection{Angular representation}
 \paragraph{Convergence}
-Figure~\ref{fig:score-nolight-angular} and~\ref{fig:score-nolight-angular} show the convergence of the CNNs using AR shown as the cost function on the mini-batch that the gradient is estimated from, over iterations. The cost function is Euclidean loss, described in section \ref{sec:angular}.
+Figure~\ref{score-nolight-angular} and~\ref{score-nolight-angular} show the convergence of the CNNs using AR shown as the cost function on the mini-batch that the gradient is estimated from, over iterations. The cost function is Euclidean loss, described in section \ref{sec:angular}.
 The results presented are both with and without visual distortion and with the network topologies described in section \ref{sec:topologies}. The deep network reaches a lower cost, but requires additional iterations to converge to a solution. The deep network trained with light has an average time per iteration of 3,734 milliseconds, while the shallow network trained with light has an average time per iteration of 2,572 milliseconds. Consequently, the deep network converges significantly slower.
 
 The same phenomena as without visual distortion is observed in figure~\ref{fig:score-light-angular}, but the difference in final cost is less than without visual distortion.
