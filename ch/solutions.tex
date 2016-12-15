@@ -2,23 +2,14 @@
 
 \section{Solutions}
 \label{sec:solutions}
-Creating a fully functional visual FPS agent requires solutions to a range of different problems. To narrow the scope of the solution, the functionality of the proposed solutions is limited to only a subset of the required functionality to play a full-fledged FPS game, as Counter Strike or Quake. Developing a FPS agent capable of playing like a human player requires the following functionality:
-\begin{itemize}
-\item Movement - The agent can move efficiently between points of interest.
-\item Navigation - The agent can recognise different maps and utilise strategic positions.
-\item Aiming and shooting - The agent can identify targets, aim and shoot efficiently with a range of weapons.
-\item Identification of objects of interest - The agent can identify objects of interest, such as armour, weapons and flags.
-\item Identification of sound - The agent can identify threats from sound.
-\item Adaption of role in a team - The agent can identify the roles of its teammates and are able to put itself in a position that compliments the team.
-\end{itemize}
-The focus of the solution is aiming and shooting, and the proposed solutions only attempts to solve this problem.
+Creating a fully functional visual FPS agent requires solutions to a range of different problems. To narrow the scope of the solution, the functionality of the proposed solutions is limited to only a subset of the required functionality to play a full-fledged FPS game, as Counter Strike or Quake. Developing a FPS agent capable of playing like a human player requires lots of different functionality as for example map navigation, adaptation of team role and identification of sound. The focus of the solution is aiming and shooting, and the proposed solutions only attempts to solve this problem. The problem includes dealing with weapon recoil, reloading properly and aiming and shooting at the target. The agent uses a single full automatic weapon.
+
+\subsection{Actions}
+The agent should be able to aim, shoot and reload. Therefore, the output of the AIC is turn horizontally, turn vertically, shoot and reload. The turn actions are analog, such that the greater the output, the faster it turns. Shoot and reload are binary actions, that triggers when the output is above a specific threshold. Shooting takes precedence over reload, and turning can be done while shooting or reloading.
 
 \subsection{Granularity of control}
 The frequency of which the AI makes decisions is a parameter that shapes the potential and performance requirements of the solution. The finest level of control is achieved by parsing every single frame of the game to infer an action. This is performance intensive, as the process of parsing the visual output through the VRC requires significant amount of computational resources. Using a control frequency lesser than the number of frames reduces the potential reaction speed of the agent and the overall smoothness of its behaviour. The approach of Michal Kempka et al.\cite{vizdoom} is also vision based, and repeats the chosen action for $k$ frames. We chose the same approach, as the flexibility of skipping frames reduces the hardware requirements.
 Some of the functionality requirements of an agent capable of playing a game like Counter Strike might require higher level of control, such as deciding the long term strategy plan or navigating larger maps. This is not in the scope of the proposed solutions.
-
-\subsection{Actions}
-The agent should be able to aim, shoot and reload. Therefore, the output of the AIC is turn horizontally, turn vertically, shoot and reload. The turn actions are analog, such that the greater the output, the faster it turns. Shoot and reload are binary actions, that triggers when the output is above a specific threshold. Shooting takes precedence over reload, and turning can be done while shooting or reloading.
 
 \subsection{Feature representations}
 Recall that the feature representation is the integration point of the VRC and the AIC, and that it is the output of the VRC and the input of the AIC.
