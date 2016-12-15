@@ -74,3 +74,37 @@ The following examples are incorrect predictions by the deep visual partitioning
 	\caption[AR mean error visualised]{The blue box marks the average error margins for horizontal and vertical angles for the deep CNN without visual distortion, while the red box marks the same error for the shallow CNN.}
 	\end{center}
 \end{figure}
+
+\section{Visually distorted examples}
+\begin{figure}[H]
+	\begin{center}
+	\begin{scriptsize}
+		\sffamily
+		\input{img/vd1.pdf_tex}
+	\end{scriptsize}
+	\label{fig:vd1}
+	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 0) with a confidence of 71.9\%.}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+	\begin{scriptsize}
+		\sffamily
+		\input{img/vd2.pdf_tex}
+	\end{scriptsize}
+	\label{fig:vd2}
+	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 4) with a confidence of 78.0\%.}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+	\begin{scriptsize}
+		\sffamily
+		\input{img/vd3.pdf_tex}
+	\end{scriptsize}
+	\label{fig:vd3}
+	\caption[Visually distorted example]{The deep CNN estimating the VPR incorrectly predicts the class(id 2) with a confidence of 58.9\%. The correct class has id 4.}
+	\end{center}
+\end{figure}
