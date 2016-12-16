@@ -54,6 +54,7 @@ It is apparent from the difference in accuracy on the test set and the train set
 
 
 \subsubsection{Feature maps}
+\label{sec:featuremaps}
 The feature maps shown on figure \ref{fig:featuremaps} are visualised by scaling the output range of $[0,1]$ of every neuron in the convolutional layers linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer.
 
 \begin{figure}[H]

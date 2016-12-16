@@ -1,2 +1,3 @@
 *.tex eol=lf
 *.pdf_tex eol=lf
+*.bib eol=lf
