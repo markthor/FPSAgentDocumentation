@@ -16,23 +16,12 @@ All training of the CNN was done on a server, at the IT University of Copenhagen
 \noindent
 Each training experiment was done using one of the GPUs and up to 12 GB of RAM allowing for two simultaneous runs.
 
-\subsection{Bridging between Unity and DL4J}\todo{Move this to Theory?}
-The game used is made using the game engine Unity, where it is possible to interface with the game using either C\#, JavaScript, Boo or Unity Script.
+\subsection{Communication between the action inferring component and the visual recognising component}
+The game used throughout the project was made using the game engine Unity, where it is possible to interface with the game using either C\#, JavaScript, Boo or Unity Script. Since the game has to send the pixel data to a CNN to obtain the inputs for the AIC, the easiest option would be to implement the VRC in one of the languages supported by Unity.
 
-The convolutional neural network is trained using DL4J \todo{Has DL4J been introduced at this point?}, which is written in Java.
-It is unfortunately not possible to interface with the game using Java. Somehow the game has to communicate with a convolutional neural network.
+Unfortunately we were unable to find a framework suitable for our needs, why we decided to look for frameworks in other languages. Java is the language we are most comfortable in, why we decided to use a Java framework, called DeepLearning4J(DL4J)\footnote{\url{https://deeplearning4j.org/}}.
 
-\section{Figures}
-
-\begin{figure}[H]
-	\begin{scriptsize}
-		\sffamily
-		\def\svgwidth{\textwidth}
-		\input{img/grid.pdf_tex}
-	\end{scriptsize}
-	\caption{Ids of the 3, 3, 3 partitioning scheme}
-	\label{fig:ids}
-\end{figure}
+Neither of the languages used to interface with the game can natively communicate with Java. In order to allow communication between the VRC and the AIC a simple socket bridge was implemented. The overhead introduced by this bridge is minimal as it is possible to send the required data back and forth 10,000 times in approximately three seconds.
 
 \section{Incorrect predictions}
 \label{sec:incorrectpredictions}
@@ -109,3 +98,21 @@ The following examples are incorrect predictions by the deep visual partitioning
 	\caption[Visually distorted example]{The deep CNN estimating the VPR incorrectly predicts the class(id 2) with a confidence of 58.9\%. The correct class has id 4.}
 	\end{center}
 \end{figure}
+
+\section{Figures}
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/grid.pdf_tex}
+	\end{scriptsize}
+	\caption{Ids of the 3, 3, 3 partitioning scheme}
+	\label{fig:ids}
+\end{figure}
+
+
+
+
+
+
