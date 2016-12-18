@@ -95,17 +95,17 @@ Google's LeNet as documented in \cite{christian} uses inception modules, which c
 \label{sec:neat}
 NEAT\footnote{Neuroevolution in augmenting Topologies} is an evolutionary algorithm for evolving both the topology and weights of artificial neural networks while using speciation to preserve the best and possibly new innovative networks.
 
-NEATs ability to modify the topology of networks and make common evolutionary practices, such as crossover, work on genomes with different topologies, is what distinguishes it from many other evolutionary methods for developing artificial neural networks. The purpose of NEAT, and similar methods, is developing the most optimal network, with the best performance possible and a topology consisting only of the input and output nodes and connections between them. \todo{Measured by what?}.
+NEATs ability to modify the topology of networks and make common evolutionary practices, such as crossover, work on genomes with different topologies, is what distinguishes it from many other evolutionary methods for evolving artificial neural networks. The purpose of NEAT, and similar methods, is evolving the most optimal network, with the best performance possible and a topology consisting only of the input and output nodes and connections between them.
 
-NEAT does so by continually mutating weights while steadily using complexification in order to allow more advanced behaviour to develop. This steady development of the topologies, along with speciation, allow NEAT to only complexify, if it benefits the solution. \todo{detect might not be the right word. More like: }
-Other similar methods use pre-defined topologies based on the developers best intuition, empirical data or even random topologies to develop a satisfying network, by only mutating the weights. These methods rarely achieve an optimal solution with minimal dimensionality, as the task of pre-defining even a simple network is a very difficult task, at least if one desire the smallest dimensionality possible.\todo{i think some mathematicians might disagree on that one}
+NEAT works by continually mutating weights while steadily using complexification in order to allow more advanced behaviour to develop. This steady development of the topologies, along with speciation, allow NEAT to only complexify, if it benefits the solution.
+Other similar methods use pre-defined topologies based on the developers best intuition, empirical data or even random topologies to develop a satisfying network, by only mutating the weights. These methods rarely achieve an optimal solution with minimal dimensionality, as the task of pre-defining even a simple network is a very difficult task, at least if the complexity of the solution is a concern.
 
 \subsubsection{NEAT Encoding}
 NEAT uses a direct encoding scheme which consists of a list of node genes and connection genes. Node genes simply depict whether it is an input, output or hidden node. A connection gene describe a source and target node, weight, whether or not it is enabled and a unique innovation number.
 These innovation numbers are paramount for NEAT in order to do crossovers and comparisons as part of its evolutionary algorithm and to apply speciation techniques. The innovation number is a unique historical marking each connection has. It is used to quickly identify the shared ancestral traits in different networks in order to give a means of comparing and classifying structures. When a new, previously unknown, connection is introduced in a structure, as a result of a structural mutation, is the new connection gene given the next innovation number as its identifier.
-Crossover in NEAT work by first identifying shared, disjoint and excess connection genes in the two parent genomes. Then a new structure is built from randomly inheriting shared genes, while excess and disjoint genes are inherited from the fittest of the parents. This method for working with different topologies also solves the competing conventions problem\todo{source, original neat paper} and allow the development of recurrent networks to solve non-markovian problems such as the pole balancing problem\todo{source?} or parts of the experiments in this paper.
+Crossover in NEAT work by first identifying shared, disjoint and excess connection genes in the two parent genomes. Genes are shared if they have the same innovation number, and disjoint or excess if not. A new structure is then built from randomly inheriting shared genes, while excess and disjoint genes are inherited from the fittest of the parents. This method for working with different topologies also solves the competing conventions problem\todo{source, original neat paper} and allow the development of recurrent networks to solve non-markovian problems such as the pole balancing problem\todo{source?} or parts of the experiments in this paper.
 
-The NEAT framework used in the paper, handles crossover / sexual reproduction a little bit different. A newly produced genome will either enable or disable all disabled connections it received, whereas original NEAT, makes this decision on a connection by connection basis.
+The NEAT framework used in the paper, handles crossover / sexual reproduction slightly different. A newly produced genome will either enable or disable all disabled connections it received, whereas original NEAT, makes this decision on a connection by connection basis.
 
 \begin{figure}[H]
 	\centering
@@ -119,19 +119,19 @@ Speciation in NEAT allows networks with very different topologies to compete, br
 
 A new topological innovation in a TWEANN, occurs when a structural change happens, like a new node or a new connection. Such a change is however likely to make the network perform considerably worse than before, compared to the networks in the population, which did not get such a significant change. In order to preserve new innovations, the entire population split into separate species, depending on their topology and they compete, primarily, within their own specie. This way, if a new innovation is placed in a new species, it will be allowed to evolve and tune its new structure to something fitting, and not just be discarded as a bad evolutionary step before it has even been explored.
 
-This, formula for calculating the distance between two genomes, are used to place them in species: 
+The following formula is used to calculate the distance between genes for assigning species: 
 
 $$\delta = \frac{c_1E}{N} + \frac{c_2D}{N} + \bar W c_3$$
 
 The formula uses the number of excess genes, $E$, disjoint genes, $D$, and the average weight of the matching genes, $W$. The importance of these three parameters can be adjusted using the three variables $c1$, $c2$ and $c3$, while N is the total amount of genes in the larger of the two networks. There are no definitive optimal settings for these parameters, they have to be experimented with on a case by case basis. The goal of the parameters are to protect innovative changes as they adjust their weights to discover the potential of the change while also discarding structures which have proved not to work. \todo{What is the goal of the adjustment of these hyper parameters? When a innovative change is made, it should be protected}
 
-At each evolution step, is a random genome in a specie selected to be that specie's representative, and all other genomes get their distance calculated with regards to that genome, to determine if it should be part of that specie. If a genome is too far from any specie, then it will be placed in a new specie where it, itself will become the representative genome.
+At each evolution step, a random genome in a species is selected to be that specie's representative, and all other genomes get their distance calculated with regards to that genome, to determine if it should be part of that species. If a genome is too far from any species, then it will be placed in a new species where it, itself will become the representative genome.
 
-All genomes have their fitness changed, depending on how big the specie it is part of is, and how different the genomes is from the other genomes in the specie:
+All genomes have their fitness changed, depending on how big the species it is part of is, and how different the genomes is from the other genomes in the species:
 
 $$f_i' = \frac{f_i}{\sum^n_{j=1} sh(\delta(i,j))}$$
 
-$f'i$, is the modified fitness of the network, $sh(\delta(i,j))$ is a function returning 1 if $\delta(i,j)$, the distance between the networks, is below the threshold $\delta_t$, otherwise it returns 0. This results in the modified fitness being lower the bigger the specie the genome is part of is meaning that bigger species will have to perform better in order to survive as a big specie.
+$f'i$, is the modified fitness of the network, $sh(\delta(i,j))$ is a function returning 1 if $\delta(i,j)$, the distance between the networks, is below the threshold $\delta_t$, otherwise it returns 0. This results in the modified fitness being lower the larger the species the genome is part of is meaning that larger species will have to perform better in order to survive as a large species.
 
 \subsubsection{K-Means speciation} 
 \todo{how should this be cited?}http://sharpneat.sourceforge.net/research/speciation-kmeans.html
@@ -142,11 +142,11 @@ The center point of a cluster is calculated with euclidean distance as the compo
 K-Means implementation uses a vector of a genes' connection's innovation ids and their weights to represent them in the coordinate system. Manhattan distance is used as the distance metric, which is not much different from the distance metric in the original speciation idea. Manhattan distance in the original distance metric is equal to ${c_1E}$ and ${c_2E}$ set to 0 and $c_3$ to 1.
 
 \subsection{Gradient descent}
-Gradient descent is an optimisation method that fits an ANN to a number of training examples, to learn the underlying data pattern, by minimising a cost function. In the context of image recognition, a training example is an image and associated features, such as the class that the image belongs to.
+Gradient descent is an optimisation method that fits a model to a number of training examples, to learn the underlying data pattern, by minimising a cost function. In the context of image recognition, a training example is an image and associated features, such as the class that the image belongs to. The associated features are referred to as ground truths. The model subject to optimisation is an ANN.
 
 In contrast to NEAT, gradient descent does not adjust the topology of the network. Hence, it is given a predefined topology and thus a set of parameters, known as $\theta$, which is the set of biases of all neurons and weights of all connections in the network. 
 
-Gradient descent iterates through the set of training examples, and calculates cost through backpropagation based on the difference between the predicted value, $a(x)$, and the real value, $y(x)$. Euclidean loss is a common cost function.
+Gradient descent iterates through the set of training examples, and calculates cost through backpropagation based on the difference between the predicted features, $a(x)$, and the ground truths, $y(x)$. Euclidean loss is a common cost function.
 $$C(x) = {\lVert y(x) - a(x) \rVert}^2$$
 The parameters of the network are updated based on the gradient of the cost function $\nabla C$ with respect to $\theta$. By knowing the gradient with respect to every parameter of the network, the parameters can be updated, such that the cost is reduced. Consider a change in cost, as described by the change in a parameter:
 $$\Delta C \approx \nabla C \cdot \Delta v $$
@@ -165,7 +165,7 @@ The true gradient of $C$ is approximated by averaging the gradients calculated f
 \label{sec:negative}
 For classification tasks, where the output is a probability distribution summing to one, the negative log likelihood is used as cost function. Training examples of classification tasks are represented as a binary vectors, with 1 in the class that the input belongs to. Let $y_{ij}$ be the $j$'th term of the feature vector of the $i$'th training example, and $p_{ij}$ be the corresponding prediction from the network subject to training, then the log likelihood function can be described as:
 $$ C_{loglikelihood} = -\frac{1}{n} \sum_{i} \sum_{j} y_{ij}\text{ln}(p_{ij}) $$
-Where $n$ is the number of training examples. Explained in more simple terms, this cost function is exactly equal to the negative natural logarithm of the predicted probability of the correct class. Negative log likelihood is preferred over Euclidean loss for classification tasks, as it makes gradient descent converge to the optimal solution faster\cite{Solla}.
+Where $n$ is the number of training examples. Explained in more simple terms, the cost of a probability distribution is exactly equal to the negative natural logarithm of the predicted probability of the correct class. Negative log likelihood is preferred over Euclidean loss for classification tasks, as it makes gradient descent converge to the optimal solution faster\cite{Solla}.
 
 The Euclidean loss function described in the last section is used for regression tasks, where any output sum and any output range is allowed.
 
