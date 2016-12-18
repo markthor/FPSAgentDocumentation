@@ -11,6 +11,11 @@
 		\textbf{Name} & \textbf{Definition} \\ \hline
 		Visual recognition component (VRC) & The component responsible for creating a feature representation of an image. It is implemented as a convolutional neural network in this project. \\ \hline
 		Action inferring component (AIC) & The component responsible for inferring actions from the feature representation of the visual recognition component. This is implemented as a neural network evolved with neuroevolution in this project. \\ \hline
+		
+		Pipeline & The combination of the VRC and the AIC component, translating the visual state to action. \\ \hline
+		
+Translates per second (TPS) & The number of times per second the state of the game is passed through the AIC or the pipeline to infer an action.\\ \hline		
+		
 		Visual partitioning representation (VPR) & A representation of the visual state, based on partition classes, described in section \ref{sec:vpr}. \\ \hline
 		
 		Angular representation (AR) & A representation of the visual state based on relative angles between the agent and the target, described in section \ref{sec:angular}. \\ \hline
@@ -18,6 +23,7 @@
 		Target & The game entity that the agent is rewarded for shooting. \\ \hline
 		
 		Tap-fire & Shooting more accurate with a short delay between shots in order to reduce the penalty that weapon recoil has on accuracy. \\ \hline
+		
 		
 \end{tabularx}
 \end{center}
