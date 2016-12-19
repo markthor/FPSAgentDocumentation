@@ -61,7 +61,7 @@
     \put(0.74101044,0.67401805){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Actions}}}%
     \put(0.48378135,0.51846754){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Training examples}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{img/architecture.pdf}}%
-    \put(0.86929556,0.54075276){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Evolution generates}}}%
+    \put(0.85864567,0.54075276){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Generates}}}%
     \put(0.25598355,0.53735457){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Used to train}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{img/architecture.pdf}}%
     \put(0.05217106,0.78406058){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Perception}}}%

@@ -1,4 +1,4 @@
-Generation	Fitness	Shooting fitness	Aiming fitness	Shots	Misses	Wrong reloads
+Generation	Fitness	ShootingFitness	AimingFitness	Shots	Misses	WrongReloads
 1	42.285389	0.000000	42.285389	393	393	36
 2	44.583869	0.000000	44.583869	506	506	22
 3	62.986282	27.500000	35.486282	600	545	0

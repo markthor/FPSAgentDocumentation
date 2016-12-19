@@ -8,7 +8,7 @@
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
-			title=Shooting fitness over generations,
+			title=Averaged shooting fitness over generations,
 			xlabel=Generations,
 			ylabel=Shooting fitness,
 			ymin = 0,
@@ -19,6 +19,13 @@
 			xticklabel style={rotate=30},
 			minor x tick num=1,
 			legend pos=north west,
+			transpose legend,
+			legend columns=2,
+			legend style={
+				/tikz/column 2/.style={
+					column sep=10pt,
+				}
+            },
 		]
 		\addplot+ [cred, mark=none] table [x={Generation}, y={ShootingFitness}] {\neatAngularMean};
 		\addlegendentry{AR - recoil}
@@ -30,5 +37,5 @@
 		\addlegendentry{VPR + recoil}
 	\end{axis}
 \end{tikzpicture}
-\caption{Training the agent}
+\caption[Averaged NEAT shooting fitness]{Training the agent}
 \end{figure}
