@@ -3,6 +3,7 @@
 \pgfplotstableread{data/neat/ang-mean.dat}{\neatAngularMean}
 \pgfplotstableread{data/neat/ang-recoil-mean.dat}{\neatAngularRecoilMean}
 \pgfplotstableread{data/neat-vpr-fitness.dat}{\neatVPRFitness}
+\pgfplotstableread{data/neat/vpr-recoil-mean.dat}{\neatVPRRecoilMean}
 
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
@@ -18,11 +19,13 @@
 			legend pos=north west,
 		]
 		\addplot+ [cred, mark=none] table [x={Generation}, y={ShootingFitness}] {\neatAngularMean};
-		\addlegendentry{Angular representation}
+		\addlegendentry{AR - recoil}
 		\addplot+ [corange, mark=none] table [x={Generation}, y={ShootingFitness}] {\neatAngularRecoilMean};
-		\addlegendentry{Angular representation with recoil}
+		\addlegendentry{AR + recoil}
 		\addplot+ [cblue, mark=none] table [x={Generation}, y={Shooting}] {\neatVPRFitness};
-		\addlegendentry{Visual partitioning representation}
+		\addlegendentry{VPR - recoil}
+		\addplot+ [cgreen, mark=none] table [x={Generation}, y={ShootingFitness}] {\neatVPRRecoilMean};
+		\addlegendentry{VPR + recoil}
 	\end{axis}
 \end{tikzpicture}
 \caption{Training the agent}

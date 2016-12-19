@@ -1,6 +1,6 @@
 %!TEX root = ../../preamble.tex
 
-\pgfplotstableread{data/neat-vpr-fitness.dat}{\neatVPRFitness}
+\pgfplotstableread{data/neat/vpr-recoil-mean.dat}{\neatVPRRecoilMean}
 
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
@@ -15,13 +15,13 @@
 			minor x tick num=1,
 			legend pos=north west,
 		]
-		\addplot+ [bluered-mix, mark=none] table [x={Generation}, y={Overall}] {\neatVPRFitness};
+		\addplot+ [bluered-mix, mark=none] table [x={Generation}, y={Fitness}] {\neatVPRRecoilMean};
 		\addlegendentry{Overall fitness}
-		\addplot+ [cred, mark=none] table [x={Generation}, y={Aiming}] {\neatVPRFitness};
+		\addplot+ [cred, mark=none] table [x={Generation}, y={AimingFitness}] {\neatVPRRecoilMean};
 		\addlegendentry{Aiming fitness}
-		\addplot+ [cblue, mark=none] table [x={Generation}, y={Shooting}] {\neatVPRFitness};
+		\addplot+ [cblue, mark=none] table [x={Generation}, y={ShootingFitness}] {\neatVPRRecoilMean};
 		\addlegendentry{Shooting fitness}
 	\end{axis}
 \end{tikzpicture}
-\caption{Training the VPR agent}
+\caption{Training the VPR agent with recoil}
 \end{figure}
