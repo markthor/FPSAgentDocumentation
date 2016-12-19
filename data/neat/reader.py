@@ -14,6 +14,7 @@ f2len = len(lines2)
 f3len = len(lines3)
 
 shortestFileLength = min(min(f1len, f2len), f3len)
+print("Lowest generation number is: " + str(shortestFileLength-1))
 
 # Write header
 output.write(lines1[0])

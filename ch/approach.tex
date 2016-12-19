@@ -9,7 +9,7 @@ This section describes the details of the training of the CNN, including the tra
 
 \subsubsection{Topologies}
 \label{sec:approachtopologies}
-We present four different topologies, two for classification and two for regression. Both types are tested with a 12 layered architecture and a 6 layered architecture, called deep and shallow respectively. The difference between the two topologies is in the number of neurons in the fully connected layers and in the activation functions used for the output. All activation functions are ReLU(rectifier), except in the output layers, where softmax is used for classification and identity is used for regression. The regression network outputs the angular representation as described in section \ref{sec:angular}, scaled to fit a range of $-1$ to $1$. The classification network outputs 26 probabilities summing to $1$. The networks take inputs with a shape of 256x256x3, which is the 3 color channels of the image.
+We present four different topologies, two for classification and two for regression. Both types are tested with a 12 layered architecture and a 6 layered architecture, referred to as deep and shallow respectively. The difference between the two topologies is in the number of neurons in the fully connected layers and in the activation functions used for the output. All activation functions are ReLU(rectifier), except in the output layers, where softmax is used for classification and identity is used for regression. The regression network outputs the angular representation as described in section \ref{sec:angular}, scaled to fit a range of $-1$ to $1$. The classification network outputs 26 probabilities summing to $1$. The networks take inputs with a shape of 256x256x3, which is the 3 color channels of the image.
 
 \paragraph{Deep neural network topologies}
 The network topologies are illustrated on figure \ref{fig:architectureOfDeepNet}. Both have 12 layers, the first 8 being alternating convolutional and pooling layers, while the next 3 layers being fully connected layers followed by an output layer.  The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 2. Both networks have a total of 3,200 parameters(weights and biases) in the convolutional layers.
@@ -54,7 +54,7 @@ The training examples consists of the raw image data and ground truths. The raw 
     \label{fig:split}
 \end{figure}
 \noindent
-The ground truth is different for the visual partitioning representation and the angular representation. For the VPR it is a vector with a 1 in the correct class, and for the angular representation it is a 4 dimensional vector with the correct representation.
+The ground truth is different for the two representations. For the VPR it is a vector with a 1 in the correct class, and for the AR it is a 4 dimensional vector with the correct representation.
 In section~\ref{subsub:data-gen} it is explained how the training data for this project was gathered.
 
 
@@ -62,7 +62,7 @@ In section~\ref{subsub:data-gen} it is explained how the training data for this 
 The output of the VRC approximating the visual partitioning representation is a probability distribution summing to 1, as described in section \ref{sec:vpr}. When the VRC is used as input provider to the AIC, output of the VRC is transformed to a sparse vector with a 1 in the class with the highest probability. This makes the input similar to the input that the AIC is trained with.
 
 \subsubsection{Scaling of the angular representation}
-The angular representation of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the AR is estimated by the VRC and used as input to the AIC, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 for consistency, regardless of the output of the VRC. When the AR is used as input to the AIC, each angle is split into two scalars. For both angles the scalars are defined as:
+The AR of the position of the target consists of four dimensions as described in section \ref{sec:angular}. The horizontal and vertical angle are scaled to $[-1,1]$, the distance is divided by $20$, and the bit indicating whether the target is within sight is either 1 or 0. When the AR is estimated by the VRC and used as input to the AIC, angles are cutoff if they are outside the range of $[-1,1]$, and the indication of whether a target is present is rounded to 0 or 1. If the indication is rounded to 0, the other dimensions are set to 0 for consistency, regardless of the output of the VRC. When the AR is used as input to the AIC, each angle is split into two scalars. For both angles the scalars are defined as:
 
 \[
     f_1(v) =  
@@ -80,15 +80,15 @@ The angular representation of the position of the target consists of four dimens
 \end{dcases}
 \]
 \noindent
-This results in 6 non-negative outputs from the AR.
+This results in 6 non-negative real numbers making up the AR.
 
 \subsection{Training the agent}
 \label{sub:training-neat}
-The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}\todo{describe the sharpNEAT framework}. The training of the agent was done in Unity 5\todo{link?}, using the UnityNEAT framework\todo{https://github.com/lordjesus/UnityNEAT}, which is a, slightly modified, implementation of NEAT and made easy to use with games developed in Unity.
-Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of having the CNN detect which visual partition the enemy is in, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
+The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}\todo{describe the sharpNEAT framework}. The training of the agent was done in Unity 5\todo{link?}, using the UnityNEAT framework\todo{https://github.com/lordjesus/UnityNEAT}, which is a, slightly modified, implementation of NEAT, made easier to use with games developed in Unity.
+Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of using the CNN to estimate the representation, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster.
 
 \subsubsection{Evaluation}
-The fitness of a network was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 20 times and the results averaged. The random spawn of the target, and agent, ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded for hitting the target and aiming closer to the target.
+Network fitness was evaluated in the FPS game described in section \ref{sec:fpssetting}. An evaluation lasts 15 seconds, and as the evaluation includes some randomness, each evaluation was repeated 20 times and the results averaged. The random spawn of the target, and agent, ensures that the agent does not learn a specific pattern, but learns to act in any situation. The agent was awarded for hitting the target and aiming closer to the target.
 
 \subsubsection{Fitness function}
 The fitness function for the evaluation can be formulated as:
@@ -130,13 +130,13 @@ Taking pictures of the environment, in which the agent is during actual play, us
 
 An untrained NEAT agent, basing its actions on the angular game state, exhibits more or less random behaviour. During training the behaviour should become less random and more intelligent, which is desirable under normal circumstances, but not when the agent is used to generate training data. Disabling the fitness function, i.e. always giving a fitness of 0, disables learning, thereby persisting the random behaviour.
 
-We were able to almost fully automate the process of generating training data by disabling the fitness function, making it possible to take a screenshot every $n$-th frame, where $n$ was around 5-10,  thereby getting a set of images representative of the states the agent would be in, during actual play.
+We were able to almost fully automate the process of generating training data by disabling the fitness function and taking a screenshot every 5-10'th frame,  thereby getting a set of images representative of the states the agent would be in, during actual play.
 
 
 \subsubsection{Data cleaning}
-Problems can occur when representation of classes are imbalanced, as discussed in section~\ref{sub:data-req}.
+Problems can occur when the representation of classes is imbalanced, as discussed in section~\ref{sub:data-req}.
 
-To overcome these problems some of the images not containing an enemy was deleted. Before deletion approximately half of the images did not contain an enemy. We decided to delete images such that, after deletion around 15\% of the images did not contain an enemy.
+To overcome these problems some of the images not containing an enemy was deleted. The deletion reduced the number of images with an enemy from \~50\% to \~15\%.
 
 The distribution of the rest of the classes depends heavily on the granularity of the partitioning scheme used. Using a 3, 3, 3 partitioning scheme, the most represented class, not counting images without an enemy, constitutes around 11\% of the images. The least represented class contained a mere 0.0862\% of the samples. In other words our representation of classes were majorly imbalanced as seen in table~\ref{tab:enemy-dist}.
 

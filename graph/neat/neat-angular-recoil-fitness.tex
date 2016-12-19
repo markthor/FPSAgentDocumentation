@@ -1,0 +1,27 @@
+%!TEX root = ../../preamble.tex
+
+\pgfplotstableread{data/neat/ang-recoil-mean.dat}{\neatAngularRecoilMean}
+
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			title=Fitness over generations,
+			xlabel=Generations,
+			ylabel=Fitness,
+			xmin = -16,
+			xmax = 416,
+			restrict x to domain=0:400,
+			xticklabel style={rotate=30},
+			minor x tick num=1,
+			legend pos=north west,
+		]
+		\addplot+ [bluered-mix, mark=none] table [x={Generation}, y={Fitness}] {\neatAngularRecoilMean};
+		\addlegendentry{Overall fitness}
+		\addplot+ [cred, mark=none] table [x={Generation}, y={AimingFitness}] {\neatAngularRecoilMean};
+		\addlegendentry{Aiming fitness}
+		\addplot+ [cblue, mark=none] table [x={Generation}, y={ShootingFitness}] {\neatAngularRecoilMean};
+		\addlegendentry{Shooting fitness}
+	\end{axis}
+\end{tikzpicture}
+\caption{Training the angular agent with recoil}
+\end{figure}

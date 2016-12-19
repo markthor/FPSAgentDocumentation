@@ -1,4 +1,4 @@
-%!TEX root = ../preamble.tex
+%!TEX root = ../../preamble.tex
 
 \pgfplotstableread{data/neat/ang-mean.dat}{\neatAngularMean}
 
@@ -8,9 +8,9 @@
 			title=Fitness over generations,
 			xlabel=Generations,
 			ylabel=Fitness,
-			xmin = -10,
-			xmax = 225,
-			restrict x to domain=0:215,
+			xmin = -16,
+			xmax = 416,
+			restrict x to domain=0:400,
 			xticklabel style={rotate=30},
 			minor x tick num=1,
 			legend pos=north west,
@@ -23,5 +23,5 @@
 		\addlegendentry{Shooting fitness}
 	\end{axis}
 \end{tikzpicture}
-\caption{Training the angular agent}
+\caption{Training the angular agent without recoil}
 \end{figure}

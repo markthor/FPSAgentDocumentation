@@ -214,7 +214,7 @@ This helps keep the weights within a range that makes gradient descent converge 
 \label{sub:data-req}
 According to recent research~\cite{balanced-classes} having imbalanced representations of classes used for training with gradient descent can lead to poor performing networks. According to the study, the worst cases of networks trained on imbalanced data were only able to consistently classify images belonging to the most represented class, i.e. one out of a total of ten classes. The imbalance of data were at most a factor of two, i.e the most represented class having twice as many samples as the least represented class.
 
-If the training data at hand is imbalanced one might want to do even the distribution of classes. Overcoming the imbalances can be achieved through different approaches.
+The complications introduced by imbalanced class distributions can be addressed by evening the distribution of classes. Overcoming the imbalances can be achieved through different approaches.
 
 One method is to delete data from over-represented classes until every class has an equal amount of samples. This can severely affect the amount of training data as data is deleted until every class has samples equal to the lowest denominator.
 
