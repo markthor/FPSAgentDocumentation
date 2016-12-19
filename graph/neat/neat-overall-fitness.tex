@@ -1,6 +1,7 @@
-%!TEX root = ../preamble.tex
+%!TEX root = ../../preamble.tex
 
 \pgfplotstableread{data/neat/ang-mean.dat}{\neatAngularMean}
+\pgfplotstableread{data/neat/ang-recoil-mean.dat}{\neatAngularRecoilMean}
 \pgfplotstableread{data/neat-vpr-fitness.dat}{\neatVPRFitness}
 
 \begin{figure}[H]
@@ -9,15 +10,19 @@
 			title=Overall fitness over generations,
 			xlabel=Generations,
 			ylabel=Overall fitness,
-			xmin = -10,
-			xmax = 225,
-			restrict x to domain=0:215,
+			ymin = 0,
+			ymax = 600,
+			xmin = -16,
+			xmax = 416,
+			restrict x to domain=0:400,
 			xticklabel style={rotate=30},
 			minor x tick num=1,
 			legend pos=north west,
 		]
-		\addplot+ [cred, mark=none] table [x={Generation}, y={Fitness }] {\neatAngularMean};
+		\addplot+ [cred, mark=none] table [x={Generation}, y={Fitness}] {\neatAngularMean};
 		\addlegendentry{Angular representation}
+		\addplot+ [corange, mark=none] table [x={Generation}, y={Fitness}] {\neatAngularRecoilMean};
+		\addlegendentry{Angular representation with recoil}
 		\addplot+ [cblue, mark=none] table [x={Generation}, y={Overall}] {\neatVPRFitness};
 		\addlegendentry{Visual partitioning representation}
 	\end{axis}
