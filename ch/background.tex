@@ -177,14 +177,14 @@ Gradient descent, as described above, can be thought of as a ball rolling down a
 $$\theta_{t+1} = \theta_t + v_{t+1}$$
 In the non-modified version of gradient descent, the velocity was only based on the gradient. NAG modifies the velocity based on the previous velocity:
 $$v_{t+1} = \mu v_t - \eta \Delta C(\theta_t + \mu v_t)$$
-Where $\mu$ is a hyperparameter that determines the amount of momentum. It can be shown that NAG converges faster than gradient descent for differentiable and convex cost functions.
+Where $\mu$ is a hyperparameter that determines the amount of momentum. It can be shown that NAG converges faster than gradient descent for differentiable and convex cost functions\cite{Nestrov}.
 
 \subsubsection{Regularisation}
 \label{sec:regularisation}
 Regularisation in gradient descent helps preventing the model from overfitting to the training examples. Overfitting occurs, when the optimisation method reduces the models generalisation capabilities, but increases its capabilities of correctly predicting training examples. It occurs as minimising the cost function for the training examples is only an approximate representation of the goal of gradient descent,  the true goal is to make the model generalise. When gradient descent reaches a certain point in training, the only way to get a lower cost is to overfit to the training examples. Early stopping is a strategy to reduce overfitting, by measuring the models generalisation strength on a data set not used during training.
 
-The number of free parameters in a fully connected ANN can be high, as the number of connection weights between to layers are equal to the product of the number of neurons in each layer. A greater number of free parameters increases the overfitting potential of the model, while a greater number of training examples has the opposite effect.
-High weights are indicators of overfitting, as an overfitted network detects few unique features of a single example and lets them determine the entire output, to form a "memory" from the parameters. Consequently, both l1- and l2-regularisation limits overfitting by reducing the magnitude of the weights. They do so, by adding a second term to the cost function, such that the change in parameters are influenced by the magnitude of the parameters. Let $C_0$ be the original cost function, then the cost function with l2 regularisation is,
+A greater number of free parameters increases the overfitting potential of the model, while a greater number of training examples has the opposite effect.
+High weights are indicators of overfitting, as an overfitted network detects few unique features of a single example and lets them determine the entire output, to form a memory from the parameters. Consequently, both l1- and l2-regularisation limits overfitting by reducing the magnitude of the weights. They do so, by adding a second term to the cost function, such that the change in parameters are influenced by the magnitude of the parameters. Let $C_0$ be the original cost function, then the cost function with l2 regularisation is,
 $$C = C_0 + \frac{\lambda}{2n}\sum_{w} w^2 $$
 where $\lambda$ is a hyper parameter that dictates the strength of the regularisation. l1 regularisation is very similar, the only difference being that the weights are not squared.
 
