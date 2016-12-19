@@ -1,3 +1,11 @@
 \section{Conclusion}
 \label{sec:conclusion}
-It was nice working with u guys!
+This project investigated the potential of combining neuroevolution and deep learning in the context of a FPS game by implementing and evaluating two different integrations of the two AI algorithms. The goal of the experimentation was to answer the following research question.
+\begin{itemize}
+\item How can supervised deep learning and neuroevolution be combined to create a visual FPS agent capable of aiming and shooting?
+\end{itemize}
+The results of the experiments indicates, that both variations of the feature representations in conjunction with NEAT and deep learning are capable of producing the desired agent behaviour, and can be applied to future AI implementations. The lack of proper hardware, performance optimisation of the pipeline and optimisation of the supervised learning process clearly makes the agent perform worse, and these shortcomings should be addressed for this approach to be viable. The project also set out to answer the following research question.
+\begin{itemize}
+\item Which feature representation of a visual partially-observable state makes the combination of neuroevolution and supervised deep learning perform well?
+\end{itemize}
+We presented two different feature representations, the visual partitioning representation and the angular representation. Both of the representations proved useful, as the VPR was estimated successfully with deep learning with little optimisation, while the AR proved a better foundation for neuroevolution. Whether the correct choice of feature representation for future implementations of the combination is the AR or the VPR depends on the difficulty of the visual recognition task. If training examples are subject to labelling, or the target detection is challenging, it is more realistic to estimate the VPR. However, if large volumes of training examples are available, and the time available for hyper parameter and topological optimisation, using the AR could yield faster neuroevolution and a more intelligent agent.
