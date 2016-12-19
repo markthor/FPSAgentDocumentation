@@ -22,7 +22,7 @@ Each training experiment was done using one of the GPUs and up to 12 GB of RAM a
 \subsection{Communication between the action inferring component and the visual recognising component}
 The game used throughout the project was made using the game engine Unity, where it is possible to interface with the game using either C\#, JavaScript, Boo or Unity Script. Since the game has to send the pixel data to a CNN to obtain the inputs for the AIC, the easiest option would be to implement the VRC in one of the languages supported by Unity.
 
-Unfortunately we were unable to find a framework suitable for our needs, why we decided to look for frameworks in other languages. Java is the language we are most comfortable in, why we decided to use a Java framework, called DeepLearning4J(DL4J)\footnote{\url{https://deeplearning4j.org/}}.
+Unfortunately we were unable to find a framework suitable for our needs, why we decided to look for frameworks in other languages. Java is the language we are most comfortable in, why we decided to use a Java framework, called DeepLearning4J\footnote{\url{https://deeplearning4j.org/}}.
 
 Neither of the languages used to interface with the game can natively communicate with Java. In order to allow communication between the VRC and the AIC a simple socket bridge was implemented. The overhead introduced by this bridge is minimal as it is possible to send the required data back and forth 10,000 times in approximately three seconds.
 
