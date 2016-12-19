@@ -12,11 +12,13 @@ The output of an artificial neuron is dependant on the input signals, the activa
 
 The flexibility of the neuron model comes from the free parameters of the network - the weights and the biases. The relation between neurons are modelled by the weights, and the bias models the activation threshold of a neuron.
 
-Depending on the purpose of the network, a neuron can use a wide variety of activation functions. The choice of activation functions can significantly influences the time required for training, as well the output range of the network. A frequently used activation function for image recognition is the rectified linear function $f(z) = \text{Max}(0,z)$. The softmax activation function is used by the neurons in the highest layer of networks trained for classification tasks, where the output of the network is a probability distribution summing to one. Let $z_j$ be the weighted input of the $j$'th neuron of the output layer, then the activation of the neuron is:
+Depending on the purpose of the network, a neuron can use a wide variety of activation functions. The choice of activation functions can significantly influences the time required for training, as well the output range of the network. A frequently used activation function for training deep ANNs is the rectified linear function, $f(z) = \text{Max}(0,z)$. The softmax activation function is used by the neurons in the highest layer of networks trained for classification tasks, where the output of the network is a probability distribution summing to one. Let $z_j$ be the weighted input of the $j$'th neuron of the output layer, then the activation of the neuron is:
 $$a_j = \frac{ \text{e}^{z_j} }{ \sum_{k} \text{e}^{z_k} }$$
 This activation function ensures that the output of the last layer sums to one, regardless of the weighted input signals, and is used in conjunction with the negative log likelihood cost function described in section \ref{sec:negative}.
 
-The identity activation function is used for networks trained for regression tasks. This allows the network to output in the range of $]-\infty,\infty[$ and avoids the dying ReLU problem in the output layer, as explained in section \ref{sec:vanishinggradient}. The identity function is $f(x) = x$.
+The identity activation function($f(x) = x$) is used for networks trained for regression tasks. This allows the network to output in the range of $]-\infty,\infty[$ and avoids the dying ReLU problem in the output layer, as explained in section \ref{sec:vanishinggradient}.
+
+The ANNs evolved with neuroevolution uses the sigmoid activation function, defined as $a(z) = \frac{1}{1+e^{-z}}$.
 
 
 \subsubsection{Single-layered networks}
@@ -95,7 +97,7 @@ Google's LeNet as documented in \cite{christian} uses inception modules, which c
 \label{sec:neat}
 NEAT\footnote{Neuroevolution in augmenting Topologies} is an evolutionary algorithm for evolving both the topology and weights of artificial neural networks while using speciation to preserve the best and possibly new innovative networks.
 
-NEATs ability to modify the topology of networks and make common evolutionary practices, such as crossover, work on genomes with different topologies, is what distinguishes it from many other evolutionary methods for evolving artificial neural networks. The purpose of NEAT, and similar methods, is to develop a network with the best performance possible, while keeping the topology of it as simple as possible.
+NEATs ability to modify the topology of networks and make common evolutionary practices, such as crossover, work on genomes with different topologies, is what distinguishes it from many other evolutionary methods for evolving artificial neural networks. The purpose of NEAT, and similar methods, is evolving the most optimal network, with the best performance possible and a topology consisting only of the input and output nodes and connections between them.
 
 NEAT works by continually mutating weights while steadily using complexification in order to allow more advanced behaviour to develop. This steady development of the topologies, along with speciation, allow NEAT to only complexify, if it benefits the solution.
 Other similar methods use pre-defined topologies based on the developers best intuition, empirical data or even random topologies to develop a satisfying network, by only mutating the weights. These methods rarely achieve an optimal solution with minimal dimensionality, as the task of pre-defining even a simple network is a very difficult task, at least if the complexity of the solution is a concern.
@@ -103,11 +105,9 @@ Other similar methods use pre-defined topologies based on the developers best in
 \subsubsection{NEAT Encoding}
 NEAT uses a direct encoding scheme which consists of a list of node genes and connection genes. Node genes simply depict whether it is an input, output or hidden node. A connection gene describe a source and target node, weight, whether or not it is enabled and a unique innovation number.
 These innovation numbers are paramount for NEAT in order to do crossovers and comparisons as part of its evolutionary algorithm and to apply speciation techniques. The innovation number is a unique historical marking each connection has. It is used to quickly identify the shared ancestral traits in different networks in order to give a means of comparing and classifying structures. When a new, previously unknown, connection is introduced in a structure, as a result of a structural mutation, is the new connection gene given the next innovation number as its identifier.
-Crossover in NEAT work by first identifying shared, disjoint and excess connection genes in the two parent genomes. Genes are shared if they have the same innovation number, and disjoint or excess if not. A new structure is then built from randomly inheriting shared genes, while excess and disjoint genes are inherited from the fittest of the parents. This method for working with different topologies also solves the competing conventions problem\todo{source, original neat paper}.
+Crossover in NEAT work by first identifying shared, disjoint and excess connection genes in the two parent genomes. Genes are shared if they have the same innovation number, and disjoint or excess if not. A new structure is then built from randomly inheriting shared genes, while excess and disjoint genes are inherited from the fittest of the parents. This method for working with different topologies also solves the competing conventions problem\todo{source, original neat paper} and allow the development of recurrent networks to solve non-markovian problems such as the pole balancing problem\todo{source?} or parts of the experiments in this paper.
 
 The NEAT framework used in the paper, handles crossover / sexual reproduction slightly different. A newly produced genome will either enable or disable all disabled connections it received, whereas original NEAT, makes this decision on a connection by connection basis.
-
-NEAT's encoding also allow the development of recurrent networks to solve non-markovian problems such as the pole balancing problem\todo{source?} or parts of the experiments in this paper.
 
 \begin{figure}[H]
 	\centering

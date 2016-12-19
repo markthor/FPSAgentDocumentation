@@ -55,19 +55,32 @@ It is apparent from the difference in accuracy on the test set and the train set
 
 \subsubsection{Feature maps}
 \label{sec:featuremaps}
-The feature maps shown on figure \ref{fig:featuremaps} are visualised by scaling the output range of $[0,1]$ of every neuron in the convolutional layers linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer.
+The feature maps shown on figure \ref{fig:featuremaps} are visualised by scaling the output range of $[0,1]$ of every neuron in the convolutional layers linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer. All of the feature maps are from the same input. Additional feature maps are included in appendix, section~\ref{sec:featuremaps-appendix}. The feature maps from the two different representations are different in both the magnitude and the variance of the output, and the variance. The feature maps from the network estimating the AR has fewer useful feature maps in the last max pooling layer and has a tendency to highlight useless features, such as the weapon overlay, as much as the target.
 
 \begin{figure}[H]
 	\begin{scriptsize}
 		\sffamily
 		\def\svgwidth{\textwidth}
-		\input{img/featuremaps.pdf_tex}
+		\input{img/featuremapsvpr.pdf_tex}
 	\end{scriptsize}
-	\caption[Feature maps]{A small subset of the feature maps produced from running a training example from the lightened arena through the visual partitioning classification deep convolutional neural network. The feature maps highlight the position of the target.}
-	\label{fig:featuremaps}
+	\caption[Feature maps]{A small subset of the feature maps produced from running a training example from the lightened arena through the VPR deep convolutional neural network. The feature maps highlight the position of the target.}
+	\label{fig:featuremapsvpr}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{scriptsize}
+		\sffamily
+		\def\svgwidth{\textwidth}
+		\input{img/featuremapsangular.pdf_tex}
+	\end{scriptsize}
+	\caption[Feature maps]{A small subset of the feature maps produced from running a training example from the lightened arena through the AR deep convolutional neural network. The feature maps highlight the position of the target.}
+	\label{fig:featuremapsangular}
 \end{figure}
 
 \subsection{Neuroevolution experiments}
+
+\subsection{The pipeline}
+
 
 % NEAT GRAPHS
 \input{graph/neat-overall-fitness.tex} %DONE

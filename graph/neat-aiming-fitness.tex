@@ -1,6 +1,6 @@
 %!TEX root = ../preamble.tex
 
-\pgfplotstableread{data/neat-angular-fitness.dat}{\neatAngularFitness}
+\pgfplotstableread{data/neat/ang-mean.dat}{\neatAngularMean}
 \pgfplotstableread{data/neat-vpr-fitness.dat}{\neatVPRFitness}
 
 \begin{figure}[H]
@@ -17,7 +17,7 @@
 			minor x tick num=1,
 			legend pos=north west,
 		]
-		\addplot+ [cred, mark=none] table [x={Generation}, y={Aiming}] {\neatAngularFitness};
+		\addplot+ [cred, mark=none] table [x={Generation}, y={AimingFitness}] {\neatAngularMean};
 		\addlegendentry{Angular representation}
 		\addplot+ [cblue, mark=none] table [x={Generation}, y={Aiming}] {\neatVPRFitness};
 		\addlegendentry{Visual partitioning representation}
