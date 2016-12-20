@@ -2,7 +2,7 @@
 
 \pgfplotstableread{data/neat/ang-mean.dat}{\neatAngularMean}
 \pgfplotstableread{data/neat/ang-recoil-mean.dat}{\neatAngularRecoilMean}
-\pgfplotstableread{data/neat-vpr-fitness.dat}{\neatVPRFitness}
+\pgfplotstableread{data/neat/vpr-mean.dat}{\neatVPRMean}
 \pgfplotstableread{data/neat/vpr-recoil-mean.dat}{\neatVPRRecoilMean}
 
 \begin{figure}[H]
@@ -31,7 +31,7 @@
 		\addlegendentry{AR - recoil}
 		\addplot+ [corange, mark=none] table [x={Generation}, y={Fitness}] {\neatAngularRecoilMean};
 		\addlegendentry{AR + recoil}
-		\addplot+ [cblue, mark=none] table [x={Generation}, y={Overall}] {\neatVPRFitness};
+		\addplot+ [cblue, mark=none] table [x={Generation}, y={Fitness}] {\neatVPRMean};
 		\addlegendentry{VPR - recoil}
 		\addplot+ [cgreen, mark=none] table [x={Generation}, y={Fitness}] {\neatVPRRecoilMean};
 		\addlegendentry{VPR + recoil}
