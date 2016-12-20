@@ -1,0 +1,78 @@
+%!TEX root = ../../preamble.tex
+
+\hspace{-8mm}
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	width=0.55\textwidth,
+	height=7cm,
+	enlarge x limits={abs=.425},
+	ymin=0,
+	ymax=400,
+	axis y line*=none,
+    axis x line*=none,
+    ybar = 15pt,
+    reverse legend,
+	legend style={at={(0.5,-0.175)},anchor=north},
+    xticklabels={
+    		{AR},
+		{VPR},
+	},
+	xtick=data,
+	minor y tick num = 1,
+    nodes near coords,
+	every node near coord/.append style={
+		/pgf/number format/fixed zerofill,
+		/pgf/number format/precision=2
+	},
+]
+
+
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+	(1, 396.715369) % Correct value
+	(0, 310.706714) % Correct value
+};
+\addplot [draw=cred, fill=cred!70] coordinates {
+	(1, 106.424958) % Correct value
+	(0, 193.712533) % Correct value
+};
+
+\legend{Groundtruths,CNN}
+\end{axis}
+
+\end{tikzpicture}
+
+\caption{Comparison of CNN vs groundtruths as VCR}
+\label{fig:neat-cnn-comparison}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
