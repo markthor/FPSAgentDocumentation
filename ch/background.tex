@@ -177,7 +177,7 @@ Gradient descent, as described above, can be thought of as a ball rolling down a
 $$\theta_{t+1} = \theta_t + v_{t+1}$$
 In the non-modified version of gradient descent, the velocity was only based on the gradient. NAG modifies the velocity based on the previous velocity:
 $$v_{t+1} = \mu v_t - \eta \Delta C(\theta_t + \mu v_t)$$
-Where $\mu$ is a hyperparameter that determines the amount of momentum. It can be shown that NAG converges faster than gradient descent for differentiable and convex cost functions\cite{Nestrov}.
+Where $\mu$ is a hyperparameter that determines the amount of momentum. It can be shown that NAG converges faster than gradient descent for differentiable and convex cost functions\cite{Nesterov}.
 
 \subsubsection{Regularisation}
 \label{sec:regularisation}
