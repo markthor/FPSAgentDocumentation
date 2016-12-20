@@ -1,41 +1,55 @@
 %!TEX root = ../../preamble.tex
 
-\pgfplotstableread{data/neat/ang-mean.dat}{\neatAngularMean}
-\pgfplotstableread{data/neat/ang-recoil-mean.dat}{\neatAngularRecoilMean}
-\pgfplotstableread{data/neat/vpr-mean.dat}{\neatVPRMean}
-\pgfplotstableread{data/neat/vpr-recoil-mean.dat}{\neatVPRRecoilMean}
-
+\hspace{-8mm}
 \begin{figure}[H]
-\begin{tikzpicture}[scale=1]
-	\begin{axis}[
-			title=Averaged reloads with full magazine per generation,
-			xlabel=Generations,
-			ylabel=Aiming fitness,
-			%ymin = 0,
-			%ymax = 50,
-			xmin = -10,
-			xmax = 273,
-			restrict x to domain=0:263,
-			xticklabel style={rotate=30},
-			minor tick num=1,
-			legend pos=north east,
-			transpose legend,
-			legend columns=2,
-			legend style={
-				/tikz/column 2/.style={
-					column sep=10pt,
-				}
-            },
-		]
-		\addplot+ [cred, mark=none] table [x={Generation}, y expr = {\thisrowno{6}/20}] {\neatAngularMean};
-		\addlegendentry{AR - recoil}
-		\addplot+ [corange, mark=none] table [x={Generation}, y expr = {\thisrowno{6}/20}] {\neatAngularRecoilMean};
-		\addlegendentry{AR + recoil}
-		\addplot+ [cblue, mark=none] table [x={Generation}, y expr = {\thisrowno{6}/20}] {\neatVPRMean};
-		\addlegendentry{VPR - recoil}
-		\addplot+ [cgreen, mark=none] table [x={Generation}, y expr = {\thisrowno{6}/20}] {\neatVPRRecoilMean};
-		\addlegendentry{VPR + recoil}
-	\end{axis}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	width=0.55\textwidth,
+	height=7cm,
+	enlarge x limits={abs=.425},
+	ymin=0,
+	ymax=0.6,
+	axis y line*=none,
+    axis x line*=none,
+    ybar = 15pt,
+	legend style={at={(0.5,-0.175)},anchor=north},
+    xticklabels={
+    		{AR},
+		{VPR},
+	},
+	xtick=data,
+	minor y tick num = 1,
+    nodes near coords,
+	every node near coord/.append style={
+		/pgf/number format/fixed,
+		/pgf/number format/fixed zerofill,
+		/pgf/number format/precision=3
+	},
+]
+
+\addplot [draw=cred, fill=cred!70] coordinates {
+	(1, 0.5) %
+	(0, 0.066) %
+};
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+	(1, 0.433) %
+	(0, 0.466) %
+};
+
+\legend{Without recoil,With recoil}
+\end{axis}
+
 \end{tikzpicture}
+\end{center}
 \caption[Averaged reloads with full magazine per generation]{Training the agent}
 \end{figure}
+
+
+% Angular no recoil			10										0.5
+% Angular recoil				8.66666666667					0.4333333
+% VPR no recoil				1.33333333333					0.0666666
+% VPR recoil					9.33333333333					0.4666666
+
+
+

@@ -13,7 +13,7 @@
 	axis y line*=none,
     axis x line*=none,
     ybar = 15pt,
-    reverse legend,
+    %reverse legend,
 	legend style={at={(0.5,-0.175)},anchor=north},
     xticklabels={
     		{AR},
@@ -28,12 +28,11 @@
 	},
 ]
 
-
-\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+\addplot [draw=cred, fill=cred!70] coordinates {
 	(1, 396.715369) % Correct value
 	(0, 310.706714) % Correct value
 };
-\addplot [draw=cred, fill=cred!70] coordinates {
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
 	(1, 106.424958) % Correct value
 	(0, 193.712533) % Correct value
 };
