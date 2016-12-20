@@ -1,0 +1,41 @@
+%!TEX root = ../../preamble.tex
+
+\pgfplotstableread{data/neat/ang-mean.dat}{\neatAngularMean}
+\pgfplotstableread{data/neat/ang-recoil-mean.dat}{\neatAngularRecoilMean}
+\pgfplotstableread{data/neat/vpr-mean.dat}{\neatVPRMean}
+\pgfplotstableread{data/neat/vpr-recoil-mean.dat}{\neatVPRRecoilMean}
+
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			title=Averaged missed shots per generation,
+			xlabel=Generations,
+			ylabel=Aiming fitness,
+			ymin = 0,
+			ymax = 50,
+			xmin = -10,
+			xmax = 273,
+			restrict x to domain=0:263,
+			xticklabel style={rotate=30},
+			minor tick num=1,
+			legend pos=north west,
+			transpose legend,
+			legend columns=2,
+			legend style={
+				/tikz/column 2/.style={
+					column sep=10pt,
+				}
+            },
+		]
+		\addplot+ [cred, mark=none] table [x={Generation}, y expr = {\thisrowno{5}/20}] {\neatAngularMean};
+		\addlegendentry{AR - recoil}
+		\addplot+ [corange, mark=none] table [x={Generation}, y expr = {\thisrowno{5}/20}] {\neatAngularRecoilMean};
+		\addlegendentry{AR + recoil}
+		\addplot+ [cblue, mark=none] table [x={Generation}, y expr = {\thisrowno{5}/20}] {\neatVPRMean};
+		\addlegendentry{VPR - recoil}
+		\addplot+ [cgreen, mark=none] table [x={Generation}, y expr = {\thisrowno{5}/20}] {\neatVPRRecoilMean};
+		\addlegendentry{VPR + recoil}
+	\end{axis}
+\end{tikzpicture}
+\caption[Averaged missed shots per generation]{Training the agent}
+\end{figure}
