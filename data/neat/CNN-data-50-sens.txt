@@ -1,0 +1,4 @@
+bestFitness=281.346872	Angular	No recoil	No CNN, with delay
+bestFitness=139.207967	Angular	No recoil	CNN
+bestFitness=282.746912	VPR	No recoil	No CNN, with delay
+bestFitness=223.632024	VPR	No recoil	CNN
