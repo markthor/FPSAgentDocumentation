@@ -5,19 +5,26 @@
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
-	width=0.55\textwidth,
+	width=0.8\textwidth,
 	height=7cm,
-	enlarge x limits={abs=.425},
+	enlarge x limits={abs=.45},
 	ymin=0,
 	ymax=400,
 	axis y line*=none,
     axis x line*=none,
-    ybar = 15pt,
+    ybar = 15pt, % Increases space between bars
     %reverse legend,
-	legend style={at={(0.5,-0.175)},anchor=north},
+    legend columns=2,
+	legend style={
+		at={(0.5,-0.175)},
+		anchor=north,
+		/tikz/column 2/.style={
+			column sep=10pt,
+		},
+	},
     xticklabels={
-    		{AR},
 		{VPR},
+    		{AR},
 	},
 	xtick=data,
 	minor y tick num = 1,
@@ -28,20 +35,37 @@
 	},
 ]
 
+% Groundtruths
 \addplot [draw=cred, fill=cred!70] coordinates {
-	(1, 396.715369) % Correct value
 	(0, 310.706714) % Correct value
-};
-\addplot [draw=cgreen, fill=cgreen!70] coordinates {
-	(1, 106.424958) % Correct value
-	(0, 193.712533) % Correct value
+	(1, 396.715369) % Correct value
 };
 
-\legend{Groundtruths,CNN}
+% Groundtruths with 50% look sensitivity
+\addplot [draw=corange, fill=corange!70] coordinates {
+	(0, 282.746912)
+	(1, 281.346872)
+};
+
+% CNN
+\addplot [draw=cgreen, fill=cgreen!70] coordinates {
+	(0, 193.712533) % Correct value
+	(1, 106.424958) % Correct value
+};
+
+% CNN with 50% look sensitivity
+\addplot [draw=cblue, fill=cblue!70] coordinates {
+	(0, 223.632024) % 
+	(1, 139.207967) % 
+};
+
+
+\legend{Groundtruths,Groundtruths with 50\% look sensitivity,CNN,CNN with 50\% look sensitivity}
 \end{axis}
 
 \end{tikzpicture}
 \end{center}
+\vspace{-2mm}
 \caption[Pipeline performance]{Fitness comparison of using the VRC and the groundtruths as features}
 \label{fig:neat-cnn-comparison}
 \end{figure}
