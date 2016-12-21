@@ -29,7 +29,7 @@ The angular feature representation unambiguously defines the position of the tar
     \label{fig:angular}
 \end{figure}
 \noindent
-The horizontal angle is calculated in the same manner, except that the angle is calculated based on the projection of both vectors onto the horizontal plane. These two angles allows the AIC to infer the aiming directly. The distance is included to allow for changing shooting behaviour based on distance. For example, if the agent shoots a full automatic rifle at a long distance, it might be better to fire separate shots than using automatic fire. The binary indication of whether there is a target within sight, has the purpose of clarifying whether the angles reflects the position of a target, or just assumes default values. The scheme is visualised in figure~\ref{fig:angular}.
+The horizontal angle is calculated in the same manner, except that the angle is calculated based on the projection of both vectors onto the horizontal plane. These two angles allows the AIC to infer the aiming directly. The distance is included to allow for changing shooting behaviour based on distance. For example, if the agent shoots a full automatic rifle at a long distance, it might be better to fire separate shots than using automatic fire. The binary indication of whether there is a target within sight, has the purpose of clarifying whether the angles reflects the position of a target, or just assumes default values. The scheme is visualised in figure~\ref{fig:angular-example}.
 \begin{figure}[H]
     \centering
     	\begin{scriptsize}
@@ -37,7 +37,7 @@ The horizontal angle is calculated in the same manner, except that the angle is 
     	\includesvg[svgpath = img/, width = 1\textwidth]{angular}
     	\end{scriptsize}
     \caption[Angular representation of the visual state]{The vertical and horizontal angles define a position on the screen. The field of view is $65^\circ$ and the target is at a horizontal angle of $-17.17^\circ$ and a vertical angle of $15.05^\circ$ in this example.}
-    \label{fig:angular}
+    \label{fig:angular-example}
 \end{figure}
 
 \subsubsection{Visual partitioning representation}

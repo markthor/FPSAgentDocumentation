@@ -16,6 +16,7 @@
 \usepackage{url}
 \usepackage{tabularx}
 \usepackage[bottom]{footmisc}
+\usepackage{scrextend}
 
 \definecolor{cred}{HTML}{D35050}
 \definecolor{cpurple}{HTML}{BA6FB6}
@@ -65,6 +66,9 @@
 	
 	\pagestyle{empty}
 	
+	\input{ch/acknowledgement.tex}
+	\newpage
+	
 %	\renewcommand{\contentsname}{Contents}
 	\tableofcontents
 %	\newpage
@@ -86,7 +90,7 @@
     \input{ch/solutions.tex}
 	\input{ch/approach.tex}
 	\input{ch/experiments.tex}
-	\input{ch/results.tex}
+	%\input{ch/results.tex}
     \input{ch/discussion.tex}
     \input{ch/futurework.tex}
     \input{ch/conclusion.tex}
@@ -94,7 +98,7 @@
 	\newpage
 	
 	\begin{appendices}
-		\input{appendices/tech.tex}
+		%\input{appendices/tech.tex}
 	\end{appendices}
 	
 	\clearpage

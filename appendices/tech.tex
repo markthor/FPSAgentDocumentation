@@ -19,7 +19,7 @@ All training of the CNN was done on a server, at the IT University of Copenhagen
 \noindent
 Each training experiment was done using one of the GPUs and up to 12 GB of RAM allowing for two simultaneous runs.
 
-\subsection{Communication between the action inferring component and the visual recognising component}
+\subsection{Communication between the action inferring component and the visual recognition component}
 \label{sec:com-vrc-aic}
 The game used throughout the project was made using the game engine Unity, where it is possible to interface with the game using either C\#, JavaScript, Boo or Unity Script. Since the game has to send the pixel data to a CNN to obtain the inputs for the AIC, the easiest option would be to implement the VRC in one of the languages supported by Unity.
 
@@ -38,7 +38,6 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\def\svgwidth{0.95\textwidth}
 		\input{img/failcollection1.pdf_tex}
 	\end{scriptsize}
-	\label{fig:failcollection1}
 	\end{center}
 \end{figure}
 
@@ -50,7 +49,6 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\def\svgwidth{0.95\textwidth}
 		\input{img/failcollection2.pdf_tex}
 	\end{scriptsize}
-	\label{fig:failcollection2}
 	\end{center}
 \end{figure}
 
@@ -63,9 +61,9 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\def\svgwidth{1\textwidth}
 		\input{img/angularError.pdf_tex}
 	\end{scriptsize}
-	\label{fig:angularerror}
-	\caption[AR mean error visualised]{The blue box marks the average error margins for horizontal and vertical angles for the deep CNN without visual distortion, while the red box marks the same error for the shallow CNN.}
 	\end{center}
+	\caption[AR mean error visualised]{The blue box marks the average error margins for horizontal and vertical angles for the deep CNN without visual distortion, while the red box marks the same error for the shallow CNN.}
+	\label{fig:angularerror}
 \end{figure}
 
 \begin{figure}[H]
@@ -75,9 +73,9 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\def\svgwidth{0.9\textwidth}
 		\input{img/aecollection1.pdf_tex}
 	\end{scriptsize}
-	\label{fig:aecollection}
-	\caption[AR error examples visualised]{The green dot marks the correct position and the red dot marks the estimated position using the deep network.}
 	\end{center}
+	\caption[AR error examples visualised]{The green dot marks the correct position and the red dot marks the estimated position using the deep network.}
+	\label{fig:aecollection}
 \end{figure}
 
 \section{Visually distorted examples}
@@ -88,9 +86,9 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\sffamily
 		\input{img/vd1.pdf_tex}
 	\end{scriptsize}
-	\label{fig:vd1}
-	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 0) with a confidence of 71.9\%.}
 	\end{center}
+	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 0) with a confidence of 71.9\%.}
+	\label{fig:vd1}
 \end{figure}
 
 \begin{figure}[H]
@@ -99,9 +97,9 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\sffamily
 		\input{img/vd2.pdf_tex}
 	\end{scriptsize}
-	\label{fig:vd2}
-	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 4) with a confidence of 78.0\%.}
 	\end{center}
+	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 4) with a confidence of 78.0\%.}
+	\label{fig:vd2}
 \end{figure}
 
 \begin{figure}[H]
@@ -110,9 +108,9 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\sffamily
 		\input{img/vd3.pdf_tex}
 	\end{scriptsize}
-	\label{fig:vd3}
-	\caption[Visually distorted example]{The deep CNN estimating the VPR incorrectly predicts the class(id 2) with a confidence of 58.9\%. The correct class has id 4.}
 	\end{center}
+	\caption[Visually distorted example]{The deep CNN estimating the VPR incorrectly predicts the class(id 2) with a confidence of 58.9\%. The correct class has id 4.}
+	\label{fig:vd3}
 \end{figure}
 
 \section{Feature maps}
@@ -125,9 +123,9 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 		\sffamily
 		\input{img/hardprediction.pdf_tex}
 	\end{scriptsize}
-	\label{fig:hp1}
-	\caption[Feature maps image]{The green square marks the correct class.}
 	\end{center}
+	\caption[Feature maps image]{The green square marks the correct class.}
+	\label{fig:hp1}
 \end{figure}
 
 \begin{figure}[H]
@@ -136,8 +134,8 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 		\sffamily
 		\input{img/featuremapsvpr2.pdf_tex}
 	\end{scriptsize}
-	\caption[Feature maps]{The feature maps highlights the position of the target behind the weapon overlay.}
 	\end{center}
+	\caption[Feature maps]{The feature maps highlights the position of the target behind the weapon overlay.}
 \end{figure}
 
 \begin{figure}[H]
@@ -146,8 +144,8 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 		\sffamily
 		\input{img/featuremapsar2.pdf_tex}
 	\end{scriptsize}
-	\caption[Feature maps]{The feature maps vaguely highlights the position of the target behind the weapon overlay.}
 	\end{center}
+	\caption[Feature maps]{The feature maps vaguely highlights the position of the target behind the weapon overlay.}
 \end{figure}
 
 
@@ -163,8 +161,22 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 	\label{fig:ids}
 \end{figure}
 
+\section{Neuroevolution graphs}
+\label{sec:neuroevolution-graphs}
+\input{graph/neat/neat-averaged-aiming-fitness.tex} %DONE
+\input{graph/neat/neat-averaged-shooting-fitness.tex} %DONE
 
+\input{graph/neat/neat-averaged-angular-fitness.tex} %DONE
+\input{graph/neat/neat-averaged-angular-recoil-fitness.tex} %DONE
+\input{graph/neat/neat-vpr-fitness.tex} %DONE
+\input{graph/neat/neat-averaged-vpr-recoil-fitness.tex} %DONE
 
+\input{graph/neat/neat-averaged-angular-fitness.tex} %DONE
+\input{graph/neat/neat-averaged-angular-recoil-fitness.tex} %DONE
+\input{graph/neat/neat-vpr-fitness.tex} %DONE
+\input{graph/neat/neat-averaged-vpr-recoil-fitness.tex} %DONE
+
+\input{graph/neat/neat-averaged-wrong-reloads.tex}
 
 
 
