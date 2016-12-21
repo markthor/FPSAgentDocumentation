@@ -1,0 +1,39 @@
+%!TEX root = ../../preamble.tex
+
+\pgfplotstableread{data/grayscale/grayscale.dat}{\neatGrayscaleScore}
+
+\begin{figure}[H]
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+			height=8cm,
+			title=Fitness per generation,
+			xlabel=Generations,
+			ylabel=Aiming fitness,
+			ymin = -5,
+			ymax = 75,
+			xmin = -4,
+			xmax = 104,
+			restrict x to domain=0:100,
+			xticklabel style={rotate=30},
+			minor tick num=1,
+			legend pos=north west,
+			reverse legend,
+			%transpose legend,
+			%legend columns=2,
+			%legend style={
+			%	/tikz/column 2/.style={
+			%		column sep=10pt,
+			%	}
+			%},
+		]
+		\addplot [cblue, mark=none] table [x={Generation}, y={ShootingFitness}] {\neatGrayscaleScore};
+		\addlegendentry{Shooting fitness}
+		\addplot [cred, mark=none] table [x={Generation}, y={AimingFitness}] {\neatGrayscaleScore};
+		\addlegendentry{Aiming fitness}
+		\addplot [cpurple, mark=none] table [x={Generation}, y={Fitness}] {\neatGrayscaleScore};
+		\addlegendentry{Overall fitness}
+	\end{axis}
+\end{tikzpicture}
+\caption{Fitness from training an agent with neuroevolution using direct visual input scaled to 28x28 and greyscaled}
+\label{fig:neat-grayscale}
+\end{figure}
