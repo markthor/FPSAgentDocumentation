@@ -176,10 +176,10 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 \input{graph/neat/neat-averaged-wrong-reloads.tex}
 \input{graph/neat/neat-averaged-missed-shots.tex}
 
+\section{Deeper convolutional neural networks}
+\label{sec:deeper-cnns}
+The deeper CNN estimating the AR was trained in the same way as the networks described in section~\ref{sec:approach}, except that the batch size was set to 5 due to memory implications. The deeper network has an additional convolutional layer and max pooling layer as well as 5 fully connected layers with 1000 neurons in each instead of 3 layer with 250. This sums up to 16 layers. The graphs show that the deeper network approximately halves the angular error of the deep network.
 
 \input{graph/score-light-angular-ultradeep.tex}
 \input{graph/angular-mse-light-ultradeep.tex}
-
-\input{graph/vpr-small-dataset-acc.tex}
-\input{graph/neat/neat-grayscale-fitness.tex}
 
