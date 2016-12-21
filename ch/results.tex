@@ -78,7 +78,10 @@ The feature maps shown in figure~\ref{fig:featuremapsvpr}~and~\ref{fig:featurema
 \end{figure}
 
 \subsection{Neuroevolution experiments}
-The graphs in figure~\ref{fig:neat-averaged-overall-fitness} and \ref{fig:neat-best-overall-fitness} as well as the graphs included in section~\ref{sec:neuroevolution-graphs} of the appendix are based on evolution with the ground truths as feature representation. We observe an overall tendency for experiments with the AR to perform better than the experiments with the VPR, both learning faster and reaching a higher fitness. Non of the approaches  handles recoil well, as visualised in the graphs in figure~\ref{fig:neat-averaged-vpr-recoil-fitness} and \ref{fig:neat-averaged-angular-recoil-fitness}. The AR with recoil eliminates approximately a single target every evaluation, and the VPR manages to hit the target 1 or 2 times.
+\label{sec:neuroevolution-experiments-results}
+The graphs in figure~\ref{fig:neat-averaged-overall-fitness} and \ref{fig:neat-best-overall-fitness} as well as the graphs included in section~\ref{sec:neuroevolution-graphs} of the appendix are based on evolution with the ground truths as feature representation. The experiments ran for approximately 4 hours each 100 generations. We observe an overall tendency for experiments with the AR to perform better than the experiments with the VPR, both learning faster and reaching a higher fitness. The AR without recoil misses significantly fewer shots than any other approach, as seen in figure~\ref{fig:neat-averaged-missed-shots}. The VPR has fewer unnecessary reloads than the AR, which is the only parameter where it is superior. Non of the approaches  handles recoil well, as visualised in the graphs in figure~\ref{fig:neat-averaged-vpr-recoil-fitness} and \ref{fig:neat-averaged-angular-recoil-fitness}. The AR with recoil eliminates approximately a single target every evaluation, and the VPR manages to hit the target 1 or 2 times. All approaches except VPR without recoil seems to reload with full magazine approximately every second evaluation, as seen in figure~\ref{fig:neat-averaged-wrong-reloads.tex}, which indicates that they do not learn proper reloading behaviour. The decreasing aiming fitness can be attributed to target elimination, as the next target is spawning in a random location.
+
+From inspecting the evolved topologies, we observe different approaches to handling reloading and recoil. The ANNs based on the AR with recoil has a tendency to evolve tap-fire in two different ways. The first one is having a negative weighted recurrent connection from and to the shoot output neuron that allows it to alternate between firing and holding fire. The other one is by slowly aiming away from the target while shooting and stopping when the aiming is too far off. The AR tends to reload when the aim is far off, as this tends to happen when a target is eliminated and a new target appears. The VPR handles recoil by moving to a partition adjacent to the center partition while shooting, and then moving back again to the center partition, creating a short delay in between shots. It tends to associate some of the medium-sized partitions with reloading.
 
 % NEAT GRAPHS
 \input{graph/neat/neat-averaged-overall-fitness.tex} %DONE
@@ -87,6 +90,8 @@ The graphs in figure~\ref{fig:neat-averaged-overall-fitness} and \ref{fig:neat-b
 
 \subsection{The pipeline}
 \label{sec:pipeline-results}
+
+The pipeline is the combination of the VRC and the AIC, and it is measured by evaluating fitness over 100 trials with the best performing VRC and the best performing AIC running at 5 TPS. The graph in figure~\ref{fig:neat-cnn-comparison} shows that both the pipeline based on the AR and the VPR are significantly penalised by using the VRC as feature representation provider, decreasing performance by 37.7\% and 73.2\% respectively. Reducing the look sensitivity by 50\% increases the performance of the pipeline, but reduces the performance of the ground truth based AIC.
 
 \input{graph/neat/neat-cnn-comparison.tex}
 

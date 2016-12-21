@@ -35,8 +35,8 @@ The fitness of the ANNs evolved with neuroevolution are measured with the game s
 \subsubsection{Unnecessary reloads and misses}
 To find out how well neuroevolution solves the task of reloading and shooting without missing, we measure the number of unnecessary reloads and misses. An unnecessary reload is defined as a reload that does not increase the number of bullets in the magazine.
 
-
-
+\subsection{Pipeline experiments}
+We evaluate the fitness of the combination of the VRC and the AIC and compare it to the fitness of the same AIC with the ground truths as feature representation. To find out how much the pipeline fitness is penalised from using AICs trained with different providers, we evaluate the fitness of the combination with half the look sensitivity\footnote{The factor that the output of the ANN trained with neuroevolution is multiplied with to calculate the resulting horizontal or vertical rotation speed.}. Lowering look sensitivity might reduce the impact of the VRC error, as the perception is translated more frequently per degree rotated. 
 
 
 
