@@ -5,19 +5,20 @@
 \pgfplotstableread{data/neat/vpr-no-2.txt}{\neatBestVPR}
 \pgfplotstableread{data/neat/vpr-recoil-3.txt}{\neatBestVPRRecoil}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
+			height=7.5cm,
 			title=Best overall fitness over generations,
 			xlabel=Generations,
 			ylabel=Overall fitness,
 			ymin = 0,
-			ymax = 700,
+			ymax = 750,
 			xmin = -14,
 			xmax = 364,
 			restrict x to domain=0:350,
 			xticklabel style={rotate=30},
-			minor x tick num=1,
+			minor tick num=1,
 			legend pos=north west,
 			transpose legend,
 			legend columns=2,

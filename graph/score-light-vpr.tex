@@ -3,10 +3,11 @@
 \pgfplotstableread{data/light-vpr-shallow.dat}{\lightVPRShallow}
 \pgfplotstableread{data/light-vpr-deep.dat}{\lightVPRDeep}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
-			title=Cost over iterations,
+			height=7.5cm,
+%			title=Cost over iterations,
 			xlabel=Iterations,
 			ylabel=Cost,
 			ymin = 0,

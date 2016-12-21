@@ -5,9 +5,10 @@
 \pgfplotstableread{data/neat/vpr-mean.dat}{\neatVPRMean}
 \pgfplotstableread{data/neat/vpr-recoil-mean.dat}{\neatVPRRecoilMean}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
+			height=7.5cm,
 			title=Averaged total fitness over generations,
 			xlabel=Generations,
 			ylabel=Total fitness,
@@ -17,7 +18,7 @@
 			xmax = 273,
 			restrict x to domain=0:263,
 			xticklabel style={rotate=30},
-			minor x tick num=1,
+			minor tick num=1,
 			legend pos=north west,
 			transpose legend,
 			legend columns=2,

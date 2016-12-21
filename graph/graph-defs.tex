@@ -13,7 +13,14 @@
 	    axis x line*=bottom,
 	    xbar,
 	    reverse legend,
-	    legend style={at={(0.5,-0.125)},anchor=north},
+	    legend columns=2,
+		legend style={
+			at={(0.5,-0.125)},
+			anchor=north,
+			/tikz/column 2/.style={
+				column sep=10pt,
+			}
+		},
 	    yticklabels={
 	    		{Without visual distortion,\\shallow network},
 			{Without visual distortion,\\deep network},
@@ -41,7 +48,15 @@
 		axis x line*=bottom,
 	    xbar,
 	    reverse legend,
-		legend style={at={(0.5,-0.2)},anchor=north},
+		%legend style={at={(0.5,-0.2)},anchor=north},
+		legend columns=2,
+		legend style={
+			at={(0.5,-0.2)},
+			anchor=north,
+			/tikz/column 2/.style={
+				column sep=10pt,
+			}
+		},
 	    yticklabels={
 			{Mean horizontal error},
 			{Mean vertical error},

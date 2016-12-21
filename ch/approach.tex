@@ -97,8 +97,9 @@ The fitness function for the evaluation can be formulated as:
 $$f = \text{damage} + \text{aim\_bonus}$$
 Where damage is the total damage dealt, and aim\_bonus is calculated as:
 $$ \text{aim\_bonus} = \frac{1}{n} \sum_{n} \frac{c}{(1+v)^2} $$
-Where c is a constant set to 75, $n$ is the number of frames and $v$ is the angle measured in radians between the forward pointing vector of the agent and the line from the agent to the target. Hence $v = 0$ if the agent aims directly at the target. This bonus makes the evolution faster, as dealing damage requires aiming, and evolving the ability to aim takes several generations.
-\begin{figure}[H]
+Where c is a constant set to 75, $n$ is the number of frames and $v$ is the angle measured in radians between the forward pointing vector of the agent and the line from the agent to the target. Hence $v = 0$ if the agent aims directly at the target. This bonus makes the evolution faster, as dealing damage requires aiming, and evolving the ability to aim takes several generations. The aim\_bonus is plotted in figure~\ref{fig:aim-bonus}.
+
+\begin{figure}[h]
 \centering
 \begin{tikzpicture}
 	\begin{axis}[
@@ -118,6 +119,7 @@ Where c is a constant set to 75, $n$ is the number of frames and $v$ is the angl
 	\end{axis}
 \end{tikzpicture}
 \caption[Fitness function used for neuroevolution]{The fitness awarded as a function of the angle between the current and the desired pointing direction. The red line marks the value of $v$ when the target is at the corner of the screen}
+\label{fig:aim-bonus}
 \end{figure}
 
 \subsubsection{NEAT setup}
