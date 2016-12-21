@@ -1,0 +1,85 @@
+%!TEX root = ../preamble.tex
+
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	angular-mse,
+	%transpose legend,
+	legend columns=2,
+	legend style={
+		/tikz/column 2/.style={
+			column sep=10pt,
+		}
+	},
+]
+
+\addplot [draw=cpurple, fill=cpurple!70] coordinates {
+	(0.086393, 2) % Correct value
+	(0.097324, 1) % Correct value
+	(0.120908, 0) % Correct value
+};
+\addlegendentry{Ultra deep}
+\addplot [draw=cblue, fill=cblue!70] coordinates {
+	(0.161777,2) % Correct value
+	(0.172215,1) % Correct value
+	(0.163934,0) % Correct value
+};
+\addlegendentry{Deep}
+
+%\legend{Ultra deep, Deep}
+\end{axis}
+
+\end{tikzpicture}
+\caption{Angular accuracy of the ultra deep topology with visual distortion}
+\label{fig:angular-mse-light-ultra-deep}
+\end{figure}
+
+%Evaluating model: models\angular\light\ultra-deep\model1.bin
+%Using db table: trainingDataLightTestSet
+%Mean horizontal error is: 0.086393
+%Mean vertical error is: 0.097324
+%Mean distance error is: 0.120908
+%Accuracy is: 0.928800
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,26 +1,30 @@
 %!TEX root = ../preamble.tex
 
+\pgfplotstableread{data/angular-light-deep-every-20.dat}{\angularLightDeep}
 \pgfplotstableread{data/ultradeep.dat}{\angularLightUltraDeep}
 
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1]
 	\begin{axis}[
+			height=9cm,
 			title=Cost over iterations,
 			xlabel=Iterations,
 			ylabel=Cost,
 			ymin=0,
 			ymax=0.55,
-			xmin = -360,
-			xmax = 9360,
-			restrict x to domain=0:9000,
+			xmin = -640,
+			xmax = 16640,
+			restrict x to domain=0:16000,
 			xticklabel style={rotate=30},
-			minor x tick num=1,
+			minor tick num=1,
 			legend pos=north east,
 		]
-		\addplot [cblue, mark=none] table [x={iteration}, y={cost}] {\angularLightUltraDeep};
+		\addplot [cblue, mark=none] table [x={iteration}, y={score}] {\angularLightDeep};
+		\addlegendentry{Deep network}
+		\addplot [cpurple, mark=none] table [x={iteration}, y={cost}] {\angularLightUltraDeep};
 		\addlegendentry{Ultra deep network}
 	\end{axis}
 \end{tikzpicture}
 \caption{Mean squared error cost over mini-batch gradient descent iterations using AR with visual distortion}
-\label{fig:score-light-angular}
+\label{fig:score-light-angular-ultradeep}
 \end{figure}
