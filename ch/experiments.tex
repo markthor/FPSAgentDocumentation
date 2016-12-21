@@ -26,7 +26,7 @@ To measure how the network is penalised by having a varying visual representatio
 The effect of depth of the CNN topologies described in section \ref{sec:approachtopologies} are measured in combination with the different visual game settings to assert its effect on training speed, overfitting and accuracy.
 
 \subsubsection{Smaller training sets}
-In a real world application of visual recognition, the number of training examples is often limited, as the training examples are subject to manual labeling. Hence, we measure both the accuracy of the VPR and the angular representation trained on significantly smaller data sets from the visually distorted game setting. Furthermore, overfitting is measured separately on these networks trained with smaller data sets, as overfitting gets more likely with fewer training examples. The data sets used are subsets of the training sets with 130,000 examples, and has an even distribution of VPR classes.
+In a real world application of visual recognition, the number of training examples is often limited, as the training examples are subject to manual labeling. Hence, we measure both the accuracy of the VPR and the angular representation trained on significantly smaller data sets from the visually distorted game setting. Furthermore, overfitting is measured separately on these networks trained with smaller data sets, as overfitting gets more likely with fewer training examples. The data sets used are subsets of the training sets with 130,000 examples, and has an even distribution of VPR classes. The training process uses L2-regularisation with $\lambda = 0.0005$.
 
  
 \subsection{Neuroevolution experiments}

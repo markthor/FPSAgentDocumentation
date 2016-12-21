@@ -47,12 +47,6 @@ It is apparent from the difference in accuracy on the test set and the train set
 \input{graph/angular-mse-light-deep.tex} %DONE
 \input{graph/angular-mse-light-shallow.tex} %DONE
 
-
-
-%\input{graph/score-light-angular-small-dataset-50.tex}
-%\input{graph/angular-mse-light-deep-small-dataset-50.tex}
-
-
 \subsubsection{Feature maps}
 \label{sec:featuremaps}
 The feature maps shown in figure~\ref{fig:featuremapsvpr}~and~\ref{fig:featuremapsvpr} are visualised by scaling the output range of $[0,1]$ of every neuron in the convolutional layers linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer. All of the feature maps are from the same input. Additional feature maps are included in appendix, section~\ref{sec:featuremaps-appendix}. The feature maps from the two different representations are different in both the magnitude and the variance of the output, and the variance. The feature maps from the network estimating the AR has fewer useful feature maps in the last max pooling layer and has a tendency to highlight useless features, such as the weapon overlay, as much as the target.
@@ -76,6 +70,11 @@ The feature maps shown in figure~\ref{fig:featuremapsvpr}~and~\ref{fig:featurema
 	\caption[Feature maps]{A small subset of the feature maps produced from running a training example from the lightened arena through the AR deep convolutional neural network. The feature maps highlight the position of the target.}
 	\label{fig:featuremapsangular}
 \end{figure}
+
+\subsubsection{Smaller datasets}
+The results shown in figure~\ref{fig:vpr-acc-small-dataset} shows that training with 5015 training examples results in an accuracy of 71.30\%, which is 15.36 percentage points less than the network trained with 130,000 examples. As the accuracy is close to 100\% on the training data, the network clearly overfitted. Whether the networks are trained for the optimal number of  iterations are 
+
+\input{graph/vpr-small-dataset-acc.tex}
 
 \subsection{Neuroevolution experiments}
 \label{sec:neuroevolution-experiments-results}
