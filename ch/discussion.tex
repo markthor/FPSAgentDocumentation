@@ -45,8 +45,4 @@ The observations from the pipeline experiments harmonises well with the observat
 Running the agent with the pipeline proved performance intensive, and the overall performance of the agent is definitely reduced by running with only 5 TPS. While the experiments failed to explore how well the combination could perform, they prove that it is possible for the combination to learn to aim and shoot with the VPR. We definitely believe that the approach can work for the AR, but the AR pipeline performance is not convincing enough to support any conclusions to this approach.
 
 \subsection{Applications in real world robotics}
-
-
-Generalising the feature representation to represent multiple targets...
-
-Security cameras, interception missile system
+The modularity of the combined approach makes it easier applicable to real world robotics, such as military robots, drones and security camera and systems relying on identifying the position of targets based on visual input. The VRC can be combined with hand coded controllers AICs, to create more reliable systems that are similar to the autonomous car driving agent developed by Chenyi Chen et al.\cite{chen}. Neuroevolution is challenging to apply to real world robotics, as the evaluation has to be faster than real time. Consequently, the robotics subject to neuroevolution has to be simulated virtually, which is further complicated by real world visual inputs. The abstraction provided by the feature representations makes this less complicated, as neuroevolution only has to interface with this representation. The VRC can theoretically be trained on labelled real world images, while the AIC can be trained without a visually realistic environment.
