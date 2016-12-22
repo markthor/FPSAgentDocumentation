@@ -83,7 +83,7 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\input{img/vd1.pdf_tex}
 	\end{scriptsize}
 	\end{center}
-	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 0) with a confidence of 71.9\%.}
+	\caption[Visually distorted example 1]{The deep CNN estimating the VPR correctly predicts the class(id 0) with a confidence of 71.9\%.}
 	\label{fig:vd1}
 \end{figure}
 
@@ -94,7 +94,7 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\input{img/vd2.pdf_tex}
 	\end{scriptsize}
 	\end{center}
-	\caption[Visually distorted example]{The deep CNN estimating the VPR correctly predicts the class(id 4) with a confidence of 78.0\%.}
+	\caption[Visually distorted example 2]{The deep CNN estimating the VPR correctly predicts the class(id 4) with a confidence of 78.0\%.}
 	\label{fig:vd2}
 \end{figure}
 
@@ -105,7 +105,7 @@ The following examples are incorrect predictions by the deep visual partitioning
 		\input{img/vd3.pdf_tex}
 	\end{scriptsize}
 	\end{center}
-	\caption[Visually distorted example]{The deep CNN estimating the VPR incorrectly predicts the class(id 2) with a confidence of 58.9\%. The correct class has id 4.}
+	\caption[Visually distorted example 3]{The deep CNN estimating the VPR incorrectly predicts the class(id 2) with a confidence of 58.9\%. The correct class has id 4.}
 	\label{fig:vd3}
 \end{figure}
 
@@ -120,7 +120,7 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 		\input{img/hardprediction.pdf_tex}
 	\end{scriptsize}
 	\end{center}
-	\caption[Feature maps image]{The green square marks the correct class.}
+	\caption[Feature maps input image]{The green square marks the correct class.}
 	\label{fig:hp1}
 \end{figure}
 
@@ -131,7 +131,7 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 		\input{img/featuremapsvpr2.pdf_tex}
 	\end{scriptsize}
 	\end{center}
-	\caption[Feature maps]{The feature maps highlights the position of the target behind the weapon overlay.}
+	\caption[Feature maps for the CNN using VPR]{The activations of the convolutional layers in the deep CNN approximating the VPR. The feature maps highlights the position of the target behind the weapon overlay.}
 \end{figure}
 
 \begin{figure}[H]
@@ -141,7 +141,7 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 		\input{img/featuremapsar2.pdf_tex}
 	\end{scriptsize}
 	\end{center}
-	\caption[Feature maps]{The feature maps vaguely highlights the position of the target behind the weapon overlay.}
+	\caption[Feature maps for the CNN using the AR]{The activations of the convolutional layers in the deep CNN approximating the AR. The feature maps vaguely highlights the position of the target behind the weapon overlay.}
 \end{figure}
 
 
@@ -167,11 +167,6 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 \input{graph/neat/neat-vpr-fitness.tex} %DONE
 \input{graph/neat/neat-averaged-vpr-recoil-fitness.tex} %DONE
 
-\input{graph/neat/neat-averaged-angular-fitness.tex} %DONE
-\input{graph/neat/neat-averaged-angular-recoil-fitness.tex} %DONE
-\input{graph/neat/neat-vpr-fitness.tex} %DONE
-\input{graph/neat/neat-averaged-vpr-recoil-fitness.tex} %DONE
-
 \input{graph/neat/neat-averaged-wrong-reloads.tex}
 \input{graph/neat/neat-averaged-missed-shots.tex}
 
@@ -179,7 +174,7 @@ The following feature maps are from the image in figure~\ref{fig:hp1}.
 
 \section{Deeper convolutional neural networks}
 \label{sec:deeper-cnns}
-The deeper CNN estimating the AR was trained in the same way as the networks described in section~\ref{sec:approach}, except that the batch size was set to 5 due to memory implications. The deeper network has an additional convolutional layer and max pooling layer as well as 5 fully connected layers with 1000 neurons in each instead of 3 layer with 250. This sums up to 16 layers. The graphs show that the deeper network approximately halves the angular error of the deep network.
+The deeper CNN estimating the AR was trained in the same way as the networks described in section~\ref{sec:approach}, except that the batch size was set to 5 due to memory implications. The deeper network has an additional convolutional layer and max pooling layer as well as 5 fully connected layers with 1000 neurons in each instead of 3 layer with 250. This sums up to 16 layers. The graphs show that the deeper network has approximately half the horizontal and vertical mean error of the deep network.
 
 \input{graph/score-light-angular-ultradeep.tex}
 \input{graph/angular-mse-light-ultradeep.tex}
