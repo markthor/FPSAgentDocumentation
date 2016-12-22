@@ -17,11 +17,13 @@ The classification network has 1,228,800 weights($16 \cdot 16 \cdot 120 \cdot 40
 The regression network has 7,680,000 weights($16 \cdot 16 \cdot 120 \cdot 250$) from the last convolutional layer to the first fully connected layer and 126,754 parameters in the remaining layers.
 
 \begin{figure}[H]
+	\begin{center}
 	\begin{scriptsize}
 		\sffamily
-		\def\svgwidth{\textwidth}
+		\def\svgwidth{0.95\textwidth}
 		\input{img/architectureOfDeepNet.pdf_tex}
 	\end{scriptsize}
+	\end{center}
 	\caption{The full topology of the deep convolutional neural networks.}
 	\label{fig:architectureOfDeepNet}
 \end{figure}
