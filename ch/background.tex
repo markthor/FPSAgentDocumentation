@@ -141,7 +141,7 @@ $f'i$, is the modified fitness of the network, $sh(\delta(i,j))$ is a function r
 \todo{how should this be cited?}http://sharpneat.sourceforge.net/research/speciation-kmeans.html
 The framework used for the experiments in this paper does not use the exact speciation strategy described here. It uses K-Means Clustering for speciation which is an algorithm for distributing data points into $K$ different clusters, or in this case, species. The algorithm works by first distributing all genomes into $k$ a random clusters. Then it calculates the centre point for each cluster and continues to distribute all the genomes into the nearest cluster. If a genome has changed cluster during the re-distribution, the algorithm starts again from calculating the centre point of the clusters as they are then and distribute the genomes again. This is done until all clusters are stable or some amount of iterations.
 
-The center point of a cluster is calculated with euclidean distance as the componentwise mean of all the points in a cluster\todo{allowed?}.
+The center point of a cluster is calculated as the componentwise mean of all the points in a cluster.
 
 K-Means implementation uses a vector of a genes' connection's innovation ids and their weights to represent them in the coordinate system. Manhattan distance is used as the distance metric, which is not much different from the distance metric in the original speciation idea. Manhattan distance in the original distance metric is equal to ${c_1E}$ and ${c_2E}$ set to 0 and $c_3$ to 1.
 

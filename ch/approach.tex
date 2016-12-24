@@ -87,9 +87,11 @@ This results in 6 non-negative real numbers making up the AR.
 
 \subsection{Training the agent}
 \label{sub:training-neat}
-We obtained the base game and textures used as test bed for our experiments from \url{http://armedunity.com/files/file/107-multiplayer-fps-kit-raknet/} and heavily modified it to suit our needs. This includes removing the ability for bots to shoot and removing everything regarding multiplayer and server functionality. 
+We obtained the base game and textures used as test bed for our experiments from \url{http://armedunity.com/files/file/107-multiplayer-fps-kit-raknet/} and heavily modified it to suit our needs. This includes removing the ability for the player/agent to move, bots to move and shoot and removing everything regarding multiplayer and server functionality. 
 
-The agent was trained with a modified version of NEAT as described in section \ref{sec:neat}\todo{describe the sharpNEAT framework}. The training of the agent was done in Unity 5\todo{link?}, using the UnityNEAT framework\todo{https://github.com/lordjesus/UnityNEAT}, which is a, slightly modified, implementation of NEAT, made easier to use with games developed in Unity.
+The training of the agent was done in Unity 5\footnote{\url{https://unity3d.com/}}.
+It was trained with a, slightly, modified version of NEAT as described in section\ref{sec:neat}, using the UnityNEAT framework\footnote{\url{https://github.com/lordjesus/UnityNEAT}}, which is a port of the C# NEAT framework SharpNEAT\footnote{\url{http://sharpneat.sourceforge.net/}}, made to use with games developed in Unity.
+
 Training the agent using the CNN as the ground truth provider is extremely computationally heavy using the setup of this project and therefore not feasible. Having access to more computational resources or more low level control with the hardware might overcome these challenges. Since neither was available at the time of writing, the CNN was not used as the ground truth provider. Instead of using the CNN to estimate the representation, it is calculated using the state of the game. This method is far less computationally heavy, making the training of the agent a lot faster, and allows the neuroevolution experiments to run at 10 TPS.
 
 \subsubsection{Evaluation}
