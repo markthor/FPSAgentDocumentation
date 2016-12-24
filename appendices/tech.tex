@@ -15,7 +15,7 @@ All training of the CNN was done on a server, at the IT University of Copenhagen
 \noindent
 Each training experiment was done using one of the GPUs and up to 12 GB of RAM allowing for two simultaneous runs.
 
-\subsection{Communication between the action inferring component and the visual recognition component}
+\subsection{Communication between the AIC and the VRC}
 \label{sec:com-vrc-aic}
 The game used throughout the project was made using the game engine Unity, where it is possible to interface with the game using either C\#, JavaScript, Boo or Unity Script. Since the game has to send the pixel data to a CNN to obtain the inputs for the AIC, the easiest option would be to implement the VRC in one of the languages supported by Unity.
 
