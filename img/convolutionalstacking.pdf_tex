@@ -52,5 +52,6 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{convolutionalstacking.pdf}}%
     \put(0.64996642,0.26316673){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{5x5}}}%
     \put(0.76917976,0.05972178){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{7x7}}}%
+    \put(0.56677696,0.45421918){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{3x3}}}%
   \end{picture}%
 \endgroup%
