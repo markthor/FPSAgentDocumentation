@@ -1,5 +1,5 @@
 %!TEX root = ../preamble.tex
-
+\newpage
 \section{Background}
 \label{sec:background}
 This section explains the theoretical framework of the project, related studies and the first person shooter game that the AI is applied to.
@@ -41,7 +41,7 @@ However, deep networks also suffers from topology-specific problems. The vanishi
 
 Recurrent connections and non-layered topologies are common in ANNs developed by TWEANNs\footnote{Topology \& Weight Evolving Artificial Neural Network algorithms}, as exemplified in figure \ref{fig:rt}. In the previous layered example, the neurons were activated three times to get the output of the network. In a non-layered recurrent topology, the neurons can be activated any number of times, known as discrete time steps, as the output is cycled through the network. This models a short-term memory, as the network can keep cycling previous inputs.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\vspace{-1.2cm}
     \centering
     \includesvg[svgpath = img/, width = 0.7\textwidth]{annR}

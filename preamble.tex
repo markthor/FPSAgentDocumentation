@@ -25,9 +25,32 @@
 \definecolor{cblue}{HTML}{2B83BA}
 \definecolor{bluered-mix}{HTML}{7F6A85}
 
-\hyphenation{neuro-evolution the-o-re-ti-cally}
+\hyphenation{neuro-evolution the-o-re-ti-cally pixel pixels re-pre-sen-ta-tion}
 
 \newcommand{\ctilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+
+
+%%%%%% HEADER %%%%%%%
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % set the \leftmark
+
+\fancyhf{}
+
+%\rhead{\fancyplain{}{MyName}}
+\lhead{\fancyplain{}{\leftmark }} 
+\cfoot{\fancyplain{}{\thepage}}
+
+
+
+
+
+
+
+%\let\oldsection\section
+%\renewcommand\section{\clearpage\oldsection}
 
 %%%%% pgfplots settings %%%%%
 \pgfplotsset{compat=newest}
@@ -60,7 +83,7 @@
 \university{IT University of Copenhagen}
 \location{Copenhagen, Denmark}
 
-\degree{A thesis submitted in fulfillment of the requirements for the degree of Master of Science.}
+\degree{A thesis submitted in fulfilment of the requirements for the degree of Master of Science.}
 \date{December 2016}
 
 
@@ -68,7 +91,8 @@
 \begin{document}
 	\maketitle
 	
-	\pagestyle{empty}
+	\pagestyle{plain}
+	\pagenumbering{Roman}
 	\input{ch/abstract.tex}
 	\input{ch/acknowledgement.tex}
 	\newpage
@@ -77,6 +101,7 @@
 	\tableofcontents
 %	\newpage
 	
+	\clearpage
 	\renewcommand{\listfigurename}{List of Figures and Plots}
 	\listoffigures
 %	\newpage
@@ -86,7 +111,8 @@
 	\newpage
 	
 	\setcounter{page}{1}
-	\pagestyle{plain}
+	\pagestyle{fancy}
+	\pagenumbering{arabic}
 
 	\input{ch/namingconventions.tex}
 	\input{ch/introduction.tex}
