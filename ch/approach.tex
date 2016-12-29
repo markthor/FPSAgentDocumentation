@@ -12,8 +12,12 @@ This section describes the details of the training of the CNN, including the tra
 We present four different topologies, two for classification and two for regression. Both types are tested with a 12 layered architecture and a 6 layered architecture, referred to as deep and shallow respectively. The difference between the two topologies is in the number of neurons in the fully connected layers and in the activation functions used for the output. All activation functions are ReLU(rectifier), except in the output layers, where softmax is used for classification and identity is used for regression. The regression network outputs the angular representation as described in section \ref{sec:angular}, scaled to fit a range of $-1$ to $1$. The classification network outputs 26 probabilities summing to $1$. The networks take inputs with a shape of 256x256x3, which is the 3 color channels of the image.
 
 \paragraph{Deep neural network topologies}
-The network topologies are illustrated on figure \ref{fig:architectureOfDeepNet}. Both have 12 layers, the first 8 being alternating convolutional and pooling layers, while the next 3 layers being fully connected layers followed by an output layer.  The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 2. Both networks have a total of 3,200 parameters(weights and biases) in the convolutional layers.
+The network topologies are illustrated on figure \ref{fig:architectureOfDeepNet}. Both have 12 layers, the first 8 being alternating convolutional and pooling layers, while the next 3 layers being fully connected layers followed by an output layer.  The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 2.
+
+Both networks have a total of 163,940 parameters(weights and biases) in the convolutional layers.
+
 The classification network has 1,228,800 weights($16 \cdot 16 \cdot 120 \cdot 40$) from the last convolutional layer to the first fully connected layer and 4,386 parameters in the remaining layers.
+
 The regression network has 7,680,000 weights($16 \cdot 16 \cdot 120 \cdot 250$) from the last convolutional layer to the first fully connected layer and 126,754 parameters in the remaining layers.
 
 \begin{figure}[H]
@@ -30,8 +34,12 @@ The regression network has 7,680,000 weights($16 \cdot 16 \cdot 120 \cdot 250$) 
 \end{figure}
 
 \paragraph{Shallow neural network topologies}
-The network topologies are illustrated on figure \ref{fig:architectureOfShallowNet}. Both have 6 layers, the first 4 being alternating convolutional and pooling layers, followed by a fully connected layer and an output layer.  The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 4. Both networks have a total of 5200 parameters(weights and biases) in the convolutional layers.
+The network topologies are illustrated on figure \ref{fig:architectureOfShallowNet}. Both have 6 layers, the first 4 being alternating convolutional and pooling layers, followed by a fully connected layer and an output layer.  The stride and zero padding of all the convolutional layers are 1, while the stride of all the pooling layers is 4.
+
+Both networks have a total of 246,200 parameters(weights and biases) in the convolutional layers.
+
 The classification network has 3,686,400 weights($16 \cdot 16 \cdot 120 \cdot 120$) from the last convolutional layer to the first fully connected layer and 3,266 parameters in the remaining layers.
+
 The regression network has 23,040,000 weights($16 \cdot 16 \cdot 120 \cdot 750$) from the last convolutional layer to the first fully connected layer and 3,754 parameters in the remaining layers.
 
 \begin{figure}[H]
@@ -45,7 +53,7 @@ The regression network has 23,040,000 weights($16 \cdot 16 \cdot 120 \cdot 750$)
 \end{figure}
 
 \subsubsection{Training with gradient descent}
-The optimisation process of gradient descent did not include continuous evaluation on a validation set for early stopping, as overfitting was of no concern. When the error of the network stopped improving, the process was stopped. The parameters were updated from a mini-batch of size 32, with a learning rate of $10^{-3}$. The process did not include dropout, but included L2-regularization with a coefficient of $5 \cdot 10^{-4}$ for some of the experiments. Nesterov's accelerated gradient was used with a momentum coefficient of $0.9$. The networks were initialised with Xavier initialisation. The number of training examples used for training was 130,000 for all experiments. The framework used for supervised learning was DL4J, a deep learning framework for java, accessible at \url{https://deeplearning4j.org}.
+The optimisation process of gradient descent did not include continuous evaluation on a validation set for early stopping, as overfitting was of no concern. When the error of the network stopped improving, the process was stopped. The parameters were updated from a mini-batch of size 32, with a learning rate of $10^{-3}$. The process did not include dropout, but included L2-regularisation with a coefficient of $5 \cdot 10^{-4}$ for some of the experiments. Nesterov's accelerated gradient was used with a momentum coefficient of $0.9$. The networks were initialised with Xavier initialisation. The number of training examples used for training was 130,000 for all experiments. The framework used for supervised learning was DL4J, a deep learning framework for java, accessible at \url{https://deeplearning4j.org}.
 
 \subsubsection{Training data}
 The training examples consists of the raw image data and ground truths. The raw image data is, for each pixel, the byte value of the red, green and blue pixel, i.e. three numbers between 0-255, arranged as a 3 dimensional volume, as seen in figure \ref{fig:split}.
@@ -87,7 +95,7 @@ This results in 6 non-negative real numbers making up the AR.
 
 \subsection{Training the agent}
 \label{sub:training-neat}
-We obtained the base game and textures used as test bed for our experiments from \url{http://armedunity.com/files/file/107-multiplayer-fps-kit-raknet/} and heavily modified it to suit our needs. This includes removing the ability for the player/agent to move, bots to move and shoot and removing everything regarding multiplayer and server functionality. 
+The base game\footnote{\url{http://armedunity.com/files/file/107-multiplayer-fps-kit-raknet/}} and textures used as test bed for our experiments from and heavily modified it to suit our needs. This includes removing the ability for the player/agent to move, bots to move and shoot and removing everything regarding multiplayer and server functionality. 
 
 The training of the agent was done in Unity 5\footnote{\url{https://unity3d.com/}}.
 It was trained with a, slightly, modified version of NEAT as described in section~\ref{sec:neat}, using the UnityNEAT framework\footnote{\url{https://github.com/lordjesus/UnityNEAT}}, which is a port of the C\# NEAT framework SharpNEAT\footnote{\url{http://sharpneat.sourceforge.net/}}, made to use with games developed in Unity.
@@ -145,7 +153,7 @@ We were able to almost fully automate the process of generating training data by
 \subsubsection{Data cleaning}
 Problems can occur when the representation of classes is imbalanced, as discussed in section~\ref{sub:data-req}.
 
-To overcome these problems some of the images not containing an enemy was deleted. The deletion reduced the number of images with an enemy from \~50\% to \~15\%.
+To overcome these problems some of the images not containing an enemy was deleted. The deletion reduced the number of images without an enemy from \ctilde50\% to \ctilde15\%.
 
 The distribution of the rest of the classes depends heavily on the granularity of the partitioning scheme used. Using a 3, 3, 3 partitioning scheme, the most represented class, not counting images without an enemy, constitutes around 11\% of the images. The least represented class contained a mere 0.0862\% of the samples. In other words our representation of classes were majorly imbalanced as seen in table~\ref{tab:enemy-dist}.
 

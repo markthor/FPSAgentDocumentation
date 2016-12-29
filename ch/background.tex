@@ -5,7 +5,7 @@
 This section explains the theoretical framework of the project, related studies and the first person shooter game that the AI is applied to.
 
 \subsection{Artificial neural networks}
-An artificial neural network (ANN) is a computational model, capable of approximating any continuous function to any precision.~\cite{kurt} Inspired by biological neural networks, it is composed of mathematical functions known as neurons, computing a non-linear function over the weighted sum of its input. To form a network, the neurons are connected with each other as a directed graph, such that the output of one neuron is fed into another neuron. As the arrangement, connectivity and number of neurons can be varied, ANNs can have very different sizes, shapes and capabilities.
+An artificial neural network (ANN) is a computational model, capable of approximating any continuous function to any precision~\cite{kurt}. Inspired by biological neural networks, it is composed of mathematical functions known as neurons, computing a non-linear function over the weighted sum of its input. To form a network, the neurons are connected with each other as a directed graph, such that the output of one neuron is fed into another neuron. As the arrangement, connectivity and number of neurons can be varied, ANNs can have very different sizes, shapes and capabilities.
 
 \subsubsection{Artificial neurons}
 The output of an artificial neuron is dependant on the input signals, the activation function, and its weights and bias. Each input signal is weighted individually. Let $x$ be the vectorised input signals of the neuron, $w$ be the vectorised weights, and $b$ be the bias. Then the weighted input for the activation function, $z$, is calculated as $z = x \cdot w + b$.
@@ -46,7 +46,7 @@ Recurrent connections and non-layered topologies are common in ANNs developed by
     \centering
     \includesvg[svgpath = img/, width = 0.7\textwidth]{annR}
     \vspace{-10mm}
-    \caption[Simple recurrent topology]{An example of an ANN with a recurrent connection(the dotted line) in a less constrained topology.}
+    \caption[Simple recurrent topology]{An example of an ANN with a recurrent connection (the dotted line) in a less constrained topology.}
     \label{fig:rt}
 \end{figure}
 
@@ -222,7 +222,7 @@ One method is to delete data from over-represented classes until every class has
 A second method is proposed in~\cite{balanced-classes}, showing promising results. The idea is to randomly duplicate samples from lesser represented classes, until classes are more evenly distributed. The most extreme form of this method duplicates samples until an even distribution is obtained.
 \subsection{Related work}
 \label{sec:relatedwork}
-In 2014, a visual agent for playing TORCS\footnote{The Open Racing Car Simulator} was developed using reinforcement learning to evolve a network with a CNN component\cite{torcs}. The fitness functions used to train the top layer network was different than the fitness function used to train the CNN component. The top layer network adapted the output of the CNN component and successfully used it, despite the output of the CNN component being humanly incomprehensible, and based solely on the image. The TORCS AI demonstrates the strong input interpretation potential of NEAT.
+In 2014, a visual agent for playing TORCS was developed using reinforcement learning to evolve a network with a CNN component\cite{torcs}. The fitness functions used to train the top layer network was different than the fitness function used to train the CNN component. The top layer network adapted the output of the CNN component and successfully used it, despite the output of the CNN component being humanly incomprehensible, and based solely on the image. The TORCS AI demonstrates the strong input interpretation potential of NEAT.
 
 Chenyi Chen et al. \cite{chen} trained a deep convolutional neural network to detect features of road images in TORCS, retextured to simulate real driving. The features included angle of the road tangent and distance to land markings. The features are similar to the AR we propose, as it estimates angles and distance. Chenyi Chen et al. trained their network with 484,815 training examples for 140,000 iterations, which is quite resource intensive. The features were translated to driving actions by a handwritten controller, which is the main difference between their and our approach. The advantage of their approach is that the desired behaviour of the agent can be formulated in detail, which is necessary when programming critical systems, like an autonomous car.
 
@@ -237,7 +237,7 @@ Numerous examples of applying supervised learning or evolutionary algorithms to 
 
 The FPS environment used as a test bed for the pipeline is described in this section. The agent starts with a single full automatic weapon, which has 30 bullets in a single magazine. It has 6 extra magazines at its disposal. The weapon does not automatically reload when the magazine is empty, in order to force the agent to learn detecting when a magazine is empty. Since the agent does not get any input regarding bullets and magazines left, it should, optimally, learn to count how many bullets and magazines it has used. This is important in order to not waste time attempting to shoot or reload when there are no more bullets or the weapon is fully loaded, it is however possible to get very reasonable behaviour from the agent without perfect reload times.
 
-The target spawns with 100 health points, and a single bullet does 10 damage to it, no matter where it hits. This means that 10 hits are required for the agent to kill the target. If the the agent only reloads when it is out of bullets, it will have 210 bullets, meaning it could theoretically eliminate 21 targets. The agent is however not given enough time to eliminate such a high number of targets, but it is given plentiful extra bullets, to allow for mistakes, in order to increase the learning rate.
+The target spawns with 100 health points, and a single bullet does 10 damage to it, no matter where it hits. This means that 10 hits are required for the agent to kill the target. If the agent only reloads when it is out of bullets, it will have 210 bullets, meaning it could theoretically eliminate 21 targets. The agent is however not given enough time to eliminate such a high number of targets, but it is given plentiful extra bullets, to allow for mistakes, in order to increase the learning rate.
 
 The weapon has a violent recoil which the agent has to learn how to control. The recoil is set to miss the enemy/bot already on the third shot in far the most cases and emptying an entire magazine will on average hit the target 3-4 times. As this will result in a very low score, the agent will have to learn how to control the recoil. The recoil is random, so the agent has to learn how to tap-fire in order to maximise accuracy. The weapon can shoot 10 times per second and the recoil is turned off for some of the experiments.
 

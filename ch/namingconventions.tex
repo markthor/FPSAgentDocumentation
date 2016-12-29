@@ -1,11 +1,14 @@
 %!TEX root = ../preamble.tex
 
 \section{Naming conventions}
+\label{sec:naming-conventions} 
 
 \begin{table}[H]
 \begin{center}
 
-\begin{tabularx}{\textwidth}{ | p{5cm} | X |}
+%\begin{tabularx}{\textwidth}{ | p{5cm} | X |}
+\begin{tabularx}{\textwidth}{ | >{\RaggedRight}p{4.5cm} | X |}
+%\begin{tabularx}{\textwidth}{ | l | p{11cm} |}
 		\hline
 	
 		\textbf{Name} & \textbf{Definition} \\ \hline
@@ -16,9 +19,10 @@
 		
 Translates per second (TPS) & The number of times per second the state of the game is passed through the AIC or the pipeline to infer an action.\\ \hline		
 		
-		Visual partitioning representation (VPR) & A representation of the visual state, based on partition classes, described in section \ref{sec:vpr}. \\ \hline
+		Angular representation (AR) & A representation of the visual state based on relative angles between the agent and the target, described in section~\ref{sec:angular} on page~\pageref{sec:angular}. \\ \hline
 		
-		Angular representation (AR) & A representation of the visual state based on relative angles between the agent and the target, described in section \ref{sec:angular}. \\ \hline
+		Visual partitioning representation (VPR) & A representation of the visual state, based on partition classes, described in section~\ref{sec:vpr} on page~\pageref{sec:vpr}. \\ \hline
+		
 		Agent & The game entity that the developed AI controls. \\ \hline
 		Target & The game entity that the agent is rewarded for shooting. \\ \hline
 		
@@ -27,7 +31,6 @@ Translates per second (TPS) & The number of times per second the state of the ga
 		
 \end{tabularx}
 \end{center}
-\label{tab:naming-conventions} 
 \end{table}
 
 \newpage

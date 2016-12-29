@@ -10,25 +10,26 @@ The experiments performed are described in section \ref{sec:cnnexperiments}. Not
 
 \subsubsection{Visual partitioning representation}
 \paragraph{Convergence}
-Figure \ref{fig:score-nolight-vpr} and \ref{fig:score-light-vpr} show the convergence of the CNNs using VPR measured as the cost function on the mini-batch that the gradient is estimated from, over iterations. As the process of batch selection is random, the score is fluctuating. The cost function is negative log-likelihood, described in section \ref{sec:negative}.
+Figure \ref{fig:score-nolight-vpr} and \ref{fig:score-light-vpr} show the convergence of the CNNs using VPR measured as the cost function on the mini-batch that the gradient is estimated from, over iterations. As the process of batch selection is random, the score is fluctuating. The cost function is negative log likelihood, described in section \ref{sec:negative}.
 The results presented are with and without visual distortion and with the network topologies described in section \ref{sec:topologies}. The shallow topology converges in fewer iterations, but both networks manage to converge to a solution. The average time per iteration for the data with visual distortion is 4,782 milliseconds for the deep network and 2,451 milliseconds for the shallow network.
 
 \input{graph/score-nolight-vpr.tex} %DONE
-\input{graph/score-light-vpr.tex} %DONE
 \vspace{-5mm}
 
 \paragraph{Performance}
 The accuracy of the results in figure~\ref{fig:vpr-acc} is measured as the percentage of correct predictions. It is apparent from these results, that the models have not overfitted to the training data, as the difference in accuracy of the training set and the test set is insignificant. Furthermore, the topologies of the networks does not seem to have a significant impact on the accuracy. Examples of the training examples that the deep CNN with visual distortion fails to classify correctly can be seen in section~\ref{sec:incorrectpredictions} of the appendix. The incorrect predictions are due to the target being in between partitions or behind the weapon overlay.
 
+\input{graph/score-light-vpr.tex} %DONE
 \input{graph/vpr-acc.tex} %DONE
 
 
 \subsubsection{Angular representation}
 \paragraph{Convergence}
 Figure~\ref{fig:score-nolight-angular} and~\ref{fig:score-light-angular} show the convergence of the CNNs using AR shown as the cost function on the mini-batch that the gradient is estimated from, over iterations. The cost function is Euclidean loss, described in section \ref{sec:angular}.
-The results presented are both with and without visual distortion and with the network topologies described in section \ref{sec:topologies}. The deep network reaches a lower cost, but requires additional iterations to converge to a solution. The deep network trained with light has an average time per iteration of 3,734 milliseconds, while the shallow network trained with light has an average time per iteration of 2,572 milliseconds. Consequently, the deep network converges significantly slower.
+The results presented are both with and without visual distortion and with the network topologies described in section \ref{sec:topologies}. The deep network reaches a lower cost, but requires additional iterations to converge to a solution. The deep network trained in the visually distorted setting has an average time per iteration of 3,734 milliseconds, while the shallow network has an average time per iteration of 2,572 milliseconds. Consequently, the deep network converges significantly slower.
 
-The same phenomena as without visual distortion is observed in figure~\ref{fig:score-light-angular}, but the difference in final cost is less than without visual distortion.
+%The same phenomena as without visual distortion is observed in figure~\ref{fig:score-light-angular}, but the difference in final cost is less than without visual distortion.
+In the setting without visual distortion the deep network also performs better than the shallow network, as seen in figure~\ref{fig:score-light-angular}, but the difference in final cost is lesser.%less than without visual distortion.
 
 \input{graph/score-nolight-angular.tex}
 
@@ -40,7 +41,7 @@ The performance is measured as mean absolute error on the angles and distance of
 
 Figure \ref{fig:angular-acc} shows that there is no significant difference between the accuracy on the test and the training set. This entails little to no overfitting on target detection.
 
-It is apparent from the difference in accuracy on the test set and the train set that there is little to no overfitting on horizontal angle, vertical angle and distance, as seen in figure \ref{fig:angular-mse-nolight-deep}, \ref{fig:angular-mse-nolight-shallow}, \ref{fig:angular-mse-light-deep} and \ref{fig:angular-mse-light-shallow}. The deep networks perform better than the shallow ones on both tasks, but the difference is especially significant without visual distortion. The error of the networks trained without visual distortion is visualised in section~\ref{sec:angular-error} of the appendix.
+It is apparent from the difference in accuracy on the test set and the training set that there is little to no overfitting on horizontal angle, vertical angle and distance, as seen in figure \ref{fig:angular-mse-nolight-deep}, \ref{fig:angular-mse-nolight-shallow}, \ref{fig:angular-mse-light-deep} and \ref{fig:angular-mse-light-shallow}. The deep networks perform better than the shallow ones on both tasks, but the difference is especially significant without visual distortion. The error of the networks trained without visual distortion is visualised in section~\ref{sec:angular-error} of the appendix.
 
 \input{graph/angular-acc.tex} %DONE
 \input{graph/angular-mse-nolight-deep.tex} %DONE
@@ -51,7 +52,7 @@ It is apparent from the difference in accuracy on the test set and the train set
 \clearpage
 \subsubsection{Feature maps}
 \label{sec:featuremaps}
-The feature maps shown in figure~\ref{fig:featuremapsvpr}~and~\ref{fig:featuremapsangular} are visualised by scaling the output range of $[0,1]$ of every neuron in the convolutional layers linearly to the grey scale range of $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, their is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer. All of the feature maps are from the same input. Additional feature maps are included in appendix, section~\ref{sec:featuremaps-appendix}. The feature maps from the two different representations are different in both the magnitude and the variance of the output, and the variance. The feature maps from the network estimating the AR has fewer useful feature maps in the last max pooling layer and has a tendency to highlight useless features, such as the weapon overlay, as much as the target.
+The feature maps shown in figure~\ref{fig:featuremapsvpr}~and~\ref{fig:featuremapsangular} are visualised by scaling the output range $[0,1]$ of every neuron in the convolutional layers linearly to the grey scale range $[0,255]$. The leftmost column of feature maps are from the first convolutional layer, and the rightmost is the input to the fully connected layers. As a convolutional layer takes a depth slice of all the previous feature maps as input, there is no apparent connection between the visualised output of the max pooling layer and the following result of the convolutional layer. All of the feature maps are from the same input. Additional feature maps are included in section~\ref{sec:featuremaps-appendix} of the appendix. The feature maps from the two different representations are different in both the magnitude and the variance of the output. The feature maps from the network estimating the AR has fewer useful feature maps in the last max pooling layer and has a tendency to highlight useless features, such as the weapon overlay, as much as the target.
 
 \begin{figure}[H]
 	\begin{scriptsize}
@@ -74,15 +75,15 @@ The feature maps shown in figure~\ref{fig:featuremapsvpr}~and~\ref{fig:featurema
 \end{figure}
 
 \subsubsection{Smaller datasets}
-The results shown in figure~\ref{fig:vpr-acc-small-dataset} shows that training with 5015 training examples results in an accuracy of 71.30\%, which is 15.36 percentage points less than the network trained with 130,000 examples. As the accuracy is close to 100\% on the training data, the network clearly overfitted. Whether the networks are trained for the optimal number of iterations is uncertain.
+The results shown in figure~\ref{fig:vpr-acc-small-dataset} shows that training with 5,015 training examples results in an accuracy of 71.30\%, which is 15.36 percentage points less than the network trained with 130,000 examples. As the accuracy is close to 100\% on the training data, the network clearly overfitted. Whether the networks are trained for the optimal number of iterations is uncertain.
 
 \input{graph/vpr-small-dataset-acc.tex}
 
 \subsection{Neuroevolution experiments}
 \label{sec:neuroevolution-experiments-results}
-The graphs in figure~\ref{fig:neat-averaged-overall-fitness} and \ref{fig:neat-best-overall-fitness} as well as the graphs included in section~\ref{sec:neuroevolution-graphs} of the appendix are based on evolution with the ground truths as feature representation. The experiments ran for approximately 4 hours each 100 generations. We observe an overall tendency for experiments with the AR to perform better than the experiments with the VPR, both learning faster and reaching a higher fitness. The AR without recoil misses significantly fewer shots than any other approach, as seen in figure~\ref{fig:neat-averaged-missed-shots}. The VPR has fewer unnecessary reloads than the AR, which is the only parameter where it is superior. Non of the approaches  handles recoil well, as visualised in the graphs in figure~\ref{fig:neat-averaged-vpr-recoil-fitness} and \ref{fig:neat-averaged-angular-recoil-fitness}. The AR with recoil eliminates approximately a single target every evaluation, and the VPR manages to hit the target 1 or 2 times. All approaches except VPR without recoil seems to reload with full magazine approximately every second evaluation, as seen in figure~\ref{fig:neat-averaged-wrong-reloads.tex}, which indicates that they do not learn proper reloading behaviour. The decreasing aiming fitness can be attributed to target elimination, as the next target is spawning in a random location.
+The graphs in figure~\ref{fig:neat-averaged-overall-fitness} and \ref{fig:neat-best-overall-fitness} as well as the graphs included in section~\ref{sec:neuroevolution-graphs} of the appendix are based on evolution with the ground truths as feature representation. The experiments ran for approximately 4 hours each 100 generations. We observe an overall tendency for experiments with the AR to perform better than the experiments with the VPR, both learning faster and reaching a higher fitness. The AR without recoil misses significantly fewer shots than any other approach, as seen in figure~\ref{fig:neat-averaged-missed-shots}. The VPR has fewer unnecessary reloads than the AR, which is the only parameter where it is superior. None of the approaches handles recoil well, as visualised in the graphs in figure~\ref{fig:neat-averaged-vpr-recoil-fitness} and \ref{fig:neat-averaged-angular-recoil-fitness}. The AR with recoil eliminates approximately a single target every evaluation, and the VPR manages to hit the target 1 or 2 times. All approaches except VPR without recoil seems to reload with full magazine approximately every second evaluation, as seen in figure~\ref{fig:neat-averaged-wrong-reloads.tex}, which indicates that they do not learn proper reloading behaviour. The decreasing aiming fitness can be attributed to target elimination, as the next target is spawning in a random location.
 
-From inspecting the evolved topologies, we observe different approaches to handling reloading and recoil. The ANNs based on the AR with recoil has a tendency to evolve tap-fire in two different ways. The first one is having a negative weighted recurrent connection from and to the shoot output neuron that allows it to alternate between firing and holding fire. The other one is by slowly aiming away from the target while shooting and stopping when the aiming is too far off. The AR tends to reload when the aim is far off, as this tends to happen when a target is eliminated and a new target appears. The VPR handles recoil by moving to a partition adjacent to the center partition while shooting, and then moving back again to the center partition, creating a short delay in between shots. It tends to associate some of the medium-sized partitions with reloading.
+From inspecting the evolved topologies, we observe different approaches to handling reloading and recoil. The ANNs based on the AR with recoil has a tendency to evolve tap-fire in two different ways. The first one is having a negative weighted recurrent connection from and to the shoot output neuron that allows it to alternate between firing and holding fire. The other one is by slowly aiming away from the target while shooting, and then stopping when the aim is too far off. The AR tends to reload when the aim is far off, as this tends to happen when a target is eliminated and a new target appears. The VPR handles recoil by moving to a partition adjacent to the centre partition while shooting, and then moving back again to the centre partition, creating a short delay in between shots. It tends to associate some of the medium-sized partitions with reloading.
 
 % NEAT GRAPHS
 \input{graph/neat/neat-averaged-overall-fitness.tex} %DONE
@@ -92,7 +93,7 @@ From inspecting the evolved topologies, we observe different approaches to handl
 \subsection{The pipeline}
 \label{sec:pipeline-results}
 
-The pipeline is the combination of the VRC and the AIC, and it is measured by evaluating fitness over 100 trials with the best performing VRC and the best performing AIC running at 5 TPS. The graph in figure~\ref{fig:neat-cnn-comparison} shows that both the pipeline based on the AR and the VPR are significantly penalised by using the VRC as feature representation provider, decreasing performance by 37.7\% and 73.2\% respectively. Reducing the look sensitivity by 50\% increases the performance of the pipeline, but reduces the performance of the ground truth based AIC.
+The pipeline is the combination of the VRC and the AIC, and it is measured by evaluating fitness over 100 trials with the best performing VRC and the best performing AIC running at 5 TPS. The graph in figure~\ref{fig:neat-cnn-comparison} shows that both the pipeline based on the AR and the VPR are significantly penalised by using the VRC as feature representation provider, decreasing performance by 73.2\% and 37.7\% respectively. Reducing the look sensitivity by 50\% increases the performance of the pipeline, but reduces the performance of the ground truth based AIC.
 
 \input{graph/neat/neat-cnn-comparison.tex}
 
